@@ -48,23 +48,11 @@
       <a href="#contact" class="hover:text-brand-orange">Contact</a>
     </nav>
     <div class="flex items-center gap-3">
-      <button id="menu-toggle" class="md:hidden p-2" aria-label="Toggle menu">
-        <svg class="h-6 w-6 text-brand-charcoal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
       <a href="#contact"
          class="inline-block rounded-md bg-brand-orange px-5 py-2 text-white font-semibold shadow hover:opacity-90 transition">
         Book a Call
       </a>
     </div>
-  </div>
-  <div id="mobile-menu" class="md:hidden hidden px-6 pb-4 flex flex-col gap-2 text-sm font-medium">
-    <a href="#why"   class="py-2 hover:text-brand-orange">Why Us</a>
-    <a href="#work"  class="py-2 hover:text-brand-orange">Work</a>
-    <a href="#pricing" class="py-2 hover:text-brand-orange">Pricing</a>
-    <a href="#faq"   class="py-2 hover:text-brand-orange">FAQ</a>
-    <a href="#contact" class="py-2 hover:text-brand-orange">Contact</a>
   </div>
 </header>
 
@@ -286,13 +274,6 @@
 <script>
   /* dynamic year for footer */
   document.getElementById('year').textContent = new Date().getFullYear();
-  const toggle = document.getElementById('menu-toggle');
-  const menu = document.getElementById('mobile-menu');
-  if (toggle && menu) {
-    toggle.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
-    });
-  }
 </script>
 </body>
 </html>
