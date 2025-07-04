@@ -4,9 +4,9 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Privacy Policy | Scrapyard Sites</title>
-  <link rel="icon" href="assets/logo.png" sizes="any"/>
-  <link rel="mask-icon" href="assets/logo.svg" color="#D75E02"/>
-  <link rel="apple-touch-icon" href="assets/logo.png"/>
+  <link rel="icon" href="/assets/logo.png" sizes="any"/>
+  <link rel="mask-icon" href="/assets/logo.svg" color="#D75E02"/>
+  <link rel="apple-touch-icon" href="/assets/logo.png"/>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -27,9 +27,92 @@
     };
   </script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    :root {
+      --color-links: #D75E02;
+    }
+
+    /* Nav bar underline animation */
+    header nav a,
+    #mobileMenu a:not(.bg-yellow-500) {
+      position: relative;
+      text-decoration: none;
+    }
+
+    header nav a:hover,
+    #mobileMenu a:not(.bg-yellow-500):hover {
+      color: currentColor !important; /* keep existing color on hover */
+    }
+
+    /* Keep active nav item orange even when hovered */
+    header nav a.text-yellow-400:hover {
+      color: var(--color-links) !important;
+    }
+
+    header nav a::after,
+    #mobileMenu a:not(.bg-yellow-500)::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 0;
+      height: 2px;
+      background-color: var(--color-links);
+      transition: width 0.3s ease;
+    }
+
+    header nav a:hover::after,
+    #mobileMenu a:not(.bg-yellow-500):hover::after {
+      width: 100%;
+    }
+
+    /* Brand title underline animation */
+    .site-title {
+      position: relative;
+      display: inline-block;
+    }
+
+    .site-title::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 0;
+      height: 2px;
+      background-color: var(--color-links);
+      transition: width 0.3s ease;
+    }
+
+    a:hover .site-title::after {
+      width: 100%;
+    }
+</style>
 </head>
-<body class="font-sans text-brand-charcoal bg-white antialiased p-6">
-  <main class="max-w-3xl mx-auto">
+<body class="font-sans text-brand-charcoal antialiased bg-white overflow-x-hidden">
+  <header class="bg-white fixed top-0 left-0 right-0 w-full z-50 shadow-sm">
+    <div class="mx-auto max-w-7xl relative flex items-center justify-between px-6 py-3">
+      <a href="/" class="flex items-center gap-2">
+        <img src="/assets/logo.svg" alt="ScrapYardSites logo" class="h-6 w-6 md:h-8 md:w-8"/>
+        <span class="site-title text-xl md:text-2xl font-black tracking-tight">
+          <span class="text-brand-orange">Scrapyard</span> Sites
+        </span>
+      </a>
+      <nav class="hidden md:flex absolute left-1/2 -translate-x-1/2 justify-center items-center gap-8 text-sm font-medium">
+        <a href="/#why" class="hover:text-brand-orange">Why Us</a>
+        <a href="/#work" class="hover:text-brand-orange">Portfolio</a>
+        <a href="/#pricing" class="hover:text-brand-orange">Pricing</a>
+        <a href="/#contact" class="hover:text-brand-orange">Contact</a>
+        <a href="/#faq" class="hover:text-brand-orange">FAQ</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a href="/#contact" class="inline-block rounded-md bg-brand-orange px-5 py-2 text-white font-semibold shadow hover:opacity-90 transition">
+          Book a Call
+        </a>
+      </div>
+    </div>
+  </header>
+  <main class="max-w-3xl mx-auto pt-20 px-6">
     <h1 class="text-3xl font-bold mb-4">Privacy Policy for Scrapyard&nbsp;Sites</h1>
     <p class="mb-4"><strong>Effective Date: 4&nbsp;July&nbsp;2025</strong></p>
     <p class="mb-4">Scrapyard Sites (“Company,” “we,” “our,” or “us”) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit scrapyardsites.com (the “Site”) or interact with any of our services, prototypes, or test sites hosted on GitHub or other platforms (collectively, the “Services”). By accessing or using our Services, you agree to the terms of this Privacy Policy.</p>
