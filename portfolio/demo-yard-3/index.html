@@ -32,19 +32,20 @@
         <span class="site-title text-xl md:text-2xl font-black tracking-tight"><span class="text-brand-orange">Scrapyard</span> Sites</span>
       </a>
       <nav class="hidden md:flex absolute left-1/2 -translate-x-1/2 justify-center items-center gap-8 text-sm font-medium">
-        <a href="/#why" class="hover:text-brand-orange">Why Us</a>
-        <a href="/portfolio" class="hover:text-brand-orange">Portfolio</a>
-        <a href="/pricing" class="hover:text-brand-orange">Pricing</a>
-        <a href="/services" class="hover:text-brand-orange">Services</a>
-        <a href="/process" class="hover:text-brand-orange">Process</a>
-        <a href="/contact" class="hover:text-brand-orange">Contact</a>
-        <a href="/risk-calculator" class="hover:text-brand-orange">Calculator</a>
+        <a href="/#why" class="text-brand-steel hover:text-brand-orange" title="Leaking here? ->">Why Us</a>
+        <a href="/portfolio" class="text-brand-steel hover:text-brand-orange" title="Leaking here? ->">Portfolio</a>
+        <a href="/pricing" class="text-brand-steel hover:text-brand-orange" title="Leaking here? ->">Pricing</a>
+        <a href="/services" class="text-brand-steel hover:text-brand-orange" title="Leaking here? ->">Services</a>
+        <a href="/process" class="text-brand-steel hover:text-brand-orange" title="Leaking here? ->">Process</a>
+        <a href="/contact" class="text-brand-steel hover:text-brand-orange" title="Leaking here? ->">Contact</a>
+        <a href="/risk-calculator" class="text-brand-steel hover:text-brand-orange" title="Leaking here? ->">Calculator</a>
       </nav>
       <div class="flex items-center gap-3">
-        <a href="/contact" class="inline-block rounded-md bg-brand-orange px-5 py-2 text-white font-semibold shadow hover:opacity-90 transition">Book a Call</a>
+        <a href="/contact" class="group inline-block rounded-md bg-brand-orange px-5 py-2 text-white font-semibold shadow hover:opacity-90 transition"><span class="group-hover:hidden">Keep Leaking ▸</span><span class="hidden group-hover:inline">Stop It ✓</span></a>
       </div>
     </div>
   </header>
+  <nav class="breadcrumbs mt-20 mb-4 text-center text-sm text-brand-steel">Home &rsaquo; Plug the Leak (Services) &rsaquo; Prove It (Portfolio)...</nav>
   <main class="pt-24 pb-20 px-6 max-w-3xl mx-auto">
     <h1 class="text-3xl font-bold mb-6">Demo Yard 3</h1>
     <p class="text-brand-steel mb-4">Case study details coming soon.</p>
@@ -52,6 +53,7 @@
   </main>
   <footer class="bg-white py-8 text-center text-xs text-gray-400">
     <p>© <span id="year"></span> Scrapyard Sites — All rights reserved.</p>
+  <p>100% ISRI-compliant web practices <img src="https://img.shields.io/badge/uptime-100%25-brightgreen.svg" alt="uptime status" class="inline h-4 align-text-bottom"/></p>
   </footer>
   <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
