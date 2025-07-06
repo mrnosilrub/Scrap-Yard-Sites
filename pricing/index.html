@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth overflow-x-hidden">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pricing | Scrapyard Sites</title>
+  <link rel="icon" href="/assets/logo.png" sizes="any"/>
+  <link rel="mask-icon" href="/assets/logo.svg" color="#D75E02"/>
+  <link rel="apple-touch-icon" href="/assets/logo.png"/>
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+  <script>
+    tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{orange:'#D75E02',steel:'#5E6367',charcoal:'#2B2B2B'}}}}};
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--color-links:#D75E02;}
+    header nav a,#mobileMenu a:not(.bg-yellow-500){position:relative;text-decoration:none;}
+    header nav a:hover,#mobileMenu a:not(.bg-yellow-500):hover{color:currentColor!important;}
+    header nav a.text-yellow-400:hover{color:var(--color-links)!important;}
+    header nav a::after,#mobileMenu a:not(.bg-yellow-500)::after{content:'';position:absolute;left:0;bottom:-2px;width:0;height:2px;background-color:var(--color-links);transition:width .3s ease;}
+    header nav a:hover::after,#mobileMenu a:not(.bg-yellow-500):hover::after{width:100%;}
+    .site-title{position:relative;display:inline-block;}
+    .site-title::after{content:'';position:absolute;left:0;bottom:-2px;width:0;height:2px;background-color:var(--color-links);transition:width .3s ease;}
+    a:hover .site-title::after{width:100%;}
+  </style>
+</head>
+<body class="font-sans text-brand-charcoal antialiased bg-white overflow-x-hidden">
+  <header class="bg-white fixed top-0 left-0 right-0 w-full z-50 shadow-sm">
+    <div class="mx-auto max-w-7xl relative flex items-center justify-between px-6 py-3">
+      <a href="/" class="flex items-center gap-2">
+        <img src="/assets/logo.svg" alt="ScrapYardSites logo" class="h-6 w-6 md:h-8 md:w-8"/>
+        <span class="site-title text-xl md:text-2xl font-black tracking-tight"><span class="text-brand-orange">Scrapyard</span> Sites</span>
+      </a>
+      <nav class="hidden md:flex absolute left-1/2 -translate-x-1/2 justify-center items-center gap-8 text-sm font-medium">
+        <a href="/#why" class="hover:text-brand-orange">Why Us</a>
+        <a href="/portfolio" class="hover:text-brand-orange">Portfolio</a>
+        <a href="/contact" class="hover:text-brand-orange">Contact</a>
+        <a href="/risk-calculator" class="hover:text-brand-orange">Calculator</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a href="/contact" class="inline-block rounded-md bg-brand-orange px-5 py-2 text-white font-semibold shadow hover:opacity-90 transition">Book a Call</a>
+      </div>
+    </div>
+  </header>
+  <main class="pt-24 pb-20 px-6">
+    <section class="max-w-4xl mx-auto text-center">
+      <h1 class="text-3xl font-bold">Straight‑Shooter Pricing</h1>
+      <p class="mt-2 text-brand-steel max-w-xl mx-auto">No hidden fees, no “call for quote”. You’ll know the cost before we write a line of code.</p>
+      <div class="mt-14 grid gap-10 md:grid-cols-3">
+        <div class="relative bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm p-10">
+          <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-orange text-white text-xs font-semibold px-3 py-1 rounded-full shadow">Most yards start here</span>
+          <h2 class="text-xl font-semibold mb-4">Standard Launch</h2>
+          <p class="text-5xl font-extrabold tracking-tight">$2,499</p>
+          <ul class="text-base md:text-sm text-brand-steel mt-6 space-y-2 text-left">
+            <li>&bull; One scrolling page, built mobile-first</li>
+            <li>&bull; Contact form straight to your inbox</li>
+            <li>&bull; Google Maps embed</li>
+            <li>&bull; Google Business Profile tune-up + basic SEO</li>
+            <li>&bull; 30 days of free tweaks</li>
+          </ul>
+        </div>
+        <div class="bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm p-10">
+          <h2 class="text-xl font-semibold mb-4">Premium Launch</h2>
+          <p class="text-5xl font-extrabold tracking-tight">$5,499</p>
+          <ul class="text-base md:text-sm text-brand-steel mt-6 space-y-2 text-left">
+            <li>&bull; Up to 8 pages (Home, Services, Locations, Contact, etc.)</li>
+            <li>&bull; Contact forms on every key page</li>
+            <li>&bull; Location pages with Google Maps</li>
+            <li>&bull; Structured-data SEO + GBP cleanup</li>
+            <li>&bull; 60 days of fine-tuning after go-live</li>
+          </ul>
+        </div>
+        <div class="bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm p-10">
+          <h2 class="text-xl font-semibold mb-4">Care Plan</h2>
+          <p class="text-5xl font-extrabold tracking-tight">$99<span class="text-2xl font-bold">/mo</span></p>
+          <ul class="text-base md:text-sm text-brand-steel mt-6 space-y-2 text-left">
+            <li>&bull; Unlimited text & photo updates (24 hour turnaround)</li>
+            <li>&bull; Security patches, backups, uptime checks</li>
+            <li>&bull; Quarterly performance report</li>
+            <li>&bull; Priority email support</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="mt-20 max-w-4xl mx-auto" id="faq">
+      <h2 class="text-3xl font-bold text-center mb-10">FAQ</h2>
+      <div class="space-y-6 text-center md:text-left">
+        <details class="group"><summary class="cursor-pointer font-semibold text-brand-charcoal group-open:text-brand-orange">How fast can my site go live?</summary><p class="mt-1 text-brand-steel text-base md:text-sm md:pl-4 md:border-l md:border-brand-orange/40">Seven calendar days from signed agreement and content hand-off.</p></details>
+        <details class="group"><summary class="cursor-pointer font-semibold text-brand-charcoal group-open:text-brand-orange">Do I own the domain and content?</summary><p class="mt-1 text-brand-steel text-base md:text-sm md:pl-4 md:border-l md:border-brand-orange/40">Yes. At launch the domain, copy, and images are 100% yours.</p></details>
+        <details class="group"><summary class="cursor-pointer font-semibold text-brand-charcoal group-open:text-brand-orange">Can I cancel the Care Plan?</summary><p class="mt-1 text-brand-steel text-base md:text-sm md:pl-4 md:border-l md:border-brand-orange/40">Anytime, no hard feelings—just email us and we’ll hand over full admin access.</p></details>
+        <details class="group"><summary class="cursor-pointer font-semibold text-brand-charcoal group-open:text-brand-orange">What do you need from me to start?</summary><p class="mt-1 text-brand-steel text-base md:text-sm md:pl-4 md:border-l md:border-brand-orange/40">Logo (if you have one), yard photos (phone pics are fine), and a brief call to nail your services, hours, and pricing flow.</p></details>
+        <details class="group"><summary class="cursor-pointer font-semibold text-brand-charcoal group-open:text-brand-orange">How do payments work?</summary><p class="mt-1 text-brand-steel text-base md:text-sm md:pl-4 md:border-l md:border-brand-orange/40">50% deposit to book your build week, 50% on launch day. Card, ACH, or check—whatever’s easiest.</p></details>
+        <details class="group"><summary class="cursor-pointer font-semibold text-brand-charcoal group-open:text-brand-orange">Is hosting included?</summary><p class="mt-1 text-brand-steel text-base md:text-sm md:pl-4 md:border-l md:border-brand-orange/40">Yes. Hosting, SSL, and domain hookup are baked into the $99/mo Care Plan. Prefer to self-host? We’ll deploy to your server for a one-time $199 hand-off.</p></details>
+        <details class="group"><summary class="cursor-pointer font-semibold text-brand-charcoal group-open:text-brand-orange">Can you add more pages later?</summary><p class="mt-1 text-brand-steel text-base md:text-sm md:pl-4 md:border-l md:border-brand-orange/40">Sure. Extra pages are $350 each or jump to Power-Launch if you need a larger build from the start.</p></details>
+        <details class="group"><summary class="cursor-pointer font-semibold text-brand-charcoal group-open:text-brand-orange">Will you write the copy and handle SEO?</summary><p class="mt-1 text-brand-steel text-base md:text-sm md:pl-4 md:border-l md:border-brand-orange/40">Absolutely. We draft the text, bake in industry keywords, and fine-tune meta tags so Google knows exactly what you buy and where you are.</p></details>
+        <details class="group"><summary class="cursor-pointer font-semibold text-brand-charcoal group-open:text-brand-orange">Do you shoot photos or video?</summary><p class="mt-1 text-brand-steel text-base md:text-sm md:pl-4 md:border-l md:border-brand-orange/40">We can—onsite photo/video packages start at $750 in the lower 48. Most yards start with their own shots and upgrade later.</p></details>
+      </div>
+    </section>
+  </main>
+  <footer class="bg-white py-8 text-center text-xs text-gray-400">
+    <p>© <span id="year"></span> Scrapyard Sites — All rights reserved.</p>
+  </footer>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>

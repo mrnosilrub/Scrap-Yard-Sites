@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth overflow-x-hidden">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | Scrapyard Sites</title>
+  <link rel="icon" href="/assets/logo.png" sizes="any"/>
+  <link rel="mask-icon" href="/assets/logo.svg" color="#D75E02"/>
+  <link rel="apple-touch-icon" href="/assets/logo.png"/>
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+  <script>
+    tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{orange:'#D75E02',steel:'#5E6367',charcoal:'#2B2B2B'}}}}};
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--color-links:#D75E02;}
+    header nav a,#mobileMenu a:not(.bg-yellow-500){position:relative;text-decoration:none;}
+    header nav a:hover,#mobileMenu a:not(.bg-yellow-500):hover{color:currentColor!important;}
+    header nav a.text-yellow-400:hover{color:var(--color-links)!important;}
+    header nav a::after,#mobileMenu a:not(.bg-yellow-500)::after{content:'';position:absolute;left:0;bottom:-2px;width:0;height:2px;background-color:var(--color-links);transition:width .3s ease;}
+    header nav a:hover::after,#mobileMenu a:not(.bg-yellow-500):hover::after{width:100%;}
+    .site-title{position:relative;display:inline-block;}
+    .site-title::after{content:'';position:absolute;left:0;bottom:-2px;width:0;height:2px;background-color:var(--color-links);transition:width .3s ease;}
+    a:hover .site-title::after{width:100%;}
+  </style>
+</head>
+<body class="font-sans text-brand-charcoal antialiased bg-white overflow-x-hidden">
+  <header class="bg-white fixed top-0 left-0 right-0 w-full z-50 shadow-sm">
+    <div class="mx-auto max-w-7xl relative flex items-center justify-between px-6 py-3">
+      <a href="/" class="flex items-center gap-2">
+        <img src="/assets/logo.svg" alt="ScrapYardSites logo" class="h-6 w-6 md:h-8 md:w-8"/>
+        <span class="site-title text-xl md:text-2xl font-black tracking-tight"><span class="text-brand-orange">Scrapyard</span> Sites</span>
+      </a>
+      <nav class="hidden md:flex absolute left-1/2 -translate-x-1/2 justify-center items-center gap-8 text-sm font-medium">
+        <a href="/#why" class="hover:text-brand-orange">Why Us</a>
+        <a href="/portfolio" class="hover:text-brand-orange">Portfolio</a>
+        <a href="/pricing" class="hover:text-brand-orange">Pricing</a>
+        <a href="/risk-calculator" class="hover:text-brand-orange">Calculator</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a href="/contact" class="inline-block rounded-md bg-brand-orange px-5 py-2 text-white font-semibold shadow hover:opacity-90 transition">Book a Call</a>
+      </div>
+    </div>
+  </header>
+  <main class="pt-24 pb-20 px-6">
+    <h1 class="text-3xl font-bold text-center mb-8">Get in Touch</h1>
+    <div class="mx-auto max-w-4xl text-center">
+      <p class="mt-2 text-brand-steel">Fill the form or call <a href="tel:9493568762" class="underline">949‑356‑8762</a>.</p>
+      <form action="https://formspree.io/f/yourID" method="POST" class="mt-10 grid gap-6">
+        <input type="text" name="name" required placeholder="Name" class="w-full rounded-md px-4 py-3 bg-white border border-brand-steel/20 text-brand-charcoal" />
+        <input type="email" name="email" required placeholder="Email" class="w-full rounded-md px-4 py-3 bg-white border border-brand-steel/20 text-brand-charcoal" />
+        <input type="text" name="company" required placeholder="Yard / Company" class="w-full rounded-md px-4 py-3 bg-white border border-brand-steel/20 text-brand-charcoal" />
+        <textarea name="message" rows="4" placeholder="Tell us what you need…" class="w-full rounded-md px-4 py-3 bg-white border border-brand-steel/20 text-brand-charcoal"></textarea>
+        <button type="submit" class="rounded-md bg-brand-orange px-8 py-3 font-semibold text-white shadow hover:opacity-90 transition">Send →</button>
+      </form>
+      <div class="mt-10">
+        <iframe class="w-full h-64" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10000!2d-97.7431!3d30.2672"></iframe>
+      </div>
+      <div class="mt-10">
+        <iframe src="https://calendly.com/your-calendar" class="w-full h-[630px]"></iframe>
+      </div>
+    </div>
+  </main>
+  <footer class="bg-white py-8 text-center text-xs text-gray-400">
+    <p>© <span id="year"></span> Scrapyard Sites — All rights reserved.</p>
+  </footer>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
