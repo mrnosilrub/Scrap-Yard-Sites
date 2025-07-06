@@ -2,11 +2,10 @@
 <html lang="en" class="scroll-smooth overflow-x-hidden">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="preload" href="/assets/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
   <title>Risk Calculator | Scrapyard Sites</title>
-  <link rel="icon" href="/assets/logo.png" sizes="any"/>
-  <link rel="mask-icon" href="/assets/logo.svg" color="#D75E02"/>
-  <link rel="apple-touch-icon" href="/assets/logo.png"/>
+  <link rel="icon" href="/favicon.svg"> <!-- prevents 404s on mobile -->
   <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
   <script>
     tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{orange:'#D75E02',steel:'#5E6367',charcoal:'#2B2B2B'}}}}};
@@ -25,26 +24,29 @@
   </style>
 </head>
 <body class="font-sans text-brand-charcoal antialiased bg-white overflow-x-hidden">
-  <header class="bg-white fixed top-0 left-0 right-0 w-full z-50 shadow-sm">
-    <div class="mx-auto max-w-7xl relative flex items-center justify-between px-6 py-3">
-      <a href="/" class="flex items-center gap-2">
-        <img src="/assets/logo.svg" alt="ScrapYardSites logo" class="h-6 w-6 md:h-8 md:w-8"/>
-        <span class="site-title text-xl md:text-2xl font-black tracking-tight"><span class="text-brand-orange">Scrapyard</span> Sites</span>
-      </a>
-      <nav class="hidden md:flex absolute left-1/2 -translate-x-1/2 justify-center items-center gap-8 text-sm font-medium">
-        <a href="/#why" class="text-brand-steel hover:text-brand-orange" title="Leaking here? ->">Why Us</a>
-        <a href="/portfolio" class="text-brand-steel hover:text-brand-orange" title="Leaking here? ->">Portfolio</a>
-        <a href="/pricing" class="text-brand-steel hover:text-brand-orange" title="Leaking here? ->">Pricing</a>
-        <a href="/services" class="text-brand-steel hover:text-brand-orange" title="Leaking here? ->">Services</a>
-        <a href="/process" class="text-brand-steel hover:text-brand-orange" title="Leaking here? ->">Process</a>
-        <a href="/contact" class="text-brand-steel hover:text-brand-orange" title="Leaking here? ->">Contact</a>
-        <a href="/risk-calculator" class="text-brand-steel hover:text-brand-orange" title="Leaking here? ->">Calculator</a>
-      </nav>
-      <div class="flex items-center gap-3">
-        <a href="/contact" class="group inline-block rounded-md bg-brand-orange px-5 py-2 text-white font-semibold shadow hover:opacity-90 transition"><span class="group-hover:hidden">Keep Leaking ▸</span><span class="hidden group-hover:inline">Stop It ✓</span></a>
-      </div>
-    </div>
+  <header class="sticky top-0 z-50 bg-white shadow-sm">
+    <nav class="container flex items-center justify-between py-3">
+      <a href="/" class="text-xl font-bold">Scrapyard Sites</a>
+      <!-- Mobile hamburger (≤ 768 px) -->
+      <button id="menuToggle" class="md:hidden p-2">
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2"/></svg>
+      </button>
+      <!-- Desktop links -->
+      <ul id="menu" class="hidden md:flex gap-6 text-sm font-medium">
+        <li><a href="/services">Services</a></li>
+        <li><a href="/process">Process</a></li>
+        <li><a href="/portfolio">Portfolio</a></li>
+        <li><a href="/pricing">Pricing</a></li>
+        <li><a href="/risk-calculator">Calculator</a></li>
+        <li><a href="/contact" class="btn-primary">Book Call</a></li>
+      </ul>
+    </nav>
   </header>
+  <script>
+  /* basic mobile toggle */
+  document.getElementById('menuToggle')
+    ?.addEventListener('click', () => document.getElementById('menu').classList.toggle('hidden'));
+  </script>
   <main class="pt-24 pb-32 px-6">
     <h1 class="text-3xl font-bold text-center mb-4">Reputation Risk Calculator</h1>
     <p class="text-center text-brand-steel mb-8">Every missed call is metal on your competitor’s scale. Run the numbers—see what procrastination costs.</p>
