@@ -48,25 +48,39 @@
     ?.addEventListener('click', () => document.getElementById('menu').classList.toggle('hidden'));
   </script>
   <main class="pt-24 pb-32 px-6">
-    <h1 class="text-3xl font-bold text-center mb-4">Reputation Risk Calculator</h1>
-    <p class="text-center text-brand-steel mb-8">Every missed call is metal on your competitor’s scale. Run the numbers—see what procrastination costs.</p>
-    <div class="mx-auto max-w-md bg-gray-50 border border-brand-steel/10 rounded-xl p-6 shadow">
-      <label class="block mb-4">Average load weight (tons)
-        <input id="weight" type="number" step="0.1" class="mt-1 w-full rounded-md border border-brand-steel/20 px-3 py-2" />
-      </label>
-      <label class="block mb-4">Average margin ($/ton)
-        <input id="margin" type="number" step="0.01" class="mt-1 w-full rounded-md border border-brand-steel/20 px-3 py-2" />
-      </label>
-      <label class="block mb-4">Loads missed per month
-        <input id="missed" type="number" value="1" class="mt-1 w-full rounded-md border border-brand-steel/20 px-3 py-2" />
-      </label>
-      <button onclick="calc()" class="w-full rounded-md bg-brand-orange text-white font-semibold py-2">Calculate</button>
-      <div id="result" class="mt-6 text-center hidden">
-        <p id="loss" class="font-bold text-brand-orange text-lg"></p>
-        <p id="days" class="font-bold text-brand-orange"></p>
-        <p class="mt-2 text-brand-steel italic text-sm">That’s one forklift you could have paid off—or one raise you could have given your scale operator.</p>
+    <section class="py-16 container">
+      <h1 class="text-3xl font-bold text-center">Reputation Risk Calculator</h1>
+      <p class="text-sm max-w-md mx-auto text-center mt-2">
+        Every missed call is material on your competitor’s scale.
+        Run the numbers—see what procrastination costs.
+      </p>
+
+      <form id="calcForm" class="mt-10 grid gap-6 max-w-md mx-auto">
+        <label class="block">
+          <span class="text-xs font-medium">Average load weight (tons)</span>
+          <input type="number" step="0.1" class="calc-field" name="tons" inputmode="decimal" required>
+        </label>
+        <label class="block">
+          <span class="text-xs font-medium">Average margin ($/ton)</span>
+          <input type="number" step="0.1" class="calc-field" name="margin" inputmode="decimal" required>
+        </label>
+        <label class="block">
+          <span class="text-xs font-medium">Loads missed per month</span>
+          <input type="number" class="calc-field" name="missed" inputmode="numeric" required>
+        </label>
+        <button class="btn-primary w-full" type="submit">Calculate</button>
+      </form>
+
+      <div id="resultBox" class="hidden mt-10 text-center">
+        <h2 class="text-xl font-bold">You’re Leaking <span id="lossFig">$‑‑‑</span>/year</h2>
+        <p class="text-sm mt-2">
+          A Standard Launch pays for itself in <strong id="roiDays">‑‑</strong> days.
+        </p>
+        <a id="contactBtn" href="/contact" class="btn-primary mt-6 inline-block">
+          Patch My Leak
+        </a>
       </div>
-    </div>
+    </section>
   </main>
   <footer class="bg-white py-8 text-center text-xs text-gray-400">
     <p>© <span id="year"></span> Scrapyard Sites — All rights reserved.</p>
@@ -79,21 +93,22 @@
     <a href="/contact" class="font-semibold hover:opacity-90">Book 15‑min Reputation Risk Scan</a>
   </div>
   <script>
-    document.getElementById('year').textContent=new Date().getFullYear();
-    function calc(){
-      var weight=parseFloat(document.getElementById('weight').value)||0;
-      var margin=parseFloat(document.getElementById('margin').value)||0;
-      var missed=parseFloat(document.getElementById('missed').value)||1;
-      var monthly=weight*margin*missed;
-      var annual=monthly*12;
-      var days=monthly>0?Math.ceil((2499)/(monthly/30)):0;
-      document.getElementById('loss').textContent='Annual lost profit $'+annual.toLocaleString(undefined,{maximumFractionDigits:0});
-      document.getElementById('days').textContent='Days until a Standard Launch pays for itself '+days+' days';
-      document.getElementById('result').classList.remove('hidden');
-      var link=document.getElementById('ctaLink');
-      link.href='/contact?leak=$'+annual.toLocaleString(undefined,{maximumFractionDigits:0});
-      document.getElementById('cta').classList.remove('hidden');
+    document.getElementById('year').textContent = new Date().getFullYear();
+    function fmt(x){
+      return x.toLocaleString('en-US',{style:'currency',currency:'USD',minimumFractionDigits:0});
     }
+    document.getElementById('calcForm').addEventListener('submit',e=>{
+      e.preventDefault();
+      const t=+e.target.tons.value, m=+e.target.margin.value, l=+e.target.missed.value;
+      if(!t||!m||!l) return alert('Fill every field');
+      const annual=t*m*l*12;
+      document.getElementById('lossFig').textContent=fmt(annual);
+      document.getElementById('roiDays').textContent=Math.ceil(2499/(annual/365));
+      document.getElementById('contactBtn').href=`/contact?leak=${annual}`;
+      document.getElementById('resultBox').classList.remove('hidden');
+      document.getElementById('ctaLink').href=`/contact?leak=${annual}`;
+      document.getElementById('cta').classList.remove('hidden');
+    });
   </script>
 </body>
 </html>
