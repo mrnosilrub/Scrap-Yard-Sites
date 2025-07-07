@@ -34,3 +34,8 @@
   background-color: #D75E02;
   color: white;
 }
+
+/* Consistent icon color for feature cards */
+.card-icon {
+  color: #D75E02;
+}
