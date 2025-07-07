@@ -54,3 +54,10 @@
   border: 1px solid rgba(94, 99, 103, 0.2); /* brand-steel/20 */
   color: #2B2B2B; /* brand-charcoal */
 }
+
+/* Ensure header remains sticky across browsers */
+header.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
