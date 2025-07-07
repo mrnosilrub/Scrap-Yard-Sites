@@ -39,3 +39,8 @@
 .card-icon {
   color: #D75E02;
 }
+
+/* Large numbers in the "How We Work" section */
+.process-step-number {
+  color: #D75E02;
+}
