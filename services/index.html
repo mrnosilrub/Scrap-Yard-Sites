@@ -87,14 +87,15 @@
         <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2"/></svg>
       </button>
       <!-- Desktop links -->
-      <ul id="menu" class="hidden md:flex md:items-center md:absolute md:left-1/2 md:-translate-x-1/2 gap-6 text-sm font-medium">
+      <ul id="menu" class="hidden md:flex md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 gap-6 text-sm font-medium">
         <li><a href="/services">Services</a></li>
         <li><a href="/process">Process</a></li>
         <li><a href="/portfolio">Portfolio</a></li>
         <li><a href="/pricing">Pricing</a></li>
         <li><a href="/risk-calculator">Calculator</a></li>
-        <li><a href="/contact" class="btn-primary">Book Call</a></li>
+        <li class="md:hidden"><a href="/contact" class="btn-primary">Book Call</a></li>
       </ul>
+      <a href="/contact" class="btn-primary hidden md:block">Book Call</a>
     </nav>
   </header>
   <script>
