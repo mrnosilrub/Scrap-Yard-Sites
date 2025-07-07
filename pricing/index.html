@@ -62,40 +62,56 @@
   });
   </script>
   <main class="pt-24 pb-20 px-6">
-    <section class="py-16 bg-gray-50">
-      <div class="max-w-3xl mx-auto text-center px-6">
+    <section class="py-20 bg-white">
+      <div class="mx-auto max-w-6xl px-6 text-center">
         <h1 class="text-3xl font-bold">Straight‑Shooter Pricing</h1>
         <p class="mt-2 text-sm">
           One missed roll‑off a month (~<strong>$8 k</strong>) costs more than our Standard Launch.
           Doing nothing is the most expensive option.
         </p>
-      </div>
 
-      <!-- Packages -->
-      <div class="max-w-4xl mx-auto grid px-6 md:grid-cols-2 gap-8 mt-12">
-        <!-- Standard -->
-        <article class="pricing-card">
-          <h2 class="pricing-title">Standard Launch</h2>
-          <p class="pricing-price">$2,499</p>
-          <ul class="pricing-list">
-            <li>3‑page build & quick quote form</li>
-            <li>Google Maps embed + GBP tune‑up</li>
-            <li>30‑day fine‑tune window</li>
-          </ul>
-          <a href="/contact" class="btn-primary">Stop the Bleed →</a>
-        </article>
-
-        <!-- Premium -->
-        <article class="pricing-card">
-          <h2 class="pricing-title">Premium Launch</h2>
-          <p class="pricing-price">$5,499</p>
-          <ul class="pricing-list">
-            <li>Multi‑page muscle + location pages</li>
-            <li>Structured data & advanced SEO</li>
-            <li>60‑day fine‑tune window</li>
-          </ul>
-          <a href="/contact" class="btn-primary">Own the Market →</a>
-        </article>
+        <!-- Packages -->
+        <div class="mt-14 grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+          <!-- Launch -->
+          <div class="relative bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm transition transform hover:-translate-y-1 p-10">
+            <span
+              class="absolute -top-4 left-1/2 -translate-x-1/2 transform bg-brand-orange text-white text-xs font-semibold px-3 py-1 rounded-full shadow whitespace-nowrap z-10 pointer-events-none">
+              Most yards start here
+            </span>
+            <h3 class="text-xl font-semibold mb-4">Standard Launch</h3>
+            <p class="text-5xl font-extrabold tracking-tight">$2,499</p>
+            <ul class="text-base md:text-sm text-brand-steel mt-6 space-y-2 text-left">
+              <li>• Quick fix that stops missed-call bleed—for yards losing business right now.</li>
+              <li>• Contact form straight to your inbox</li>
+              <li>• Google Maps embed</li>
+              <li>• Google Business Profile tune-up + basic SEO</li>
+              <li>• 30 days of free tweaks</li>
+            </ul>
+          </div>
+          <!-- Premium Launch -->
+          <div class="bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm transition transform hover:-translate-y-1 p-10">
+            <h3 class="text-xl font-semibold mb-4">Premium Launch</h3>
+            <p class="text-5xl font-extrabold tracking-tight">$5,499</p>
+            <ul class="text-base md:text-sm text-brand-steel mt-6 space-y-2 text-left">
+              <li>• Full insurance policy: multi-page muscle so Google never buries you again.</li>
+              <li>• Contact forms on every key page</li>
+              <li>• Location pages with Google Maps</li>
+              <li>• Structured-data SEO + GBP cleanup</li>
+              <li>• 60 days of fine-tuning after go-live</li>
+            </ul>
+          </div>
+          <!-- Care Plan -->
+          <div class="bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm transition transform hover:-translate-y-1 p-10">
+            <h3 class="text-xl font-semibold mb-4">Care Plan</h3>
+            <p class="text-5xl font-extrabold tracking-tight">$99<span class="text-2xl font-bold">/mo</span></p>
+            <ul class="text-base md:text-sm text-brand-steel mt-6 space-y-2 text-left">
+              <li>• Unlimited text & photo updates (24 hour turnaround)</li>
+              <li>• Security patches, backups, uptime checks</li>
+              <li>• Quarterly performance report</li>
+              <li>• Priority email support</li>
+            </ul>
+          </div>
+        </div>
       </div>
 
       <!-- FAQ stays below packages -->
