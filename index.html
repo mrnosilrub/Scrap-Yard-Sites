@@ -37,6 +37,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="/assets/styles.css"/>
   <style>
     :root {
       --color-links: #D75E02;
@@ -118,8 +119,8 @@
 
 <!-- ── Header ─────────────────────────────────────────────── -->
   <header class="sticky top-0 z-50 bg-white shadow-sm">
-    <nav class="container flex items-center justify-between py-3">
-      <a href="/" class="text-xl font-bold">Scrapyard Sites</a>
+    <nav class="max-w-7xl mx-auto flex items-center justify-between py-3 px-6">
+      <a href="/" class="flex items-center gap-2"><img src="/assets/logo.svg" alt="Scrapyard Sites logo" class="h-8 w-8"/><span class="site-title text-xl font-bold">Scrapyard Sites</span></a>
       <!-- Mobile hamburger (≤ 768 px) -->
       <button id="menuToggle" class="md:hidden p-2">
         <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2"/></svg>
@@ -143,6 +144,8 @@
 
 <!-- ── Hero ───────────────────────────────────────────────── -->
 <section class="py-20 text-center bg-gray-50">
+  <div class="max-w-4xl mx-auto px-6">
+    <img src="/assets/hero.jpg" alt="Scrapyard hero" class="mx-auto mb-8 rounded-md shadow">
   <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
     Your Outdated Site Is <span class="text-orange-600">Leaking Loads</span>
   </h1>
@@ -155,10 +158,12 @@
     <a href="/pricing" class="btn-primary">See Cost →</a>
     <a href="/risk-calculator" class="btn-secondary">Calculate My Leak</a>
   </div>
+  </div>
 </section>
 
 <!-- ── Why Us ──────────────────────────────────────────────── -->
-<section class="py-16 container">
+<section class="py-16 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
   <h2 class="text-2xl font-bold mb-10">Why Generalist Agencies Leave You Exposed</h2>
 
   <div class="grid md:grid-cols-3 gap-8 text-sm">
@@ -174,6 +179,7 @@
       <h3 class="font-semibold text-base">Credibility Shield</h3>
       <p>Industrial‑grade design signals trust to brokers, suppliers and walk‑ins.</p>
     </article>
+  </div>
   </div>
 </section>
 
