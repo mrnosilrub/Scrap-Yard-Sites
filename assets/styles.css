@@ -1,9 +1,12 @@
 .btn-primary {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 0.75rem 1.25rem;
   background-color: #D75E02;
   color: white;
   font-weight: 600;
+  line-height: 1;
   text-align: center;
   text-decoration: none;
   border-radius: 0.375rem;
@@ -13,11 +16,14 @@
 .btn-primary:hover { opacity: 0.9; }
 
 .btn-secondary {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 0.75rem 1.25rem;
   border: 2px solid #D75E02;
   color: #D75E02;
   font-weight: 600;
+  line-height: 1;
   text-align: center;
   text-decoration: none;
   border-radius: 0.375rem;
