@@ -73,18 +73,15 @@
       </p>
 
       <form id="calcForm" class="mt-10 grid gap-6 max-w-md mx-auto">
-        <label class="block">
-          <span class="text-xs font-medium">Average load weight (tons)</span>
-          <input type="number" step="0.1" class="calc-field" name="tons" inputmode="decimal" required>
-        </label>
-        <label class="block">
-          <span class="text-xs font-medium">Average margin ($/ton)</span>
-          <input type="number" step="0.1" class="calc-field" name="margin" inputmode="decimal" required>
-        </label>
-        <label class="block">
-          <span class="text-xs font-medium">Loads missed per month</span>
-          <input type="number" class="calc-field" name="missed" inputmode="numeric" required>
-        </label>
+        <input type="number" step="0.1" name="tons" inputmode="decimal" required
+               placeholder="Average load weight (tons)"
+               class="w-full rounded-md px-4 py-3 bg-white border border-brand-steel/20 text-brand-charcoal" />
+        <input type="number" step="0.1" name="margin" inputmode="decimal" required
+               placeholder="Average margin ($/ton)"
+               class="w-full rounded-md px-4 py-3 bg-white border border-brand-steel/20 text-brand-charcoal" />
+        <input type="number" name="missed" inputmode="numeric" required
+               placeholder="Loads missed per month"
+               class="w-full rounded-md px-4 py-3 bg-white border border-brand-steel/20 text-brand-charcoal" />
         <button class="btn-primary w-full" type="submit">Calculate</button>
       </form>
 
