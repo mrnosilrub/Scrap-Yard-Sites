@@ -66,3 +66,13 @@ header.fixed {
 #menuToggle.open .icon-open { display: none; }
 #menuToggle.open .icon-close { display: inline; }
 
+/* Close button for full-screen mobile menu */
+#mobileMenu .close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  color: #2B2B2B;
+}
+
