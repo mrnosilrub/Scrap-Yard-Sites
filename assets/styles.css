@@ -61,6 +61,10 @@ header.fixed {
   color: #2B2B2B;
 }
 
+#menuClose svg {
+  color: #2B2B2B;
+}
+
 /* Swap hamburger/close icons when menu opens */
 #menuToggle .icon-close { display: none; }
 #menuToggle.open .icon-open { display: none; }
