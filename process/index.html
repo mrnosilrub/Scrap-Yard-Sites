@@ -40,13 +40,20 @@
       color: white;
       font-weight: 700;
       flex-shrink: 0;
+      align-self: center;
     }
     .process-step {
       flex-direction: column;
       align-items: flex-start;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .process-step:hover {
+      transform: translateY(-0.25rem);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
     .process-step h2 {
       word-wrap: break-word;
+      margin-bottom: 0.25rem;
     }
   </style>
 </head>
