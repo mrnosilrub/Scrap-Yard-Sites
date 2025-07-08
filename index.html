@@ -124,7 +124,7 @@
       <!-- Mobile hamburger (≤ 768 px) -->
       <button id="menuToggle" class="md:hidden p-2">
         <svg class="icon-open w-6 h-6" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <svg class="icon-close w-6 h-6 hidden" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M6 18L18 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg class="icon-close w-6 h-6" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M6 18L18 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <!-- Desktop links -->
       <ul id="menu" class="hidden md:flex md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 gap-6 text-sm font-medium">
@@ -153,13 +153,11 @@
   /* full-screen mobile toggle */
   document.getElementById('menuToggle')?.addEventListener('click', () => {
     const menu = document.getElementById('mobileMenu');
-    const openIcon = document.querySelector('#menuToggle .icon-open');
-    const closeIcon = document.querySelector('#menuToggle .icon-close');
+    const btn = document.getElementById('menuToggle');
     menu.classList.toggle('hidden');
     const isOpen = !menu.classList.contains('hidden');
     document.body.classList.toggle('overflow-hidden', isOpen);
-    openIcon.classList.toggle('hidden', isOpen);
-    closeIcon.classList.toggle('hidden', !isOpen);
+    btn.classList.toggle('open');
   });
   </script>
 
