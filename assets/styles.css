@@ -46,10 +46,9 @@
 }
 
 
-/* Ensure header remains sticky across browsers */
-header.sticky {
-  position: -webkit-sticky !important;
-  position: sticky !important;
+/* Ensure header remains fixed across browsers */
+header.fixed {
+  position: fixed !important;
   top: 0 !important;
   left: 0;
   right: 0;
