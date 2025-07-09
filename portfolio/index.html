@@ -68,8 +68,7 @@
     const isOpen = !menu.classList.contains('hidden');
     document.body.classList.toggle('overflow-hidden', isOpen);
     btn.classList.toggle('open');
-
-  });
+  }
   /* highlight active nav item */
   const current = location.pathname.split('/')[1];
   document.querySelectorAll('#menu a, #mobileMenu a').forEach(link => {
@@ -79,7 +78,6 @@
     }
   });
 
-  }
   document.getElementById('menuToggle')?.addEventListener('click', toggleMobileMenu);
   document.getElementById('menuClose')?.addEventListener('click', toggleMobileMenu);
 
