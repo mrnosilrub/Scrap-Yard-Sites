@@ -92,7 +92,7 @@
 <body class="font-sans text-brand-charcoal antialiased bg-white overflow-x-hidden">
   <header class="fixed top-0 left-0 right-0 w-full z-50 bg-white shadow-sm">
     <nav class="max-w-7xl mx-auto relative flex items-center justify-between py-3 px-6">
-      <a href="/" class="flex items-center gap-2"><img src="/assets/logo.svg" alt="Scrapyard Sites logo" class="h-8 w-8"/><span class="site-title text-xl font-bold text-brand-charcoal"><span class="text-brand-orange">Scrapyard</span> Sites</span></a>
+      <a href="/" class="flex items-center gap-2"><img src="/assets/logo.svg" alt="Scrapyard Sites logo" class="h-8 w-8"/><span class="site-title text-xl text-brand-charcoal"><span class="font-bold text-brand-orange">Scrapyard</span> <span class="font-bold">Sites</span></span></a>
       <!-- Mobile hamburger (≤ 768 px) -->
       <button id="menuToggle" class="md:hidden p-2">
         <svg class="icon-open w-6 h-6" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -111,7 +111,10 @@
       <a href="/contact" class="btn-primary hidden md:block">Book Call</a>
     </nav>
     <!-- Full-screen mobile menu -->
-    <div id="mobileMenu" class="text-brand-charcoal md:hidden fixed inset-0 z-40 flex flex-col items-center justify-center gap-6 text-xl font-medium bg-white hidden">
+    <div id="mobileMenu" class="text-brand-charcoal md:hidden fixed inset-0 z-50 flex flex-col items-center justify-center gap-6 text-xl font-medium bg-white hidden">
+      <button id="menuClose" class="absolute top-4 right-4 p-2">
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M6 18L18 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
       <a href="/services">Services</a>
       <a href="/process">Process</a>
       <a href="/portfolio">Portfolio</a>
@@ -123,13 +126,14 @@
   </header>
   <script>
   /* full-screen mobile toggle */
-  document.getElementById('menuToggle')?.addEventListener('click', () => {
+  function toggleMobileMenu() {
     const menu = document.getElementById('mobileMenu');
     const btn = document.getElementById('menuToggle');
     menu.classList.toggle('hidden');
     const isOpen = !menu.classList.contains('hidden');
     document.body.classList.toggle('overflow-hidden', isOpen);
     btn.classList.toggle('open');
+
   });
   /* highlight active nav item */
   const current = location.pathname.split('/')[1];
@@ -139,6 +143,11 @@
       link.classList.add('text-brand-orange');
     }
   });
+
+  }
+  document.getElementById('menuToggle')?.addEventListener('click', toggleMobileMenu);
+  document.getElementById('menuClose')?.addEventListener('click', toggleMobileMenu);
+
   </script>
   <main class="max-w-3xl mx-auto pt-24 pb-20 px-6 prose prose-a:text-brand-orange">
     <h1 class="text-3xl font-bold mb-4">Privacy Policy</h1>
