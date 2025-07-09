@@ -46,7 +46,7 @@
     }
 
     /* Keep active nav item orange even when hovered */
-    header nav ul a.text-yellow-400:hover {
+    header nav ul a.text-brand-orange:hover {
       color: var(--color-links) !important;
     }
 
@@ -133,9 +133,21 @@
     const isOpen = !menu.classList.contains('hidden');
     document.body.classList.toggle('overflow-hidden', isOpen);
     btn.classList.toggle('open');
+
+  });
+  /* highlight active nav item */
+  const current = location.pathname.split('/')[1];
+  document.querySelectorAll('#menu a, #mobileMenu a').forEach(link => {
+    const seg = link.getAttribute('href').split('/')[1];
+    if (seg && seg === current) {
+      link.classList.add('text-brand-orange');
+    }
+  });
+
   }
   document.getElementById('menuToggle')?.addEventListener('click', toggleMobileMenu);
   document.getElementById('menuClose')?.addEventListener('click', toggleMobileMenu);
+
   </script>
   <main class="max-w-3xl mx-auto pt-24 pb-20 px-6 prose prose-a:text-brand-orange">
     <h1 class="text-3xl font-bold mb-4">Privacy Policy</h1>

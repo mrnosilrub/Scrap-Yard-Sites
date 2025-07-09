@@ -41,7 +41,7 @@
     #mobileMenu a:not(.bg-yellow-500):hover {
       color: currentColor !important;
     }
-    header nav ul a.text-yellow-400:hover {
+    header nav ul a.text-brand-orange:hover {
       color: var(--color-links) !important;
     }
     header nav ul a::after,
@@ -122,9 +122,21 @@
     const isOpen = !menu.classList.contains('hidden');
     document.body.classList.toggle('overflow-hidden', isOpen);
     btn.classList.toggle('open');
+
+  });
+  /* highlight active nav item */
+  const current = location.pathname.split('/')[1];
+  document.querySelectorAll('#menu a, #mobileMenu a').forEach(link => {
+    const seg = link.getAttribute('href').split('/')[1];
+    if (seg && seg === current) {
+      link.classList.add('text-brand-orange');
+    }
+  });
+
   }
   document.getElementById('menuToggle')?.addEventListener('click', toggleMobileMenu);
   document.getElementById('menuClose')?.addEventListener('click', toggleMobileMenu);
+
   </script>
   <main class="pt-24">
     <section class="py-16 bg-gray-50">
