@@ -464,6 +464,7 @@
           entry.target.classList.add('aos-active');
           obs.unobserve(entry.target);
         }
+      });
     }, { threshold: 0.1 });
     aosEls.forEach(el => aosObserver.observe(el));
   } else if (prefersReduced) {
