@@ -76,3 +76,9 @@ header nav ul a,
   color: #2B2B2B;
 }
 
+
+/* Force "Scrapyard" word to appear orange */
+.site-title span:first-child {
+  color: #D75E02 !important;
+}
+
