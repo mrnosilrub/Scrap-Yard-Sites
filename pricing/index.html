@@ -101,7 +101,7 @@
         </p>
 
         <!-- Packages -->
-        <div id="pricing-carousel" class="carousel-track overflow-visible mt-14 flex gap-10 md:grid md:grid-cols-2 lg:grid-cols-3">
+        <div id="pricing-carousel" class="carousel-track overflow-x-auto mt-14 flex gap-10 md:grid md:grid-cols-2 lg:grid-cols-3">
           <!-- Launch -->
           <div class="carousel-item relative overflow-visible bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm transition transform hover:-translate-y-1 p-10 flex flex-col">
             <span
@@ -184,16 +184,17 @@
   <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
   <script>
   function initCarousel(id){
-    const track=document.getElementById(id);if(!track)return;const slideCount=track.children.length;
+    const track=document.getElementById(id);if(!track)return;const slides=Array.from(track.children);const slideCount=slides.length;
     const indicators=document.createElement('div');indicators.className='carousel-indicators';
     for(let i=0;i<slideCount;i++){const dot=document.createElement('span');if(i===0)dot.classList.add('active');indicators.appendChild(dot);}track.after(indicators);
     let index=0;let interval;function updateDots(i){indicators.querySelectorAll('span').forEach((dot,idx)=>{dot.classList.toggle('active',idx===i);});}
-    function goTo(i){index=i;track.scrollTo({left:track.clientWidth*index,behavior:'smooth'});updateDots(index);} 
+    const slideWidth=slides[1]?slides[1].offsetLeft-slides[0].offsetLeft:track.clientWidth;
+    function goTo(i){index=i;track.scrollTo({left:slideWidth*index,behavior:'smooth'});updateDots(index);}
     function start(){if(!interval)interval=setInterval(()=>{goTo((index+1)%slideCount);},4000);} 
     function stop(){if(interval){clearInterval(interval);interval=null;}}
     const visibility=new IntersectionObserver(entries=>{entries.forEach(entry=>{const fully=entry.isIntersecting&&entry.intersectionRect.height>=entry.boundingClientRect.height&&entry.intersectionRect.top>=0&&entry.intersectionRect.bottom<=window.innerHeight;if(fully){start();}else{stop();}});},{threshold:[0,1]});
     visibility.observe(track.parentElement||track);
-    track.addEventListener('scroll',()=>{const i=Math.round(track.scrollLeft/track.clientWidth);if(i!==index){index=i;updateDots(index);}});
+    track.addEventListener('scroll',()=>{const i=Math.round(track.scrollLeft/slideWidth);if(i!==index){index=i;updateDots(index);}});
   }
   if(window.matchMedia('(max-width: 767px)').matches){initCarousel('pricing-carousel');}
   </script>
