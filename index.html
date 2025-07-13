@@ -537,6 +537,8 @@
     const aosObserver = new IntersectionObserver((entries, obs) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
+          entry.target.style.transition =
+            'opacity 1s ease-out, transform 1s ease-out';
           entry.target.classList.add('aos-active');
           entry.target.addEventListener(
             'transitionend',
