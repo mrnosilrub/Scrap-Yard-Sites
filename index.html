@@ -574,7 +574,6 @@
     track.after(indicators);
 
     let index = 0;
-    let interval;
 
     function updateDots(i) {
       indicators.querySelectorAll('span').forEach((dot, idx) => {
@@ -590,34 +589,7 @@
       updateDots(index);
     }
 
-    function start() {
-      if (!interval) interval = setInterval(() => {
-        goTo((index + 1) % slideCount);
-      }, 4000);
-    }
-
-    function stop() {
-      if (interval) {
-        clearInterval(interval);
-        interval = null;
-      }
-    }
-
-    const visibility = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        const fully = entry.isIntersecting &&
-                      entry.intersectionRect.height >= entry.boundingClientRect.height &&
-                      entry.intersectionRect.top >= 0 &&
-                      entry.intersectionRect.bottom <= window.innerHeight;
-        if (fully) {
-          start();
-        } else {
-          stop();
-        }
-      });
-    }, { threshold: [0, 1] });
-
-    visibility.observe(track.parentElement || track);
+    // Auto-scrolling removed
 
     track.addEventListener('scroll', () => {
       const i = Math.round(track.scrollLeft / slideWidth);
