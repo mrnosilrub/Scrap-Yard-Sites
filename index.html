@@ -108,6 +108,15 @@
       transform: translateY(0);
       transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     }
+@media (max-width: 767px) {
+  [data-aos] {
+    transform: translateY(40px);
+  }
+  .aos-active {
+    transition-duration: 0.4s;
+  }
+}
+
 
     /* Mobile carousel styles */
     @media (max-width: 767px) {
@@ -324,7 +333,7 @@
       <!-- Launch -->
       <div class="carousel-item relative bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm transition transform hover:-translate-y-1 p-10">
         <span
-          class="absolute -top-4 left-1/2 -translate-x-1/2 transform bg-brand-orange text-white text-xs font-semibold px-3 py-1 rounded-full shadow whitespace-nowrap z-10 pointer-events-none"
+          class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 transform bg-brand-orange text-white text-xs font-semibold px-3 py-1 rounded-full shadow whitespace-nowrap z-10 pointer-events-none"
           style="background-color:#D75E02">
           Most yards start here
         </span>
