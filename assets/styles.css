@@ -102,3 +102,15 @@ header nav ul a,
 }
 
 
+@media (max-width: 767px) {
+  header nav ul a::after,
+  #mobileMenu a:not(.bg-yellow-500)::after,
+  .site-title::after {
+    transition: none !important;
+  }
+  header nav ul a:hover::after,
+  #mobileMenu a:not(.bg-yellow-500):hover::after,
+  a:hover .site-title::after {
+    width: 0 !important;
+  }
+}
