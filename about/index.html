@@ -11,6 +11,7 @@
   </script>
 <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <link rel="stylesheet" href="/assets/styles.css"/>
   <style>
     :root{--color-links:#D75E02;}
@@ -22,6 +23,14 @@
     .site-title{position:relative;display:inline-block;}
     .site-title::after{content:'';position:absolute;left:0;bottom:-2px;width:0;height:2px;background-color:var(--color-links);transition:width .3s ease;}
     a:hover .site-title::after{width:100%;}
+
+    /* AOS fade-up utility */
+    [data-aos] {opacity:0;transform:translateY(20px);}
+    .aos-active {opacity:1;transform:translateY(0);transition:opacity .6s ease-out,transform .6s ease-out;}
+
+    /* Icon slide-in from the left */
+    [data-icon] {opacity:0;transform:translateX(-20px);}
+    .aos-active [data-icon] {opacity:1;transform:translateX(0);transition:opacity .6s ease-out,transform .6s ease-out;}
   </style>
 </head>
 <body class="font-sans text-brand-charcoal antialiased bg-white overflow-x-hidden">
@@ -106,19 +115,23 @@
 <section class="mt-16 max-w-4xl mx-auto">
   <h2 class="text-2xl font-bold text-center mb-8">What Makes These Builds Different</h2>
   <div class="grid gap-6 md:grid-cols-2 px-6">
-    <article class="p-6 bg-white shadow rounded-md text-center">
+    <article class="p-6 bg-white shadow rounded-md text-center transition transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="0">
+      <i class="fa-solid fa-shield-alt text-3xl card-icon mb-4" data-icon></i>
       <h3 class="font-semibold mb-1">Credibility Shield</h3>
       <p class="text-sm">Sub‑2‑second load times, SSL, and real yard photos build instant trust.</p>
     </article>
-    <article class="p-6 bg-white shadow rounded-md text-center">
+    <article class="p-6 bg-white shadow rounded-md text-center transition transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="100">
+      <i class="fa-solid fa-comment-slash text-3xl card-icon mb-4" data-icon></i>
       <h3 class="font-semibold mb-1">Objection Shield</h3>
       <p class="text-sm">Copy written around the questions sellers actually ask—grades, pricing cadence, pick‑up radius.</p>
     </article>
-    <article class="p-6 bg-white shadow rounded-md text-center">
+    <article class="p-6 bg-white shadow rounded-md text-center transition transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="200">
+      <i class="fa-solid fa-eye text-3xl card-icon mb-4" data-icon></i>
       <h3 class="font-semibold mb-1">Visibility Shield</h3>
       <p class="text-sm">Local SEO schema and keyword research so you appear above chain recyclers in the map pack.</p>
     </article>
-    <article class="p-6 bg-white shadow rounded-md text-center">
+    <article class="p-6 bg-white shadow rounded-md text-center transition transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="300">
+      <i class="fa-solid fa-screwdriver-wrench text-3xl card-icon mb-4" data-icon></i>
       <h3 class="font-semibold mb-1">Reliability Shield</h3>
       <p class="text-sm">Ongoing care plan with uptime monitoring, backups, and content edits—so the site never rusts.</p>
     </article>
@@ -150,6 +163,23 @@
   </footer>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script>
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const aosEls = document.querySelectorAll('[data-aos]');
+    if (aosEls.length && !prefersReduced) {
+      const aosObserver = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('aos-active');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      aosEls.forEach(el => aosObserver.observe(el));
+    } else if (prefersReduced) {
+      aosEls.forEach(el => el.classList.add('aos-active'));
+    }
   </script>
 </body>
 </html>
