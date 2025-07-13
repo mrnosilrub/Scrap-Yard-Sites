@@ -83,3 +83,16 @@ header nav ul a,
   color: #D75E02 !important;
 }
 
+/* Stripe deposit buttons */
+.deposit-btn {
+  display: inline-block;
+  transition: opacity 0.2s;
+}
+.deposit-btn:hover {
+  opacity: 0.9;
+}
+.deposit-btn iframe {
+  width: 9rem !important;
+  margin: 0 auto;
+}
+
