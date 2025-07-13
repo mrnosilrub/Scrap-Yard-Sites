@@ -72,9 +72,13 @@ header.fixed {
 #menuToggle.open .icon-close { display: inline; }
 
 /* Default charcoal text for navigation links */
-header nav ul a,
-#mobileMenu a:not(.bg-yellow-500):not(.btn-primary) {
+header nav ul a {
   color: #2B2B2B;
+}
+
+/* Ensure active link highlights in the mobile menu */
+#mobileMenu a.text-brand-orange {
+  color: #D75E02;
 }
 
 
