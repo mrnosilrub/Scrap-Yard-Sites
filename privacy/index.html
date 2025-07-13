@@ -35,13 +35,13 @@
 
     /* Nav bar underline animation */
     header nav ul a,
-    #mobileMenu a:not(.bg-yellow-500) {
+    #mobileMenu a:not(.bg-yellow-500):not(.btn-primary) {
       position: relative;
       text-decoration: none;
     }
 
     header nav ul a:hover,
-    #mobileMenu a:not(.bg-yellow-500):hover {
+    #mobileMenu a:not(.bg-yellow-500):not(.btn-primary):hover {
       color: currentColor !important; /* keep existing color on hover */
     }
 
@@ -51,7 +51,7 @@
     }
 
     header nav ul a::after,
-    #mobileMenu a:not(.bg-yellow-500)::after {
+    #mobileMenu a:not(.bg-yellow-500):not(.btn-primary)::after {
       content: '';
       position: absolute;
       left: 0;
@@ -63,7 +63,7 @@
     }
 
     header nav ul a:hover::after,
-    #mobileMenu a:not(.bg-yellow-500):hover::after {
+    #mobileMenu a:not(.bg-yellow-500):not(.btn-primary):hover::after {
       width: 100%;
     }
 

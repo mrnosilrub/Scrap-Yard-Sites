@@ -73,7 +73,7 @@ header.fixed {
 
 /* Default charcoal text for navigation links */
 header nav ul a,
-#mobileMenu a:not(.bg-yellow-500) {
+#mobileMenu a:not(.bg-yellow-500):not(.btn-primary) {
   color: #2B2B2B;
 }
 
