@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth overflow-x-hidden">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="preload" href="/assets/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <title>Terms of Service | Scrapyard Sites</title>
+  <link rel="icon" href="../favicon.svg"> <!-- prevents 404s on mobile -->
+  <meta name="robots" content="noindex">
+  <script>
+    tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter','system-ui','sans-serif'] }, colors: { brand: { orange: '#D75E02', steel: '#5E6367', charcoal: '#2B2B2B' } } } } };
+  </script>
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="/assets/styles.css"/>
+  <style>
+    :root{--color-links:#D75E02;}
+    header nav ul a,#mobileMenu a:not(.bg-yellow-500):not(.btn-primary){position:relative;text-decoration:none;}
+    header nav ul a:hover,#mobileMenu a:not(.bg-yellow-500):not(.btn-primary):hover{color:currentColor!important;}
+    header nav ul a.text-brand-orange:hover{color:var(--color-links)!important;}
+    header nav ul a::after,#mobileMenu a:not(.bg-yellow-500):not(.btn-primary)::after{content:'';position:absolute;left:0;bottom:-2px;width:0;height:2px;background-color:var(--color-links);transition:width .3s ease;}
+    header nav ul a:hover::after,#mobileMenu a:not(.bg-yellow-500):not(.btn-primary):hover::after{width:100%;}
+    .site-title{position:relative;display:inline-block;}
+    .site-title::after{content:'';position:absolute;left:0;bottom:-2px;width:0;height:2px;background-color:var(--color-links);transition:width .3s ease;}
+    a:hover .site-title::after{width:100%;}
+    [data-aos]{opacity:0;transform:translateY(20px);} .aos-active{opacity:1;transform:translateY(0);transition:opacity .6s ease-out,transform .6s ease-out;}
+    [data-icon]{opacity:0;transform:translateX(-20px);} .aos-active [data-icon]{opacity:1;transform:translateX(0);transition:opacity .6s ease-out,transform .6s ease-out;}
+  </style>
+</head>
+<body class="font-sans text-brand-charcoal antialiased bg-white overflow-x-hidden">
+  <header class="fixed top-0 left-0 right-0 w-full z-50 bg-white shadow-sm">
+    <nav class="max-w-7xl mx-auto relative flex items-center justify-between py-3 px-6">
+      <a href="/" class="flex items-center gap-2"><img src="/assets/logo.svg" alt="Scrapyard Sites logo" class="h-8 w-8"/><span class="site-title text-xl text-brand-charcoal"><span class="font-bold text-brand-orange">Scrapyard</span> <span class="font-bold">Sites</span></span></a>
+      <!-- Mobile hamburger (≤ 768 px) -->
+      <button id="menuToggle" class="md:hidden p-2">
+        <svg class="icon-open w-6 h-6" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg class="icon-close w-6 h-6" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M6 18L18 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <!-- Desktop links -->
+      <ul id="menu" class="text-brand-charcoal hidden md:flex md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 gap-6 text-sm font-medium">
+        <li><a href="/services">Services</a></li>
+        <li><a href="/process">Process</a></li>
+        <li><a href="/portfolio">Portfolio</a></li>
+        <li><a href="/pricing">Pricing</a></li>
+        <li><a href="/risk-calculator">Calculator</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+      <a href="/contact" class="btn-primary hidden md:block">Book Call</a>
+    </nav>
+    <!-- Full-screen mobile menu -->
+    <div id="mobileMenu" class="text-brand-charcoal md:hidden fixed inset-0 z-50 flex flex-col items-center justify-center gap-6 text-xl font-medium bg-white hidden">
+      <a href="/" class="absolute left-1/2 -translate-x-1/2 top-3 flex items-center gap-2"><img src="/assets/logo.svg" alt="Scrapyard Sites logo" class="h-8 w-8"/><span class="site-title text-2xl text-brand-charcoal relative -top-0.5"><span class="font-bold text-brand-orange">Scrapyard</span> <span class="font-bold">Sites</span></span></a>
+      <button id="menuClose" class="absolute top-4 right-4 p-2">
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M6 18L18 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <a href="/services">Services</a>
+      <a href="/process">Process</a>
+      <a href="/portfolio">Portfolio</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/risk-calculator">Calculator</a>
+      <a href="/contact">Contact</a>
+      <a href="/contact" class="btn-primary">Book Call</a>
+    </div>
+  </header>
+  <script>
+  /* full-screen mobile toggle */
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const btn = document.getElementById('menuToggle');
+    menu.classList.toggle('hidden');
+    const isOpen = !menu.classList.contains('hidden');
+    document.body.classList.toggle('overflow-hidden', isOpen);
+    btn.classList.toggle('open');
+  }
+  /* highlight active nav item */
+  const currentPath = location.pathname
+    .replace(/\/index.html$/, '')
+    .replace(/\/$/, '');
+  document.querySelectorAll('#menu a, #mobileMenu a').forEach(link => {
+    const linkPath = new URL(link.getAttribute('href'), location.origin).pathname
+      .replace(/\/index.html$/, '')
+      .replace(/\/$/, '');
+    if (linkPath === currentPath) {
+      link.classList.add('text-brand-orange');
+    }
+  });
+
+  document.getElementById('menuToggle')?.addEventListener('click', toggleMobileMenu);
+  document.getElementById('menuClose')?.addEventListener('click', toggleMobileMenu);
+
+  </script>
+  <main class="max-w-3xl mx-auto pt-24 pb-20 px-6 prose prose-a:text-brand-orange">
+    <h1 class="text-3xl font-bold mb-4">Terms of Service</h1>
+    <p class="mb-4">The terms of service will be posted here soon.</p>
+  </main>
+
+  <footer class="bg-white py-8 text-center text-xs text-gray-400">
+    <p>© <span id="year"></span> Scrapyard Sites — All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
