@@ -85,7 +85,7 @@ header.fixed {
 }
 
 /* Position the close button using Tailwind classes */
-/* (top-4 right-4) from markup will keep it in the corner */
+/* (top-4 left-1/2 -translate-x-1/2 transform) to center it horizontally */
 
 
 /* Center icons inside mobile menu toggle buttons */
