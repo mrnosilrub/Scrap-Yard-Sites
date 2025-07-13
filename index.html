@@ -113,13 +113,34 @@
     @media (max-width: 767px) {
       .carousel-track {
         display: flex;
-        overflow: hidden;
+        overflow-x: auto;
         scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
       }
       .carousel-item {
         flex: 0 0 100%;
         scroll-snap-align: center;
       }
+    }
+
+    .carousel-indicators {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    .carousel-indicators span {
+      background: #D75E02;
+      border-radius: 9999px;
+      width: 0.5rem;
+      height: 0.5rem;
+      opacity: 0.5;
+      transition: width 0.3s ease, opacity 0.3s ease;
+    }
+    .carousel-indicators span.active {
+      width: 1.5rem;
+      opacity: 1;
     }
 
   </style>
@@ -211,18 +232,18 @@
   <div class="max-w-6xl mx-auto px-6">
   <h2 class="text-2xl font-bold mb-10 text-center">Why Generalist Agencies Leave You Exposed</h2>
 
-  <div id="why-carousel" class="carousel-track flex md:grid md:grid-cols-3 gap-8 text-sm">
-    <article class="carousel-item bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm p-6 text-center transition transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="0">
+  <div id="why-carousel" class="grid gap-8 md:grid-cols-3 text-sm">
+    <article class="bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm p-6 text-center transition transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="0">
       <i class="fa-solid fa-phone-slash text-3xl card-icon mb-4"></i>
       <h3 class="font-semibold text-base">Missed‑Call Plug</h3>
       <p>Quote forms drop hot leads straight into your inbox—no trucks lost in voicemail hell.</p>
     </article>
-    <article class="carousel-item bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm p-6 text-center transition transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="100">
+    <article class="bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm p-6 text-center transition transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="100">
       <i class="fa-solid fa-tags text-3xl card-icon mb-4"></i>
       <h3 class="font-semibold text-base">Price‑Shopper Filter</h3>
       <p>Copy answers margin, materials & pickup times so tyre‑kickers don’t tie up your phone lines.</p>
     </article>
-    <article class="carousel-item bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm p-6 text-center transition transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="200">
+    <article class="bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm p-6 text-center transition transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="200">
       <i class="fa-solid fa-shield-alt text-3xl card-icon mb-4"></i>
       <h3 class="font-semibold text-base">Credibility Shield</h3>
       <p>Industrial‑grade design signals trust to brokers, suppliers and walk‑ins.</p>
@@ -266,18 +287,18 @@
 <section class="py-20 bg-gray-100">
   <div class="mx-auto max-w-6xl px-6 text-center">
     <h2 class="text-3xl font-bold mb-8">How We Work</h2>
-    <div id="process-carousel" class="carousel-track flex md:grid md:grid-cols-3 gap-10">
-      <div class="carousel-item">
+    <div id="process-carousel" class="grid gap-10 md:grid-cols-3">
+      <div>
         <div class="process-step-number text-6xl font-black" data-aos="fade-up" data-aos-delay="0">1</div>
         <h3 class="font-semibold text-lg mt-3">Discovery Call</h3>
         <p class="text-base md:text-sm text-brand-steel mt-1">15 minutes to learn your yard, materials & amp draw area.</p>
       </div>
-      <div class="carousel-item">
+      <div>
         <div class="process-step-number text-6xl font-black" data-aos="fade-up" data-aos-delay="100">2</div>
         <h3 class="font-semibold text-lg mt-3">Build Week</h3>
         <p class="text-base md:text-sm text-brand-steel mt-1">We design, write and code. You review once—done.</p>
       </div>
-      <div class="carousel-item">
+      <div>
         <div class="process-step-number text-6xl font-black" data-aos="fade-up" data-aos-delay="200">3</div>
         <h3 class="font-semibold text-lg mt-3">Launch & Maintain</h3>
         <p class="text-base md:text-sm text-brand-steel mt-1">Site goes live, Google Business updated, $99/mo care plan kicks in.</p>
@@ -500,16 +521,71 @@
     const track = document.getElementById(id);
     if (!track) return;
     const slideCount = track.children.length;
+
+    const indicators = document.createElement('div');
+    indicators.className = 'carousel-indicators';
+    for (let i = 0; i < slideCount; i++) {
+      const dot = document.createElement('span');
+      if (i === 0) dot.classList.add('active');
+      indicators.appendChild(dot);
+    }
+    track.after(indicators);
+
     let index = 0;
-    setInterval(() => {
-      index = (index + 1) % slideCount;
+    let interval;
+
+    function updateDots(i) {
+      indicators.querySelectorAll('span').forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === i);
+      });
+    }
+
+    function goTo(i) {
+      index = i;
       track.scrollTo({ left: track.clientWidth * index, behavior: 'smooth' });
-    }, 4000);
+      updateDots(index);
+    }
+
+    function start() {
+      if (!interval) interval = setInterval(() => {
+        goTo((index + 1) % slideCount);
+      }, 4000);
+    }
+
+    function stop() {
+      if (interval) {
+        clearInterval(interval);
+        interval = null;
+      }
+    }
+
+    const visibility = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        const fully = entry.isIntersecting &&
+                      entry.intersectionRect.height >= entry.boundingClientRect.height &&
+                      entry.intersectionRect.top >= 0 &&
+                      entry.intersectionRect.bottom <= window.innerHeight;
+        if (fully) {
+          start();
+        } else {
+          stop();
+        }
+      });
+    }, { threshold: [0, 1] });
+
+    visibility.observe(track.parentElement || track);
+
+    track.addEventListener('scroll', () => {
+      const i = Math.round(track.scrollLeft / track.clientWidth);
+      if (i !== index) {
+        index = i;
+        updateDots(index);
+      }
+    });
   }
+
   if (window.matchMedia('(max-width: 767px)').matches) {
-    initCarousel('why-carousel');
     initCarousel('portfolio-carousel');
-    initCarousel('process-carousel');
   }
 </script>
 </body>
