@@ -319,9 +319,9 @@
       No hidden fees, no “call for quote”. You’ll know the cost before we write a line of code.
     </p>
 
-    <div class="mt-14 grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+    <div id="pricing-carousel" class="carousel-track mt-14 flex gap-10 md:grid md:grid-cols-2 lg:grid-cols-3">
       <!-- Launch -->
-      <div class="relative bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm transition transform hover:-translate-y-1 p-10">
+      <div class="carousel-item relative bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm transition transform hover:-translate-y-1 p-10">
         <span
           class="absolute -top-4 left-1/2 -translate-x-1/2 transform bg-brand-orange text-white text-xs font-semibold px-3 py-1 rounded-full shadow whitespace-nowrap z-10 pointer-events-none"
           style="background-color:#D75E02">
@@ -346,7 +346,7 @@
         </div>
       </div>
       <!-- Premium Launch -->
-      <div class="bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm transition transform hover:-translate-y-1 p-10">
+      <div class="carousel-item bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm transition transform hover:-translate-y-1 p-10">
         <h3 class="text-xl font-semibold mb-4">Premium Launch</h3>
         <p class="text-5xl font-extrabold tracking-tight">$5,499</p>
         <ul class="text-base md:text-sm text-brand-steel mt-6 space-y-2 text-left">
@@ -366,7 +366,7 @@
         </div>
       </div>
       <!-- Care Plan -->
-      <div class="bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm transition transform hover:-translate-y-1 p-10">
+      <div class="carousel-item bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm transition transform hover:-translate-y-1 p-10">
         <h3 class="text-xl font-semibold mb-4">Care Plan</h3>
         <p class="text-5xl font-extrabold tracking-tight">$99<span class="text-2xl font-bold">/mo</span></p>
         <ul class="text-base md:text-sm text-brand-steel mt-6 space-y-2 text-left">
@@ -590,6 +590,7 @@
 
   if (window.matchMedia('(max-width: 767px)').matches) {
     initCarousel('portfolio-carousel');
+    initCarousel('pricing-carousel');
   }
 </script>
 </body>

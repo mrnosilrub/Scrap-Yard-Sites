@@ -21,6 +21,10 @@
     header nav ul a:hover::after,#mobileMenu a:not(.bg-yellow-500):not(.btn-primary):hover::after{width:100%;}
     .site-title{position:relative;display:inline-block;}
     .site-title::after{content:'';position:absolute;left:0;bottom:-2px;width:0;height:2px;background-color:var(--color-links);transition:width .3s ease;}
+    @media (max-width: 767px){.carousel-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scroll-behavior:smooth;}.carousel-item{flex:0 0 100%;scroll-snap-align:center;}}
+    .carousel-indicators{display:flex;justify-content:center;gap:.5rem;margin-top:1rem;}
+    .carousel-indicators span{background:#D75E02;border-radius:9999px;width:.5rem;height:.5rem;opacity:.5;transition:width .3s ease,opacity .3s ease;}
+    .carousel-indicators span.active{width:1.5rem;opacity:1;}
     a:hover .site-title::after{width:100%;}
   </style>
 </head>
@@ -95,9 +99,9 @@
         </p>
 
         <!-- Packages -->
-        <div class="mt-14 grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+        <div id="pricing-carousel" class="carousel-track mt-14 flex gap-10 md:grid md:grid-cols-2 lg:grid-cols-3">
           <!-- Launch -->
-          <div class="relative bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm transition transform hover:-translate-y-1 p-10 flex flex-col">
+          <div class="carousel-item relative bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm transition transform hover:-translate-y-1 p-10 flex flex-col">
             <span
               class="absolute -top-4 left-1/2 -translate-x-1/2 transform bg-brand-orange text-white text-xs font-semibold px-3 py-1 rounded-full shadow whitespace-nowrap z-10 pointer-events-none"
               style="background-color:#D75E02">
@@ -122,7 +126,7 @@
             </div>
           </div>
           <!-- Premium Launch -->
-          <div class="bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm transition transform hover:-translate-y-1 p-10 flex flex-col">
+          <div class="carousel-item bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm transition transform hover:-translate-y-1 p-10 flex flex-col">
             <h3 class="text-xl font-semibold mb-4">Premium Launch</h3>
             <p class="text-5xl font-extrabold tracking-tight">$5,499</p>
           <ul class="text-base md:text-sm text-brand-steel mt-6 space-y-2 text-left">
@@ -142,7 +146,7 @@
           </div>
         </div>
           <!-- Care Plan -->
-          <div class="bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm transition transform hover:-translate-y-1 p-10">
+          <div class="carousel-item bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm transition transform hover:-translate-y-1 p-10">
             <h3 class="text-xl font-semibold mb-4">Care Plan</h3>
             <p class="text-5xl font-extrabold tracking-tight">$99<span class="text-2xl font-bold">/mo</span></p>
             <ul class="text-base md:text-sm text-brand-steel mt-6 space-y-2 text-left">
@@ -176,5 +180,20 @@
     <p>© <span id="year"></span> Scrapyard Sites — All rights reserved.</p>
   </footer>
   <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+  <script>
+  function initCarousel(id){
+    const track=document.getElementById(id);if(!track)return;const slideCount=track.children.length;
+    const indicators=document.createElement('div');indicators.className='carousel-indicators';
+    for(let i=0;i<slideCount;i++){const dot=document.createElement('span');if(i===0)dot.classList.add('active');indicators.appendChild(dot);}track.after(indicators);
+    let index=0;let interval;function updateDots(i){indicators.querySelectorAll('span').forEach((dot,idx)=>{dot.classList.toggle('active',idx===i);});}
+    function goTo(i){index=i;track.scrollTo({left:track.clientWidth*index,behavior:'smooth'});updateDots(index);} 
+    function start(){if(!interval)interval=setInterval(()=>{goTo((index+1)%slideCount);},4000);} 
+    function stop(){if(interval){clearInterval(interval);interval=null;}}
+    const visibility=new IntersectionObserver(entries=>{entries.forEach(entry=>{const fully=entry.isIntersecting&&entry.intersectionRect.height>=entry.boundingClientRect.height&&entry.intersectionRect.top>=0&&entry.intersectionRect.bottom<=window.innerHeight;if(fully){start();}else{stop();}});},{threshold:[0,1]});
+    visibility.observe(track.parentElement||track);
+    track.addEventListener('scroll',()=>{const i=Math.round(track.scrollLeft/track.clientWidth);if(i!==index){index=i;updateDots(index);}});
+  }
+  if(window.matchMedia('(max-width: 767px)').matches){initCarousel('pricing-carousel');}
+  </script>
 </body>
 </html>
