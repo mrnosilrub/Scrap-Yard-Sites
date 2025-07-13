@@ -194,13 +194,21 @@
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('aos-active');
+            entry.target.addEventListener(
+              'transitionend',
+              () => (entry.target.style.transition = ''),
+              { once: true }
+            );
             obs.unobserve(entry.target);
           }
         });
       }, { threshold: 0.1 });
       aosEls.forEach(el => aosObserver.observe(el));
     } else {
-      aosEls.forEach(el => el.classList.add('aos-active'));
+      aosEls.forEach(el => {
+        el.classList.add('aos-active');
+        el.style.transition = '';
+      });
     }
   </script>
 </body>
