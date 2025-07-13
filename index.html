@@ -527,6 +527,27 @@
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 <script>
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const aosEls = document.querySelectorAll('[data-aos]');
+  aosEls.forEach(el => {
+    const d = parseInt(el.dataset.aosDelay || '0', 10);
+    if (d) el.style.transitionDelay = `${d}ms`;
+  });
+  if (aosEls.length && !prefersReduced && 'IntersectionObserver' in window) {
+    const aosObserver = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('aos-active');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    aosEls.forEach(el => aosObserver.observe(el));
+  } else {
+    aosEls.forEach(el => el.classList.add('aos-active'));
+  }
+</script>
+<script>
   function initCarousel(id) {
     const track = document.getElementById(id);
     if (!track) return;
