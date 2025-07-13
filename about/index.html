@@ -185,6 +185,10 @@
 
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const aosEls = document.querySelectorAll('[data-aos]');
+    aosEls.forEach(el => {
+      const d = parseInt(el.dataset.aosDelay || '0', 10);
+      if (d) el.style.transitionDelay = `${d}ms`;
+    });
     if (aosEls.length && !prefersReduced && 'IntersectionObserver' in window) {
       const aosObserver = new IntersectionObserver((entries, obs) => {
         entries.forEach(entry => {
