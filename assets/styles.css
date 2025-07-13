@@ -84,18 +84,21 @@ header.fixed {
   color: #2B2B2B;
 }
 
-/* Vertically center the close button in the mobile menu */
-#mobileMenu #menuClose {
-  top: 50%;
-  transform: translateY(-50%);
-}
+/* Position the close button using Tailwind classes */
+/* (top-4 right-4) from markup will keep it in the corner */
+
 
 /* Center icons inside mobile menu toggle buttons */
 #menuToggle,
 #menuClose {
-  display: inline-flex;
   align-items: center;
   justify-content: center;
+  display: inline-flex;
+}
+
+@media (min-width: 768px) {
+  /* Hide hamburger on desktop */
+  #menuToggle { display: none; }
 }
 
 /* Swap hamburger/close icons when menu opens */
