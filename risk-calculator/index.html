@@ -70,10 +70,14 @@
   }
 
   /* highlight active nav item */
-  const current = location.pathname.split('/')[1];
+  const currentPath = location.pathname
+    .replace(/\/index.html$/, '')
+    .replace(/\/$/, '');
   document.querySelectorAll('#menu a, #mobileMenu a').forEach(link => {
-    const seg = link.getAttribute('href').split('/')[1];
-    if (seg && seg === current) {
+    const linkPath = new URL(link.getAttribute('href'), location.origin).pathname
+      .replace(/\/index.html$/, '')
+      .replace(/\/$/, '');
+    if (linkPath === currentPath) {
       link.classList.add('text-brand-orange');
     }
   });
