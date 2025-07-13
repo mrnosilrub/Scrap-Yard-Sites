@@ -84,8 +84,7 @@ header.fixed {
   color: #2B2B2B;
 }
 
-/* Position the close button using Tailwind classes */
-/* (top-4 left-1/2 -translate-x-1/2 transform) to center it horizontally */
+/* Position the close button in the top-right corner */
 
 
 /* Center icons inside mobile menu toggle buttons */
