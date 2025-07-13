@@ -84,6 +84,12 @@ header.fixed {
   color: #2B2B2B;
 }
 
+/* Vertically center the close button in the mobile menu */
+#mobileMenu #menuClose {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 /* Center icons inside mobile menu toggle buttons */
 #menuToggle,
 #menuClose {
