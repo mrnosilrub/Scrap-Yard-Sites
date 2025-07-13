@@ -112,6 +112,19 @@
       transition-duration: 0.25s;
     }
 
+    /* Mobile carousel styles */
+    @media (max-width: 767px) {
+      .carousel-track {
+        display: flex;
+        overflow: hidden;
+        scroll-snap-type: x mandatory;
+      }
+      .carousel-item {
+        flex: 0 0 100%;
+        scroll-snap-align: center;
+      }
+    }
+
   </style>
 </head>
 
@@ -201,18 +214,18 @@
   <div class="max-w-6xl mx-auto px-6">
   <h2 class="text-2xl font-bold mb-10 text-center">Why Generalist Agencies Leave You Exposed</h2>
 
-  <div class="grid md:grid-cols-3 gap-8 text-sm">
-    <article class="bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm p-6 text-center transition transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="0">
+  <div id="why-carousel" class="carousel-track flex md:grid md:grid-cols-3 gap-8 text-sm">
+    <article class="carousel-item bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm p-6 text-center transition transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="0">
       <i class="fa-solid fa-phone-slash text-3xl card-icon mb-4"></i>
       <h3 class="font-semibold text-base">Missed‑Call Plug</h3>
       <p>Quote forms drop hot leads straight into your inbox—no trucks lost in voicemail hell.</p>
     </article>
-    <article class="bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm p-6 text-center transition transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="100">
+    <article class="carousel-item bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm p-6 text-center transition transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="100">
       <i class="fa-solid fa-tags text-3xl card-icon mb-4"></i>
       <h3 class="font-semibold text-base">Price‑Shopper Filter</h3>
       <p>Copy answers margin, materials & pickup times so tyre‑kickers don’t tie up your phone lines.</p>
     </article>
-    <article class="bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm p-6 text-center transition transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="200">
+    <article class="carousel-item bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm p-6 text-center transition transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="200">
       <i class="fa-solid fa-shield-alt text-3xl card-icon mb-4"></i>
       <h3 class="font-semibold text-base">Credibility Shield</h3>
       <p>Industrial‑grade design signals trust to brokers, suppliers and walk‑ins.</p>
@@ -225,23 +238,23 @@
 <section id="work" class="scroll-mt-16 bg-white py-20">
   <div class="mx-auto max-w-6xl px-6 text-center">
     <h2 class="text-3xl font-bold mb-10">Our Portfolio</h2>
-    <div class="grid gap-8 md:grid-cols-3">
+    <div id="portfolio-carousel" class="carousel-track flex md:grid md:grid-cols-3 gap-8">
       <!-- Demo project cards -->
-      <a href="#contact" class="block bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm p-10 flex flex-col items-center text-center hover:bg-gray-100 hover:shadow-lg transition transform hover:-translate-y-1 hover:cursor-pointer">
+      <a href="#contact" class="carousel-item block bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm p-10 flex flex-col items-center text-center hover:bg-gray-100 hover:shadow-lg transition transform hover:-translate-y-1 hover:cursor-pointer">
         <div class="w-full rounded-xl overflow-hidden border border-brand-steel/10">
           <img class="w-full" src="https://placehold.co/600x400/2B2B2B/FFFFFF?text=Demo+Yard+1" alt="">
         </div>
         <h3 class="font-semibold mt-4">Demo Yard 1</h3>
         <p class="text-sm text-brand-steel mt-1">Custom design for a busy metro scrapyard.</p>
       </a>
-      <a href="#contact" class="block bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm p-10 flex flex-col items-center text-center hover:bg-gray-100 hover:shadow-lg transition transform hover:-translate-y-1 hover:cursor-pointer">
+      <a href="#contact" class="carousel-item block bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm p-10 flex flex-col items-center text-center hover:bg-gray-100 hover:shadow-lg transition transform hover:-translate-y-1 hover:cursor-pointer">
         <div class="w-full rounded-xl overflow-hidden border border-brand-steel/10">
           <img class="w-full" src="https://placehold.co/600x400/2B2B2B/FFFFFF?text=Demo+Yard+2" alt="">
         </div>
         <h3 class="font-semibold mt-4">Demo Yard 2</h3>
         <p class="text-sm text-brand-steel mt-1">Mobile friendly layout with fast quote form.</p>
       </a>
-      <a href="#contact" class="block bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm p-10 flex flex-col items-center text-center hover:bg-gray-100 hover:shadow-lg transition transform hover:-translate-y-1 hover:cursor-pointer">
+      <a href="#contact" class="carousel-item block bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm p-10 flex flex-col items-center text-center hover:bg-gray-100 hover:shadow-lg transition transform hover:-translate-y-1 hover:cursor-pointer">
         <div class="w-full rounded-xl overflow-hidden border border-brand-steel/10">
           <img class="w-full" src="https://placehold.co/600x400/2B2B2B/FFFFFF?text=Demo+Yard+3" alt="">
         </div>
@@ -256,18 +269,18 @@
 <section class="py-20 bg-gray-100">
   <div class="mx-auto max-w-6xl px-6 text-center">
     <h2 class="text-3xl font-bold mb-8">How We Work</h2>
-    <div class="grid gap-10 md:grid-cols-3">
-      <div>
+    <div id="process-carousel" class="carousel-track flex md:grid md:grid-cols-3 gap-10">
+      <div class="carousel-item">
         <div class="process-step-number text-6xl font-black" data-aos="fade-up" data-aos-delay="0">1</div>
         <h3 class="font-semibold text-lg mt-3">Discovery Call</h3>
         <p class="text-base md:text-sm text-brand-steel mt-1">15 minutes to learn your yard, materials & amp draw area.</p>
       </div>
-      <div>
+      <div class="carousel-item">
         <div class="process-step-number text-6xl font-black" data-aos="fade-up" data-aos-delay="100">2</div>
         <h3 class="font-semibold text-lg mt-3">Build Week</h3>
         <p class="text-base md:text-sm text-brand-steel mt-1">We design, write and code. You review once—done.</p>
       </div>
-      <div>
+      <div class="carousel-item">
         <div class="process-step-number text-6xl font-black" data-aos="fade-up" data-aos-delay="200">3</div>
         <h3 class="font-semibold text-lg mt-3">Launch & Maintain</h3>
         <p class="text-base md:text-sm text-brand-steel mt-1">Site goes live, Google Business updated, $99/mo care plan kicks in.</p>
@@ -486,6 +499,23 @@
     aosEls.forEach(el => aosObserver.observe(el));
   } else if (prefersReduced) {
     aosEls.forEach(el => el.classList.add('aos-active'));
+  }
+</script>
+<script>
+  function initCarousel(id) {
+    const track = document.getElementById(id);
+    if (!track) return;
+    const slideCount = track.children.length;
+    let index = 0;
+    setInterval(() => {
+      index = (index + 1) % slideCount;
+      track.scrollTo({ left: track.clientWidth * index, behavior: 'smooth' });
+    }, 4000);
+  }
+  if (window.matchMedia('(max-width: 767px)').matches) {
+    initCarousel('why-carousel');
+    initCarousel('portfolio-carousel');
+    initCarousel('process-carousel');
   }
 </script>
 </body>
