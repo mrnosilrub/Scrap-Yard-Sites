@@ -84,6 +84,14 @@ header.fixed {
   color: #2B2B2B;
 }
 
+/* Center icons inside mobile menu toggle buttons */
+#menuToggle,
+#menuClose {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Swap hamburger/close icons when menu opens */
 #menuToggle .icon-close { display: none; }
 #menuToggle.open .icon-open { display: none; }
