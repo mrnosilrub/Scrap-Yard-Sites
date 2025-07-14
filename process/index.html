@@ -51,12 +51,6 @@
       margin-bottom: 0.25rem;
     }
     /* timeline no longer uses dark background */
-    .macro-bar {
-      position: sticky;
-      top: 72px;
-      background-color: white;
-      z-index: 30;
-    }
   </style>
 </head>
 <body class="font-sans text-brand-charcoal antialiased bg-white overflow-x-hidden">
@@ -122,20 +116,15 @@
   });
 
   </script>
-  <main class="pt-24 pb-20 px-6">
-    <section class="py-16 text-center">
-      <div class="max-w-3xl mx-auto px-6">
-        <h1 class="text-3xl font-bold">7&nbsp;Days from Ghost‑Site&nbsp;to&nbsp;Google‑Proof</h1>
-        <p class="text-sm mt-2 max-w-2xl mx-auto">Leak-detection Friday, live leads next Friday—or we pay the penalty.</p>
+  <main class="pt-24 pb-20">
+    <section class="relative flex flex-col items-center justify-center min-h-[60vh] text-center">
+      <img src="/assets/hero.jpg" alt="Scrapyard hero" class="absolute inset-0 w-full h-full object-cover">
+      <div class="absolute inset-0 bg-black/70"></div>
+      <div class="relative z-10 px-6">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-white">7&nbsp;Days from Ghost‑Site&nbsp;to&nbsp;Google‑Proof</h1>
+        <p class="text-sm mt-2 text-white max-w-2xl mx-auto">Leak-detection Friday, live leads next Friday—or we pay the penalty.</p>
       </div>
     </section>
-    <div class="macro-bar">
-      <ol class="max-w-3xl mx-auto flex justify-between px-6 py-4">
-        <li><a href="#day0" class="flex flex-col items-center gap-1"><span class="step-badge">1</span><span class="font-semibold">Discovery</span></a></li>
-        <li><a href="#day1" class="flex flex-col items-center gap-1"><span class="step-badge">2</span><span class="font-semibold">Build Week</span></a></li>
-        <li><a href="#day6" class="flex flex-col items-center gap-1"><span class="step-badge">3</span><span class="font-semibold">Launch&nbsp;+30</span></a></li>
-      </ol>
-    </div>
 
     <section id="timeline" class="py-16">
       <div class="relative z-10 max-w-2xl mx-auto px-6">
