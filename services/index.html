@@ -11,11 +11,11 @@
       theme: {
         extend: {
           fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif']
+            sans: ['Inter','system-ui','sans-serif']
           },
           colors: {
             brand: {
-              orange: '#D75E02',
+              orange: '#FF6B00',
               steel: '#5E6367',
               charcoal: '#2B2B2B'
             }
@@ -24,58 +24,21 @@
       }
     };
   </script>
-<script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="/assets/styles.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
-    :root {
-      --color-links: #D75E02;
-    }
-    header nav ul a,
-    #mobileMenu a:not(.bg-yellow-500):not(.btn-primary) {
-      position: relative;
-      text-decoration: none;
-    }
-    header nav ul a:hover,
-    #mobileMenu a:not(.bg-yellow-500):not(.btn-primary):hover {
-      color: currentColor !important;
-    }
-    header nav ul a.text-brand-orange:hover {
-      color: var(--color-links) !important;
-    }
-    header nav ul a::after,
-    #mobileMenu a:not(.bg-yellow-500):not(.btn-primary)::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -2px;
-      width: 0;
-      height: 2px;
-      background-color: var(--color-links);
-      transition: width 0.3s ease;
-    }
-    header nav ul a:hover::after,
-    #mobileMenu a:not(.bg-yellow-500):not(.btn-primary):hover::after {
-      width: 100%;
-    }
-    .site-title {
-      position: relative;
-      display: inline-block;
-    }
-    .site-title::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -2px;
-      width: 0;
-      height: 2px;
-      background-color: var(--color-links);
-      transition: width 0.3s ease;
-    }
-    a:hover .site-title::after {
-      width: 100%;
-    }
+    :root{--color-links:#FF6B00;}
+    header nav ul a,#mobileMenu a:not(.bg-yellow-500):not(.btn-primary){position:relative;text-decoration:none;}
+    header nav ul a:hover,#mobileMenu a:not(.bg-yellow-500):not(.btn-primary):hover{color:currentColor!important;}
+    header nav ul a.text-brand-orange:hover{color:var(--color-links)!important;}
+    header nav ul a::after,#mobileMenu a:not(.bg-yellow-500):not(.btn-primary)::after{content:'';position:absolute;left:0;bottom:-2px;width:0;height:2px;background-color:var(--color-links);transition:width .3s ease;}
+    header nav ul a:hover::after,#mobileMenu a:not(.bg-yellow-500):not(.btn-primary):hover::after{width:100%;}
+    .site-title{position:relative;display:inline-block;}
+    .site-title::after{content:'';position:absolute;left:0;bottom:-2px;width:0;height:2px;background-color:var(--color-links);transition:width .3s ease;}
+    a:hover .site-title::after{width:100%;}
+    .slide-up{transform:translateY(30px);opacity:0;transition:opacity .6s ease,transform .6s ease;}
+    .slide-up.aos-active{transform:translateY(0);opacity:1;}
   </style>
 </head>
 <body class="font-sans text-brand-charcoal antialiased bg-white overflow-x-hidden">
@@ -115,114 +78,134 @@
   </header>
   <script>
   /* full-screen mobile toggle */
-  function toggleMobileMenu() {
-    const menu = document.getElementById('mobileMenu');
-    const btn = document.getElementById('menuToggle');
-    menu.classList.toggle('hidden');
-    const isOpen = !menu.classList.contains('hidden');
-    document.body.classList.toggle('overflow-hidden', isOpen);
-    btn.classList.toggle('open');
-  }
-  document.addEventListener('DOMContentLoaded', () => {
-    const currentPath = location.pathname
-      .replace(/\/index.html$/, '')
-      .replace(/\/$/, '');
-    document.querySelectorAll('#menu a:not(.no-highlight), #mobileMenu a:not(.no-highlight)').forEach(link => {
-      const linkPath = new URL(link.getAttribute('href'), location.origin).pathname
-        .replace(/\/index.html$/, '')
-        .replace(/\/$/, '');
-      if (linkPath === currentPath) {
-        link.classList.add('text-brand-orange');
-      }
-    });
-
-    document.getElementById('menuToggle')?.addEventListener('click', toggleMobileMenu);
-    document.getElementById('menuClose')?.addEventListener('click', toggleMobileMenu);
-  });
-
+  function toggleMobileMenu(){const menu=document.getElementById('mobileMenu');const btn=document.getElementById('menuToggle');menu.classList.toggle('hidden');const isOpen=!menu.classList.contains('hidden');document.body.classList.toggle('overflow-hidden',isOpen);btn.classList.toggle('open');}
+  document.addEventListener('DOMContentLoaded',()=>{const currentPath=location.pathname.replace(/\/index.html$/,'').replace(/\/$/,'');document.querySelectorAll('#menu a:not(.no-highlight), #mobileMenu a:not(.no-highlight)').forEach(link=>{const linkPath=new URL(link.getAttribute('href'),location.origin).pathname.replace(/\/index.html$/,'').replace(/\/$/,'');if(linkPath===currentPath){link.classList.add('text-brand-orange');}});document.getElementById('menuToggle')?.addEventListener('click',toggleMobileMenu);document.getElementById('menuClose')?.addEventListener('click',toggleMobileMenu);});
   </script>
-  <main class="pt-24 pb-20 px-6 bg-gray-50">
-    <section class="bg-gray-50 py-16">
-      <div class="max-w-3xl mx-auto text-center px-6">
-        <h1 class="text-3xl font-bold">What We Actually Do for You</h1>
-        <p class="mt-2 max-w-3xl mx-auto text-sm">The Four Shields—Fully Deployed</p>
-      </div>
-
-      <div class="mt-12 max-w-4xl mx-auto grid px-6 md:grid-cols-2 gap-10">
-        <article class="p-6 bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm text-center transition transform hover:-translate-y-1">
-          <i class="fa-solid fa-shield-alt text-3xl card-icon mb-4"></i>
-          <h2 class="font-semibold mb-1">1 · Credibility&nbsp;Shield</h2>
-          <p class="text-sm">Lightning-fast code, iron-clad SSL, and real photos of your loader—not some stock Komatsu—so brokers know you’re legit.</p>
-          <p class="text-sm mt-2"><strong>Deliverables:</strong> &lt; 2&nbsp;s load time, HTTPS lock, on-site shoot or photo polish, modern design that works in the scale-house Wi-Fi dead-zone.</p>
+  <main class="pt-24 pb-20 bg-gray-50">
+    <!-- Hero -->
+    <section class="relative flex items-center justify-center min-h-[60vh] text-center">
+      <img src="/assets/hero.jpg" alt="Grapple loading shred" class="absolute inset-0 w-full h-full object-cover">
+      <div class="absolute inset-0 bg-black/70"></div>
+      <h1 class="relative z-10 text-4xl md:text-5xl font-extrabold text-white px-6">Four Shields. One Plug-The-Leak Service.</h1>
+    </section>
+    <!-- Shield Grid -->
+    <section class="relative py-16">
+      <div class="absolute inset-0 bg-[url('/assets/hero.jpg')] bg-cover opacity-5"></div>
+      <div class="relative max-w-5xl mx-auto grid md:grid-cols-2 gap-8 px-6">
+        <article class="p-6 rounded-lg bg-brand-charcoal text-gray-200 shadow slide-up">
+          <div class="flex items-center gap-2 mb-2"><i data-lucide="shield-check" class="w-6 h-6 text-brand-orange"></i><h3 class="font-semibold">Credibility Shield</h3></div>
+          <p class="text-sm">Brokers know you’re legit—before they dial.</p>
+          <details class="mt-2">
+            <summary class="cursor-pointer text-sm">Key Outputs</summary>
+            <ul class="mt-1 pl-4 list-disc text-xs">
+              <li>&lt;2 sec load</li>
+              <li>HTTPS lock</li>
+              <li>Real loader pics</li>
+            </ul>
+          </details>
         </article>
-
-        <article class="p-6 bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm text-center transition transform hover:-translate-y-1">
-          <i class="fa-solid fa-comment-slash text-3xl card-icon mb-4"></i>
-          <h2 class="font-semibold mb-1">2 · Objection&nbsp;Killer</h2>
-          <p class="text-sm">We write FAQ-first copy that answers the three calls every industrial&nbsp;seller makes—“What metals, what price, when can you pick up?”—before they jam your phone lines.</p>
-          <p class="text-sm mt-2"><strong>Deliverables:</strong> Service-area map, commodity heat-map, transparent margin explainer.</p>
+        <article class="p-6 rounded-lg bg-brand-charcoal text-gray-200 shadow slide-up" data-aos-delay="100">
+          <div class="flex items-center gap-2 mb-2"><i data-lucide="shield-x" class="w-6 h-6 text-brand-orange"></i><h3 class="font-semibold">Objection Killer</h3></div>
+          <p class="text-sm">Phone stops ringing with tire‑kickers.</p>
+          <details class="mt-2">
+            <summary class="cursor-pointer text-sm">Key Outputs</summary>
+            <ul class="mt-1 pl-4 list-disc text-xs">
+              <li>What metals?</li>
+              <li>What margin?</li>
+              <li>When pickup?</li>
+            </ul>
+          </details>
         </article>
-
-        <article class="p-6 bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm text-center transition transform hover:-translate-y-1">
-          <i class="fa-solid fa-eye text-3xl card-icon mb-4"></i>
-          <h2 class="font-semibold mb-1">3 · Visibility&nbsp;Lock</h2>
-          <p class="text-sm">Google eats schema for breakfast. We feed it NAP-perfect local markup, “scrap-metal&nbsp;+&nbsp;city” headlines, and internal links that float you above the nationals.</p>
-          <p class="text-sm mt-2"><strong>Deliverables:</strong> LocalBusiness schema, on-page SEO, Google Business tune-up, two location landing pages included.</p>
+        <article class="p-6 rounded-lg bg-brand-charcoal text-gray-200 shadow slide-up" data-aos-delay="200">
+          <div class="flex items-center gap-2 mb-2"><i data-lucide="eye" class="w-6 h-6 text-brand-orange"></i><h3 class="font-semibold">Visibility Lock</h3></div>
+          <p class="text-sm">LocalBusiness schema + “scrap-metal + city” H1s float you above nationals.</p>
+          <details class="mt-2">
+            <summary class="cursor-pointer text-sm">Key Outputs</summary>
+            <ul class="mt-1 pl-4 list-disc text-xs">
+              <li>LocalBusiness schema</li>
+              <li>SEO headlines</li>
+              <li>Internal links</li>
+            </ul>
+          </details>
         </article>
-
-        <article class="p-6 bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm text-center transition transform hover:-translate-y-1">
-          <i class="fa-solid fa-screwdriver-wrench text-3xl card-icon mb-4"></i>
-          <h2 class="font-semibold mb-1">4 · Break‑Fix&nbsp;Warranty</h2>
-          <p class="text-sm">Sites break; loads shouldn’t. Our 24/7 uptime monitor pings us—never you—while unlimited text/photo edits mean yesterday’s price board doesn’t haunt tomorrow’s sellers.</p>
-          <p class="text-sm mt-2"><strong>Deliverables:</strong> Daily backups, security patches, 1-hour SLA on critical outages.</p>
+        <article class="p-6 rounded-lg bg-brand-charcoal text-gray-200 shadow slide-up" data-aos-delay="300">
+          <div class="flex items-center gap-2 mb-2"><i data-lucide="life-buoy" class="w-6 h-6 text-brand-orange"></i><h3 class="font-semibold">Break-Fix Warranty</h3></div>
+          <p class="text-sm">24/7 monitor pings us, not you. Unlimited edits mean yesterday’s price board never haunts tomorrow’s sellers.</p>
+          <details class="mt-2">
+            <summary class="cursor-pointer text-sm">Key Outputs</summary>
+            <ul class="mt-1 pl-4 list-disc text-xs">
+              <li>24/7 monitoring</li>
+              <li>Unlimited edits</li>
+              <li>Daily backups</li>
+            </ul>
+          </details>
         </article>
-      </div>
-
-      <div class="mt-12 max-w-3xl mx-auto space-y-4 px-6">
-        <details class="group border border-brand-steel/10 bg-white rounded-md p-4">
-          <summary class="cursor-pointer font-semibold text-brand-charcoal group-open:text-brand-orange">
-            Standard Package Deliverables
-          </summary>
-          <ul class="mt-2 pl-4 list-disc text-brand-steel text-sm">
-            <li>1‑page high‑converter with contact form</li>
-            <li>Google Business Profile tune‑up</li>
-          </ul>
-        </details>
-        <details class="group border border-brand-steel/10 bg-white rounded-md p-4">
-          <summary class="cursor-pointer font-semibold text-brand-charcoal group-open:text-brand-orange">
-            Premium Package Deliverables
-          </summary>
-          <ul class="mt-2 pl-4 list-disc text-brand-steel text-sm">
-            <li>Up to 7 pages including location pages</li>
-            <li>Structured‑data SEO and 60‑day tuning</li>
-          </ul>
-        </details>
-      </div>
-
-      <div class="text-center mt-12">
-        <p class="mb-2 text-sm">Ready to plug the leak?</p>
-        <a href="/contact" class="btn-primary"><small>Book a 15-min Leak Detection Call ➜</small></a>
       </div>
     </section>
+    <!-- Deliverables Matrix -->
+    <section class="max-w-3xl mx-auto px-6">
+      <table class="w-full text-sm border-collapse">
+        <thead class="bg-brand-charcoal text-white">
+          <tr><th class="text-left p-2">&nbsp;</th><th class="p-2 text-center">Standard</th><th class="p-2 text-center">Premium</th><th class="p-2 text-center">Care Plan</th></tr>
+        </thead>
+        <tbody>
+          <tr class="border-b"><td class="p-2">Credibility Shield</td><td class="text-center">✔︎</td><td class="text-center">✔︎</td><td class="text-center">—</td></tr>
+          <tr class="border-b"><td class="p-2">Objection Killer</td><td class="text-center">✔︎</td><td class="text-center">✔︎</td><td class="text-center">—</td></tr>
+          <tr class="border-b"><td class="p-2">Visibility Lock</td><td class="text-center">—</td><td class="text-center">✔︎</td><td class="text-center">—</td></tr>
+          <tr class="border-b"><td class="p-2">Break-Fix Warranty</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center">✔︎</td></tr>
+          <tr class="border-b"><td class="p-2">Pages included</td><td class="text-center">1</td><td class="text-center">7</td><td class="text-center">—</td></tr>
+          <tr><td class="p-2">SEO tuning window</td><td class="text-center">30 days</td><td class="text-center">60 days</td><td class="text-center">—</td></tr>
+        </tbody>
+      </table>
+    </section>
+    <!-- Care Plan Banner -->
+    <section class="bg-brand-charcoal text-white py-4 text-center mt-12">
+      <span>Uptime <span id="uptimeCounter">99.990 %</span></span>
+    </section>
+    <!-- Proof Strip -->
+    <section class="bg-gray-50 py-10 text-center">
+      <div class="flex justify-center gap-4">
+        <img src="/assets/hero.jpg" alt="Demo yard" class="w-[150px] h-[150px] object-cover rounded-md">
+        <img src="/assets/hero.jpg" alt="Demo yard" class="w-[150px] h-[150px] object-cover rounded-md">
+        <img src="/assets/hero.jpg" alt="Demo yard" class="w-[150px] h-[150px] object-cover rounded-md">
+      </div>
+      <p class="text-sm mt-2">Live in 7 days—<a href="/portfolio" class="underline">view code →</a></p>
+    </section>
+    <!-- CTA Footer -->
+    <div class="py-6 flex justify-center gap-4 bg-white border-t border-gray-200 fixed bottom-0 left-0 right-0 md:static" id="ctaBar">
+      <a href="/risk-calculator" class="btn-primary">Patch My Leak (Risk Calc)</a>
+      <a href="/contact" class="btn-secondary">Book 15-min Call</a>
+    </div>
   </main>
-<footer class="bg-white py-8 text-center text-xs text-gray-400">
-  <nav class="mb-2 space-x-2">
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/services">Services</a>
-    <a href="/process">Process</a>
-    <a href="/portfolio">Portfolio</a>
-    <a href="/pricing">Pricing</a>
-    <a href="/risk-calculator">Calculator</a>
-    <a href="/blog">Blog</a>
-    <a href="/contact">Contact</a>
-    <a href="/privacy">Privacy</a>
-    <a href="/terms-of-service">Terms</a>
-  </nav>
-  <p>© <span id="year"></span> Scrapyard Sites — All rights reserved.</p>
-</footer>
+  <footer class="bg-white py-8 text-center text-xs text-gray-400 mt-24">
+    <nav class="mb-2 space-x-2">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/services">Services</a>
+      <a href="/process">Process</a>
+      <a href="/portfolio">Portfolio</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/risk-calculator">Calculator</a>
+      <a href="/blog">Blog</a>
+      <a href="/contact">Contact</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms-of-service">Terms</a>
+    </nav>
+    <p>© <span id="year"></span> Scrapyard Sites — All rights reserved.</p>
+  </footer>
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('year').textContent=new Date().getFullYear();
+    const prefersReduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const aosEls=document.querySelectorAll('.slide-up');
+    if(aosEls.length&&!prefersReduced&&'IntersectionObserver'in window){
+      const obs=new IntersectionObserver((entries,o)=>{entries.forEach(en=>{if(en.isIntersecting){en.target.classList.add('aos-active');o.unobserve(en.target);}})},{threshold:0.1});aosEls.forEach(el=>obs.observe(el));
+    }else{aosEls.forEach(el=>el.classList.add('aos-active'))}
+    // uptime counter
+    const up=document.getElementById('uptimeCounter');
+    let val=99.990;
+    const interval=setInterval(()=>{val+=0.001;up.textContent=val.toFixed(3)+' %';if(val>=99.998){clearInterval(interval);up.textContent='99.998 %';}},200);
   </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>lucide.createIcons();</script>
 </body>
 </html>
