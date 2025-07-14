@@ -215,7 +215,34 @@
     </section>
     <section class="py-12">
       <div class="mx-auto max-w-3xl px-6">
-        <iframe src="/risk-calculator" class="w-full h-96 border rounded-lg" title="ROI Calculator"></iframe>
+        <div class="border border-brand-steel/20 rounded-xl p-6 bg-white">
+          <h2 class="text-2xl font-bold text-center">Reputation&nbsp;Risk&nbsp;Calculator</h2>
+          <p class="text-sm text-center mt-2">
+            Every missed call is material on your competitor’s scale.
+            Run the numbers—see what procrastination costs.
+          </p>
+          <form id="calcForm" class="mt-6 grid gap-6 max-w-md mx-auto">
+            <input type="number" step="0.1" name="tons" inputmode="decimal" required
+                   placeholder="Average load weight (tons)"
+                   class="w-full rounded-md px-4 py-3 bg-white border border-brand-steel/20 text-brand-charcoal" />
+            <input type="number" step="0.1" name="margin" inputmode="decimal" required
+                   placeholder="Average margin ($/ton)"
+                   class="w-full rounded-md px-4 py-3 bg-white border border-brand-steel/20 text-brand-charcoal" />
+            <input type="number" name="missed" inputmode="numeric" required
+                   placeholder="Loads missed per month"
+                   class="w-full rounded-md px-4 py-3 bg-white border border-brand-steel/20 text-brand-charcoal" />
+            <button class="btn-primary w-full" type="submit">Calculate</button>
+          </form>
+          <div id="resultBox" class="hidden mt-6 text-center">
+            <h3 class="text-xl font-bold">You’re Leaking <span id="lossFig">$‑‑‑</span>/year</h3>
+            <p class="text-sm mt-2">
+              A Standard Launch pays for itself in <strong id="roiDays">‑‑</strong> days.
+            </p>
+            <a id="contactBtn" href="/contact" class="btn-primary mt-6 inline-block">
+              Patch My Leak
+            </a>
+          </div>
+        </div>
       </div>
     </section>
     <div class="bg-brand-orange text-white text-center py-4 shadow-md">
@@ -238,6 +265,21 @@
   </nav>
   <p>© <span id="year"></span> Scrapyard Sites — All rights reserved.</p>
 </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    function fmt(x){
+      return x.toLocaleString('en-US',{style:'currency',currency:'USD',minimumFractionDigits:0});
+    }
+    document.getElementById('calcForm').addEventListener('submit',e=>{
+      e.preventDefault();
+      const t=+e.target.tons.value, m=+e.target.margin.value, l=+e.target.missed.value;
+      if(!t||!m||!l) return alert('Fill every field');
+      const annual=t*m*l*12;
+      document.getElementById('lossFig').textContent=fmt(annual);
+      document.getElementById('roiDays').textContent=Math.ceil(2499/(annual/365));
+      document.getElementById('contactBtn').href=`/contact?leak=${annual}`;
+      document.getElementById('resultBox').classList.remove('hidden');
+    });
+  </script>
 </body>
 </html>
