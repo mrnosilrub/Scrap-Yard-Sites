@@ -15,6 +15,16 @@
 }
 .btn-primary:hover { opacity: 0.9; }
 
+/* Inverted hover style for the homepage pricing CTA */
+.btn-invert-hover {
+  transition: background-color 0.2s, color 0.2s;
+}
+.btn-invert-hover:hover {
+  background-color: white;
+  color: #D75E02;
+  opacity: 1;
+}
+
 .btn-secondary {
   display: inline-flex;
   align-items: center;
