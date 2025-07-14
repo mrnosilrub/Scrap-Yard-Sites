@@ -110,6 +110,11 @@ header nav ul a {
   color: #2B2B2B;
 }
 
+/* Highlight active link in the desktop nav */
+header nav ul a.text-brand-orange {
+  color: var(--color-links);
+}
+
 /* Ensure active link highlights in the mobile menu */
 #mobileMenu a.text-brand-orange {
   color: #D75E02;
