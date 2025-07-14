@@ -11,7 +11,7 @@
       theme: {
         extend: {
           fontFamily: { sans: ['Inter','system-ui','sans-serif'] },
-          colors: { brand:{ orange:'#FF6B00', steel:'#5E6367', charcoal:'#2B2B2B' } }
+          colors: { brand:{ orange:'#D75E02', steel:'#5E6367', charcoal:'#2B2B2B' } }
         }
       }
     };
@@ -20,7 +20,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="/assets/styles.css"/>
   <style>
-    :root { --color-links: #FF6B00; }
+    :root { --color-links: #D75E02; }
     header nav ul a, #mobileMenu a:not(.bg-yellow-500):not(.btn-primary) { position: relative; text-decoration: none; }
     header nav ul a:hover, #mobileMenu a:not(.bg-yellow-500):not(.btn-primary):hover { color: currentColor !important; }
     header nav ul a.text-brand-orange:hover { color: var(--color-links) !important; }
@@ -50,18 +50,7 @@
       word-wrap: break-word;
       margin-bottom: 0.25rem;
     }
-    .timeline-bg {
-      background-color: #2B2B2B;
-      position: relative;
-      color: #E5E5E5;
-    }
-    .timeline-bg::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: repeating-linear-gradient(-45deg, rgba(255,255,255,0.05) 0, rgba(255,255,255,0.05) 10px, transparent 10px, transparent 20px);
-      pointer-events: none;
-    }
+    /* timeline no longer uses dark background */
     .macro-bar {
       position: sticky;
       top: 72px;
@@ -148,7 +137,7 @@
       </ol>
     </div>
 
-    <section id="timeline" class="timeline-bg py-16">
+    <section id="timeline" class="py-16">
       <div class="relative z-10 max-w-2xl mx-auto px-6">
         <ol class="relative border-l border-gray-700">
           <li id="day0" class="mb-10 ml-6">
@@ -258,7 +247,7 @@
         </ol>
       </div>
 
-        <div class="bg-[#2B2B2B] text-[#E5E5E5] rounded-xl p-6 mt-10 flex items-center gap-4">
+        <div class="bg-gray-100 text-brand-charcoal rounded-xl p-6 mt-10 flex items-center gap-4">
           <i data-lucide="shield" class="w-8 h-8 text-brand-orange"></i>
           <p class="text-sm font-medium">Miss the 7‑day window? Your first Care‑Plan month is free.</p>
         </div>
