@@ -46,6 +46,19 @@
   color: white;
 }
 
+/* Fallback utility classes for custom brand colors */
+.bg-brand-charcoal {
+  background-color: #2B2B2B;
+}
+
+.bg-brand-orange {
+  background-color: #D75E02;
+}
+
+.text-brand-charcoal {
+  color: #2B2B2B;
+}
+
 /* Consistent icon color for feature cards */
 .card-icon {
   color: #D75E02;
