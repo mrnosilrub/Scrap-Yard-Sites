@@ -8,7 +8,8 @@
   <link rel="icon" href="../favicon.svg"> <!-- prevents 404s on mobile -->
   <script>
     tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{orange:'#D75E02',steel:'#5E6367',charcoal:'#2B2B2B'}}}}};
-<script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+  </script>
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="/assets/styles.css"/>
   <style>
@@ -85,9 +86,10 @@
       }
     });
 
-    document.getElementById('menuToggle')?.addEventListener('click', toggleMobileMenu);
-    document.getElementById('menuClose')?.addEventListener('click', toggleMobileMenu);
-  });
+  document.getElementById('menuToggle')?.addEventListener('click', toggleMobileMenu);
+  document.getElementById('menuClose')?.addEventListener('click', toggleMobileMenu);
+});
+  </script>
 
   <main class="pt-24 pb-20 px-6">
     <div class="bg-brand-steel/10 text-sm text-brand-steel text-center py-2 mb-8">Concept builds – real code, fictitious yards.</div>
