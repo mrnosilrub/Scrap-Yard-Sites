@@ -11,7 +11,7 @@
       theme: {
         extend: {
           fontFamily: { sans: ['Inter','system-ui','sans-serif'] },
-          colors: { brand:{ orange:'#D75E02', steel:'#5E6367', charcoal:'#2B2B2B' } }
+          colors: { brand:{ orange:'#FF6B00', steel:'#5E6367', charcoal:'#2B2B2B' } }
         }
       }
     };
@@ -20,7 +20,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="/assets/styles.css"/>
   <style>
-    :root { --color-links: #D75E02; }
+    :root { --color-links: #FF6B00; }
     header nav ul a, #mobileMenu a:not(.bg-yellow-500):not(.btn-primary) { position: relative; text-decoration: none; }
     header nav ul a:hover, #mobileMenu a:not(.bg-yellow-500):not(.btn-primary):hover { color: currentColor !important; }
     header nav ul a.text-brand-orange:hover { color: var(--color-links) !important; }
@@ -49,6 +49,24 @@
     .process-step h2 {
       word-wrap: break-word;
       margin-bottom: 0.25rem;
+    }
+    .timeline-bg {
+      background-color: #2B2B2B;
+      position: relative;
+      color: #E5E5E5;
+    }
+    .timeline-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: repeating-linear-gradient(-45deg, rgba(255,255,255,0.05) 0, rgba(255,255,255,0.05) 10px, transparent 10px, transparent 20px);
+      pointer-events: none;
+    }
+    .macro-bar {
+      position: sticky;
+      top: 72px;
+      background-color: white;
+      z-index: 30;
     }
   </style>
 </head>
@@ -116,80 +134,133 @@
 
   </script>
   <main class="pt-24 pb-20 px-6">
-    <section class="py-16">
-      <div class="max-w-3xl mx-auto px-6 text-center">
-        <h1 class="text-3xl font-bold text-center">7&nbsp;Days from Ghost‑Site&nbsp;to&nbsp;Google‑Proof</h1>
-        <p class="text-center max-w-2xl mx-auto text-sm mt-2">A one‑week plan that patches your leaks and locks in rankings.</p>
+    <section class="py-16 text-center">
+      <div class="max-w-3xl mx-auto px-6">
+        <h1 class="text-3xl font-bold">7&nbsp;Days from Ghost‑Site&nbsp;to&nbsp;Google‑Proof</h1>
+        <p class="text-sm mt-2 max-w-2xl mx-auto">Leak-detection Friday, live leads next Friday—or we pay the penalty.</p>
+      </div>
+    </section>
+    <div class="macro-bar">
+      <ol class="max-w-3xl mx-auto flex justify-between px-6 py-4">
+        <li><a href="#day0" class="flex flex-col items-center gap-1"><span class="step-badge">1</span><span class="font-semibold">Discovery</span></a></li>
+        <li><a href="#day1" class="flex flex-col items-center gap-1"><span class="step-badge">2</span><span class="font-semibold">Build Week</span></a></li>
+        <li><a href="#day6" class="flex flex-col items-center gap-1"><span class="step-badge">3</span><span class="font-semibold">Launch&nbsp;+30</span></a></li>
+      </ol>
+    </div>
 
-        <ol class="mt-12 flex flex-col md:flex-row justify-between gap-8">
-          <li class="flex flex-col items-center gap-2">
-            <span class="step-badge">1</span>
-            <span class="font-semibold">Discovery</span>
+    <section id="timeline" class="timeline-bg py-16">
+      <div class="relative z-10 max-w-2xl mx-auto px-6">
+        <ol class="relative border-l border-gray-700">
+          <li id="day0" class="mb-10 ml-6">
+            <span class="step-badge absolute -left-5">0</span>
+            <div class="flex items-center gap-2">
+              <i data-lucide="search" class="w-6 h-6 text-brand-orange"></i>
+              <h3 class="font-semibold">Day 0 — Leak Detection</h3>
+            </div>
+            <p class="mt-1 text-sm">15-min screen-share to spot missed calls, unranked pages, messy metal lists. You leave with a punch-list & fixed-price quote.</p>
+            <details class="mt-2">
+              <summary class="cursor-pointer font-semibold text-sm">Inside the cab</summary>
+              <ul class="list-disc list-inside text-sm mt-1">
+                <li>15‑minute screen‑share</li>
+                <li>Spot missed calls, unranked pages &amp; messy metal lists</li>
+                <li>Leave with a punch‑list and fixed price</li>
+              </ul>
+            </details>
           </li>
-          <li class="flex flex-col items-center gap-2">
-            <span class="step-badge">2</span>
-            <span class="font-semibold">Build Week</span>
+          <li id="day1" class="mb-10 ml-6">
+            <span class="step-badge absolute -left-5">1</span>
+            <div class="flex items-center gap-2">
+              <i data-lucide="pen-tool" class="w-6 h-6 text-brand-orange"></i>
+              <h3 class="font-semibold">Day 1 — Design Kickoff</h3>
+            </div>
+            <p class="mt-1 text-sm">Layouts for desktop, mobile and the loader cab. Draft copy that sounds like your yard.</p>
+            <details class="mt-2">
+              <summary class="cursor-pointer font-semibold text-sm">Inside the cab</summary>
+              <ul class="list-disc list-inside text-sm mt-1">
+                <li>Design desktop, mobile &amp; loader‑cab breakpoints</li>
+                <li>Industry‑fluent copy outline</li>
+              </ul>
+            </details>
           </li>
-          <li class="flex flex-col items-center gap-2">
-            <span class="step-badge">3</span>
-            <span class="font-semibold">Launch&nbsp;+30</span>
+          <li id="day2" class="mb-10 ml-6">
+            <span class="step-badge absolute -left-5">2</span>
+            <div class="flex items-center gap-2">
+              <i data-lucide="code" class="w-6 h-6 text-brand-orange"></i>
+              <h3 class="font-semibold">Day 2 — Build Staging Site</h3>
+            </div>
+            <p class="mt-1 text-sm">Jamstack repo you can watch as we tune the copy with GPT‑4o.</p>
+            <details class="mt-2">
+              <summary class="cursor-pointer font-semibold text-sm">Inside the cab</summary>
+              <ul class="list-disc list-inside text-sm mt-1">
+                <li>Jamstack repo you can watch</li>
+                <li>Copy refined by GPT‑4o</li>
+              </ul>
+            </details>
+          </li>
+          <li id="day3" class="mb-10 ml-6">
+            <span class="step-badge absolute -left-5">3</span>
+            <div class="flex items-center gap-2">
+              <i data-lucide="badge-check" class="w-6 h-6 text-brand-orange"></i>
+              <h3 class="font-semibold">Day 3 — SEO &amp; Schema</h3>
+            </div>
+            <p class="mt-1 text-sm">Every page optimized; Google sees the right scrap.</p>
+            <details class="mt-2">
+              <summary class="cursor-pointer font-semibold text-sm">Inside the cab</summary>
+              <ul class="list-disc list-inside text-sm mt-1">
+                <li>Pages optimized and schema pushed</li>
+              </ul>
+            </details>
+          </li>
+          <li id="day4" class="mb-10 ml-6">
+            <span class="step-badge absolute -left-5">4</span>
+            <div class="flex items-center gap-2">
+              <i data-lucide="wrench" class="w-6 h-6 text-brand-orange"></i>
+              <h3 class="font-semibold">Day 4 — Review Round</h3>
+            </div>
+            <p class="mt-1 text-sm">One quick look keeps the timeline bullet‑proof.</p>
+            <details class="mt-2">
+              <summary class="cursor-pointer font-semibold text-sm">Inside the cab</summary>
+              <ul class="list-disc list-inside text-sm mt-1">
+                <li>One review keeps the timeline bullet‑proof</li>
+              </ul>
+            </details>
+          </li>
+          <li id="day5" class="mb-10 ml-6">
+            <span class="step-badge absolute -left-5">5</span>
+            <div class="flex items-center gap-2">
+              <i data-lucide="upload-cloud" class="w-6 h-6 text-brand-orange"></i>
+              <h3 class="font-semibold">Day 5 — Final Tweaks</h3>
+            </div>
+            <p class="mt-1 text-sm">Prep for after‑hours DNS flip.</p>
+            <details class="mt-2">
+              <summary class="cursor-pointer font-semibold text-sm">Inside the cab</summary>
+              <ul class="list-disc list-inside text-sm mt-1">
+                <li>Prepare for after‑hours DNS flip</li>
+              </ul>
+            </details>
+          </li>
+          <li id="day6" class="mb-10 ml-6">
+            <span class="step-badge absolute -left-5">6</span>
+            <div class="flex items-center gap-2">
+              <i data-lucide="rocket" class="w-6 h-6 text-brand-orange"></i>
+              <h3 class="font-semibold">Days 6‑7 — Launch &amp; 30‑Day Watch</h3>
+            </div>
+            <p class="mt-1 text-sm">Site goes live overnight. We monitor &amp; tweak free for a month.</p>
+            <details class="mt-2">
+              <summary class="cursor-pointer font-semibold text-sm">Inside the cab</summary>
+              <ul class="list-disc list-inside text-sm mt-1">
+                <li>DNS flips after hours—no downtime</li>
+                <li>Backups and weekly checks for 30 days</li>
+                <li>Free tweaks included</li>
+              </ul>
+            </details>
           </li>
         </ol>
+      </div>
 
-        <div class="mt-10 space-y-4 text-left">
-          <details>
-            <summary class="font-semibold cursor-pointer">Day&nbsp;0 – Leak Detection</summary>
-            <ul class="text-sm list-disc list-inside mt-2">
-              <li>15‑minute screen‑share</li>
-              <li>Spot missed calls, unranked pages &amp; messy metal lists</li>
-              <li>Leave with a punch‑list and fixed price</li>
-            </ul>
-          </details>
-          <details>
-            <summary class="font-semibold cursor-pointer">Day&nbsp;1 – Design kickoff</summary>
-            <ul class="text-sm list-disc list-inside mt-2">
-              <li>Design desktop, mobile &amp; loader‑cab breakpoints</li>
-              <li>Industry‑fluent copy outline</li>
-            </ul>
-          </details>
-          <details>
-            <summary class="font-semibold cursor-pointer">Day&nbsp;2 – Build staging site</summary>
-            <ul class="text-sm list-disc list-inside mt-2">
-              <li>Jamstack repo you can watch</li>
-              <li>Copy refined by GPT‑4o</li>
-            </ul>
-          </details>
-          <details>
-            <summary class="font-semibold cursor-pointer">Day&nbsp;3 – SEO &amp; schema</summary>
-            <ul class="text-sm list-disc list-inside mt-2">
-              <li>Pages optimized and schema pushed</li>
-            </ul>
-          </details>
-          <details>
-            <summary class="font-semibold cursor-pointer">Day&nbsp;4 – Review round</summary>
-            <ul class="text-sm list-disc list-inside mt-2">
-              <li>One review keeps the timeline bullet‑proof</li>
-            </ul>
-          </details>
-          <details>
-            <summary class="font-semibold cursor-pointer">Day&nbsp;5 – Final tweaks</summary>
-            <ul class="text-sm list-disc list-inside mt-2">
-              <li>Prepare for after‑hours DNS flip</li>
-            </ul>
-          </details>
-          <details>
-            <summary class="font-semibold cursor-pointer">Days&nbsp;6‑7 – Launch &amp; 30‑day watch</summary>
-            <ul class="text-sm list-disc list-inside mt-2">
-              <li>DNS flips after hours—no downtime</li>
-              <li>Backups and weekly checks for 30 days</li>
-              <li>Free tweaks included</li>
-            </ul>
-          </details>
-        </div>
-
-        <div class="border border-brand-steel/20 rounded-xl p-6 mt-10 flex items-center gap-4">
-          <svg class="w-8 h-8 text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1l3 5 5 .7-3.6 3.5.8 5-4.2-2.2L8 15l.8-5L5 6.7l5-.7 2-5z"/></svg>
-          <p class="text-sm font-medium">If we miss the seven‑day launch window, you receive your first month of our Care Plan entirely free—plus we keep working until everything performs perfectly.</p>
+        <div class="bg-[#2B2B2B] text-[#E5E5E5] rounded-xl p-6 mt-10 flex items-center gap-4">
+          <i data-lucide="shield" class="w-8 h-8 text-brand-orange"></i>
+          <p class="text-sm font-medium">Miss the 7‑day window? Your first Care‑Plan month is free.</p>
         </div>
 
       </div>
@@ -199,15 +270,15 @@
         <h2 class="text-2xl font-bold text-center mb-6">Mini FAQ</h2>
         <div class="space-y-4 text-center md:text-left">
           <details class="group">
-            <summary class="cursor-pointer font-semibold text-brand-charcoal group-open:text-brand-orange">What if my photos are terrible?</summary>
+            <summary class="flex items-center gap-2 cursor-pointer font-semibold text-brand-charcoal group-open:text-brand-orange"><span>📸</span>What if my photos are terrible?</summary>
             <p class="mt-1 text-brand-steel text-base md:text-sm md:pl-4 md:border-l md:border-brand-orange/40">Send what you have—we’ll polish them or use stock placeholders.</p>
           </details>
           <details class="group">
-            <summary class="cursor-pointer font-semibold text-brand-charcoal group-open:text-brand-orange">What if our manager hates tech?</summary>
+            <summary class="flex items-center gap-2 cursor-pointer font-semibold text-brand-charcoal group-open:text-brand-orange"><span>🖥️</span>What if our manager hates tech?</summary>
             <p class="mt-1 text-brand-steel text-base md:text-sm md:pl-4 md:border-l md:border-brand-orange/40">We handle the heavy lifting and guide them through quick approvals.</p>
           </details>
           <details class="group">
-            <summary class="cursor-pointer font-semibold text-brand-charcoal group-open:text-brand-orange">Do you offer ongoing support?</summary>
+            <summary class="flex items-center gap-2 cursor-pointer font-semibold text-brand-charcoal group-open:text-brand-orange"><span>🤝</span>Do you offer ongoing support?</summary>
             <p class="mt-1 text-brand-steel text-base md:text-sm md:pl-4 md:border-l md:border-brand-orange/40">Yes. Thirty days of tweaks are free and Care Plan options follow.</p>
           </details>
         </div>
@@ -245,8 +316,9 @@
         </div>
       </div>
     </section>
-    <div class="bg-brand-orange text-white text-center py-4 shadow-md">
-      <a href="/contact" class="font-semibold hover:opacity-90">Book 15‑min Reputation Risk Scan</a>
+    <div class="py-6 bg-gray-100 flex justify-center gap-4">
+      <a href="/risk-calculator" class="btn-primary">Patch My Leak</a>
+      <a href="/contact" class="btn-secondary">Book Call</a>
     </div>
   </main>
 <footer class="bg-white py-8 text-center text-xs text-gray-400">
@@ -281,5 +353,7 @@
       document.getElementById('resultBox').classList.remove('hidden');
     });
   </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>lucide.createIcons();</script>
 </body>
 </html>
