@@ -39,6 +39,12 @@
     a:hover .site-title::after{width:100%;}
     .slide-up{transform:translateY(30px);opacity:0;transition:opacity .6s ease,transform .6s ease;}
     .slide-up.aos-active{transform:translateY(0);opacity:1;}
+    .service-card { perspective:1000px; }
+    .flip-inner { position:relative; transform-style:preserve-3d; transition:transform .6s; }
+    .service-card:hover .flip-inner, .service-card.flip .flip-inner { transform:rotateY(180deg); }
+    .front, .back { backface-visibility:hidden; }
+    .back { transform:rotateY(180deg); }
+
   </style>
 </head>
 <body class="font-sans text-brand-charcoal antialiased bg-white overflow-x-hidden">
@@ -81,70 +87,82 @@
   function toggleMobileMenu(){const menu=document.getElementById('mobileMenu');const btn=document.getElementById('menuToggle');menu.classList.toggle('hidden');const isOpen=!menu.classList.contains('hidden');document.body.classList.toggle('overflow-hidden',isOpen);btn.classList.toggle('open');}
   document.addEventListener('DOMContentLoaded',()=>{const currentPath=location.pathname.replace(/\/index.html$/,'').replace(/\/$/,'');document.querySelectorAll('#menu a:not(.no-highlight), #mobileMenu a:not(.no-highlight)').forEach(link=>{const linkPath=new URL(link.getAttribute('href'),location.origin).pathname.replace(/\/index.html$/,'').replace(/\/$/,'');if(linkPath===currentPath){link.classList.add('text-brand-orange');}});document.getElementById('menuToggle')?.addEventListener('click',toggleMobileMenu);document.getElementById('menuClose')?.addEventListener('click',toggleMobileMenu);});
   </script>
-  <main class="pt-24 pb-20 bg-gray-50">
+  <main class="pt-0 pb-20 bg-gray-50">
     <!-- Hero -->
     <section class="relative flex items-center justify-center min-h-[60vh] text-center">
       <img src="/assets/hero.jpg" alt="Grapple loading shred" class="absolute inset-0 w-full h-full object-cover">
-      <div class="absolute inset-0 bg-black/70"></div>
+      <div class="absolute inset-0 bg-black/80"></div>
       <h1 class="relative z-10 text-4xl md:text-5xl font-extrabold text-white px-6">Four Shields. One Plug-The-Leak Service.</h1>
     </section>
     <!-- Shield Grid -->
     <section class="py-16 bg-gray-50 relative">
       <div class="relative max-w-5xl mx-auto grid md:grid-cols-2 gap-8 px-6">
-        <article class="p-6 rounded-lg bg-brand-charcoal text-white shadow slide-up">
-          <div class="flex items-center gap-2 mb-2"><i data-lucide="shield-check" class="w-6 h-6 text-brand-orange"></i><h3 class="font-semibold">Credibility Shield</h3></div>
-          <p class="text-sm">Brokers know you’re legit—before they dial.</p>
-          <details class="mt-2">
-            <summary class="cursor-pointer text-sm">Key Outputs</summary>
-            <ul class="mt-1 pl-4 list-disc text-xs">
-              <li>&lt;2 sec load</li>
-              <li>HTTPS lock</li>
-              <li>Real loader pics</li>
-            </ul>
-          </details>
+        <article class="service-card rounded-lg bg-gray-50 text-brand-charcoal shadow slide-up cursor-pointer">
+          <div class="flip-inner p-6 relative">
+            <div class="front">
+              <div class="flex items-center gap-2 mb-2"><i data-lucide="shield-check" class="w-6 h-6 text-brand-orange"></i><h3 class="font-semibold">Credibility Shield</h3></div>
+              <p class="text-sm">Brokers know you’re legit—before they dial.</p>
+            </div>
+            <div class="back absolute inset-0 p-6">
+              <ul class="mt-1 pl-4 list-disc text-xs">
+                <li>&lt;2 sec load</li>
+                <li>HTTPS lock</li>
+                <li>Real loader pics</li>
+              </ul>
+            </div>
+          </div>
         </article>
-        <article class="p-6 rounded-lg bg-brand-charcoal text-white shadow slide-up" data-aos-delay="100">
-          <div class="flex items-center gap-2 mb-2"><i data-lucide="shield-x" class="w-6 h-6 text-brand-orange"></i><h3 class="font-semibold">Objection Killer</h3></div>
-          <p class="text-sm">Phone stops ringing with tire‑kickers.</p>
-          <details class="mt-2">
-            <summary class="cursor-pointer text-sm">Key Outputs</summary>
-            <ul class="mt-1 pl-4 list-disc text-xs">
-              <li>What metals?</li>
-              <li>What margin?</li>
-              <li>When pickup?</li>
-            </ul>
-          </details>
+        <article class="service-card rounded-lg bg-gray-50 text-brand-charcoal shadow slide-up cursor-pointer" data-aos-delay="100">
+          <div class="flip-inner p-6 relative">
+            <div class="front">
+              <div class="flex items-center gap-2 mb-2"><i data-lucide="shield-x" class="w-6 h-6 text-brand-orange"></i><h3 class="font-semibold">Objection Killer</h3></div>
+              <p class="text-sm">Phone stops ringing with tire‑kickers.</p>
+            </div>
+            <div class="back absolute inset-0 p-6">
+              <ul class="mt-1 pl-4 list-disc text-xs">
+                <li>What metals?</li>
+                <li>What margin?</li>
+                <li>When pickup?</li>
+              </ul>
+            </div>
+          </div>
         </article>
-        <article class="p-6 rounded-lg bg-brand-charcoal text-white shadow slide-up" data-aos-delay="200">
-          <div class="flex items-center gap-2 mb-2"><i data-lucide="eye" class="w-6 h-6 text-brand-orange"></i><h3 class="font-semibold">Visibility Lock</h3></div>
-          <p class="text-sm">LocalBusiness schema + “scrap-metal + city” H1s float you above nationals.</p>
-          <details class="mt-2">
-            <summary class="cursor-pointer text-sm">Key Outputs</summary>
-            <ul class="mt-1 pl-4 list-disc text-xs">
-              <li>LocalBusiness schema</li>
-              <li>SEO headlines</li>
-              <li>Internal links</li>
-            </ul>
-          </details>
+        <article class="service-card rounded-lg bg-gray-50 text-brand-charcoal shadow slide-up cursor-pointer" data-aos-delay="200">
+          <div class="flip-inner p-6 relative">
+            <div class="front">
+              <div class="flex items-center gap-2 mb-2"><i data-lucide="eye" class="w-6 h-6 text-brand-orange"></i><h3 class="font-semibold">Visibility Lock</h3></div>
+              <p class="text-sm">LocalBusiness schema + “scrap-metal + city” H1s float you above nationals.</p>
+            </div>
+            <div class="back absolute inset-0 p-6">
+              <ul class="mt-1 pl-4 list-disc text-xs">
+                <li>LocalBusiness schema</li>
+                <li>SEO headlines</li>
+                <li>Internal links</li>
+              </ul>
+            </div>
+          </div>
         </article>
-        <article class="p-6 rounded-lg bg-brand-charcoal text-white shadow slide-up" data-aos-delay="300">
-          <div class="flex items-center gap-2 mb-2"><i data-lucide="life-buoy" class="w-6 h-6 text-brand-orange"></i><h3 class="font-semibold">Break-Fix Warranty</h3></div>
-          <p class="text-sm">24/7 monitor pings us, not you. Unlimited edits mean yesterday’s price board never haunts tomorrow’s sellers.</p>
-          <details class="mt-2">
-            <summary class="cursor-pointer text-sm">Key Outputs</summary>
-            <ul class="mt-1 pl-4 list-disc text-xs">
-              <li>24/7 monitoring</li>
-              <li>Unlimited edits</li>
-              <li>Daily backups</li>
-            </ul>
-          </details>
+        <article class="service-card rounded-lg bg-gray-50 text-brand-charcoal shadow slide-up cursor-pointer" data-aos-delay="300">
+          <div class="flip-inner p-6 relative">
+            <div class="front">
+              <div class="flex items-center gap-2 mb-2"><i data-lucide="life-buoy" class="w-6 h-6 text-brand-orange"></i><h3 class="font-semibold">Break-Fix Warranty</h3></div>
+              <p class="text-sm">24/7 monitor pings us, not you. Unlimited edits mean yesterday’s price board never haunts tomorrow’s sellers.</p>
+            </div>
+            <div class="back absolute inset-0 p-6">
+              <ul class="mt-1 pl-4 list-disc text-xs">
+                <li>24/7 monitoring</li>
+                <li>Unlimited edits</li>
+                <li>Daily backups</li>
+              </ul>
+            </div>
+          </div>
         </article>
       </div>
     </section>
     <!-- Deliverables Matrix -->
     <section class="max-w-3xl mx-auto px-6">
       <table class="w-full text-sm border-collapse">
-        <thead class="bg-brand-charcoal text-white">
+        <thead class="bg-gray-50 text-brand-charcoal">
           <tr><th class="text-left p-2">&nbsp;</th><th class="p-2 text-center">Standard</th><th class="p-2 text-center">Premium</th><th class="p-2 text-center">Care Plan</th></tr>
         </thead>
         <tbody>
@@ -158,26 +176,41 @@
       </table>
     </section>
     <!-- Care Plan Banner -->
-    <section class="bg-brand-charcoal text-white py-4 text-center mt-12">
+    <section class="bg-gray-50 text-brand-charcoal py-4 text-center mt-12">
       <span>Uptime <span id="uptimeCounter">99.990 %</span></span>
     </section>
-    <!-- Proof Strip -->
-    <section class="bg-gray-50 py-10 text-center">
-      <div class="flex justify-center gap-4">
-        <img src="/assets/hero.jpg" alt="Demo yard" class="w-[150px] h-[150px] object-cover rounded-md">
-        <img src="/assets/hero.jpg" alt="Demo yard" class="w-[150px] h-[150px] object-cover rounded-md">
-        <img src="/assets/hero.jpg" alt="Demo yard" class="w-[150px] h-[150px] object-cover rounded-md">
+    <!-- Work / Demo -->
+    <section id="work" class="scroll-mt-16 bg-white py-20">
+      <div class="mx-auto max-w-6xl px-6 text-center">
+        <h2 class="text-3xl font-bold mb-10">Our Portfolio</h2>
+        <div id="portfolio-carousel" class="carousel-track flex px-4 md:grid md:grid-cols-3 gap-8">
+          <a href="#contact" class="carousel-item block bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm p-10 flex flex-col items-center text-center hover:bg-gray-100 hover:shadow-lg transition transform hover:-translate-y-1 hover:cursor-pointer">
+            <div class="w-full rounded-xl overflow-hidden border border-brand-steel/10">
+              <img class="w-full" src="https://placehold.co/600x400/2B2B2B/FFFFFF?text=Demo+Yard+1" alt="">
+            </div>
+            <h3 class="font-semibold mt-4">Demo Yard 1</h3>
+            <p class="text-sm text-brand-steel mt-1">Custom design for a busy metro scrapyard.</p>
+          </a>
+          <a href="#contact" class="carousel-item block bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm p-10 flex flex-col items-center text-center hover:bg-gray-100 hover:shadow-lg transition transform hover:-translate-y-1 hover:cursor-pointer">
+            <div class="w-full rounded-xl overflow-hidden border border-brand-steel/10">
+              <img class="w-full" src="https://placehold.co/600x400/2B2B2B/FFFFFF?text=Demo+Yard+2" alt="">
+            </div>
+            <h3 class="font-semibold mt-4">Demo Yard 2</h3>
+            <p class="text-sm text-brand-steel mt-1">Mobile friendly layout with fast quote form.</p>
+          </a>
+          <a href="#contact" class="carousel-item block bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm p-10 flex flex-col items-center text-center hover:bg-gray-100 hover:shadow-lg transition transform hover:-translate-y-1 hover:cursor-pointer">
+            <div class="w-full rounded-xl overflow-hidden border border-brand-steel/10">
+              <img class="w-full" src="https://placehold.co/600x400/2B2B2B/FFFFFF?text=Demo+Yard+3" alt="">
+            </div>
+            <h3 class="font-semibold mt-4">Demo Yard 3</h3>
+            <p class="text-sm text-brand-steel mt-1">Highlighting services for industrial clients.</p>
+          </a>
+        </div>
       </div>
-      <p class="text-sm mt-2">Live in 7 days—<a href="/portfolio" class="underline">view code →</a></p>
     </section>
-    <!-- CTA Footer -->
-    <div class="py-6 flex justify-center gap-4 bg-white border-t border-gray-200 fixed bottom-0 left-0 right-0 md:static" id="ctaBar">
-      <a href="/risk-calculator" class="btn-primary">Patch My Leak (Risk Calc)</a>
-      <a href="/contact" class="btn-secondary">Book 15-min Call</a>
-    </div>
   </main>
   <footer class="bg-white py-8 text-center text-xs text-gray-400 mt-24">
-    <nav class="mb-2 space-x-2">
+      <nav class="mb-2 space-x-2">
       <a href="/">Home</a>
       <a href="/about">About</a>
       <a href="/services">Services</a>
@@ -204,7 +237,48 @@
     let val=99.990;
     const interval=setInterval(()=>{val+=0.001;up.textContent=val.toFixed(3)+' %';if(val>=99.998){clearInterval(interval);up.textContent='99.998 %';}},200);
   </script>
+<script>
+  function initCarousel(id) {
+    const track = document.getElementById(id);
+    if (!track) return;
+    const slides = Array.from(track.children);
+    const slideCount = slides.length;
+
+    const indicators = document.createElement('div');
+    indicators.className = 'carousel-indicators';
+    for (let i = 0; i < slideCount; i++) {
+      const dot = document.createElement('span');
+      if (i === 0) dot.classList.add('active');
+      indicators.appendChild(dot);
+    }
+    track.after(indicators);
+
+    let index = 0;
+    function updateDots(i) {
+      indicators.querySelectorAll('span').forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === i);
+      });
+    }
+    const slideWidth = slides[1] ? slides[1].offsetLeft - slides[0].offsetLeft : track.clientWidth;
+    function goTo(i) {
+      index = i;
+      track.scrollTo({ left: slideWidth * index, behavior: 'smooth' });
+      updateDots(index);
+    }
+    track.addEventListener('scroll', () => {
+      const i = Math.round(track.scrollLeft / slideWidth);
+      if (i !== index) {
+        index = i;
+        updateDots(index);
+      }
+    });
+  }
+  if (window.matchMedia('(max-width: 767px)').matches) {
+    initCarousel('portfolio-carousel');
+  }
+</script>
   <script src="https://unpkg.com/lucide@latest"></script>
+  <script>document.querySelectorAll(".service-card").forEach(c=>c.addEventListener("click",()=>c.classList.toggle("flip")));</script>
   <script>lucide.createIcons();</script>
 </body>
 </html>
