@@ -93,6 +93,7 @@
       <img src="/assets/hero.jpg" alt="Grapple loading shred" class="absolute inset-0 w-full h-full object-cover">
       <div class="absolute inset-0 bg-black/80"></div>
       <h1 class="relative z-10 text-4xl md:text-5xl font-extrabold text-white px-6">Four Shields. One Plug-The-Leak Service.</h1>
+      <p class="relative z-10 mt-4 text-white text-lg px-6 max-w-xl mx-auto">Launch a high-performing yard site in 7&nbsp;days.</p>
     </section>
     <!-- Shield Grid -->
     <section class="py-16 bg-gray-50 relative">
@@ -175,14 +176,10 @@
         </tbody>
       </table>
     </section>
-    <!-- Care Plan Banner -->
-    <section class="bg-gray-50 text-brand-charcoal py-4 text-center mt-12">
-      <span>Uptime <span id="uptimeCounter">99.990 %</span></span>
-    </section>
     <!-- Work / Demo -->
     <section id="work" class="scroll-mt-16 bg-white py-20">
       <div class="mx-auto max-w-6xl px-6 text-center">
-        <h2 class="text-3xl font-bold mb-10">Our Portfolio</h2>
+        <h2 class="text-3xl font-bold mb-10">View our live code</h2>
         <div id="portfolio-carousel" class="carousel-track flex px-4 md:grid md:grid-cols-3 gap-8">
           <a href="#contact" class="carousel-item block bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm p-10 flex flex-col items-center text-center hover:bg-gray-100 hover:shadow-lg transition transform hover:-translate-y-1 hover:cursor-pointer">
             <div class="w-full rounded-xl overflow-hidden border border-brand-steel/10">
@@ -208,6 +205,10 @@
         </div>
       </div>
     </section>
+    <div class="py-6 bg-gray-100 flex justify-center gap-4">
+      <a href="/risk-calculator" class="btn-primary">Patch My Leak</a>
+      <a href="/contact" class="btn-secondary">Book Call</a>
+    </div>
   </main>
   <footer class="bg-white py-8 text-center text-xs text-gray-400 mt-24">
       <nav class="mb-2 space-x-2">
@@ -232,10 +233,6 @@
     if(aosEls.length&&!prefersReduced&&'IntersectionObserver'in window){
       const obs=new IntersectionObserver((entries,o)=>{entries.forEach(en=>{if(en.isIntersecting){en.target.classList.add('aos-active');o.unobserve(en.target);}})},{threshold:0.1});aosEls.forEach(el=>obs.observe(el));
     }else{aosEls.forEach(el=>el.classList.add('aos-active'))}
-    // uptime counter
-    const up=document.getElementById('uptimeCounter');
-    let val=99.990;
-    const interval=setInterval(()=>{val+=0.001;up.textContent=val.toFixed(3)+' %';if(val>=99.998){clearInterval(interval);up.textContent='99.998 %';}},200);
   </script>
 <script>
   function initCarousel(id) {
@@ -278,7 +275,12 @@
   }
 </script>
   <script src="https://unpkg.com/lucide@latest"></script>
-  <script>document.querySelectorAll(".service-card").forEach(c=>c.addEventListener("click",()=>c.classList.toggle("flip")));</script>
+  <script>
+    if (window.matchMedia('(max-width: 767px)').matches) {
+      document.querySelectorAll('.service-card')
+        .forEach(c=>c.addEventListener('click',()=>c.classList.toggle('flip')));
+    }
+  </script>
   <script>lucide.createIcons();</script>
 </body>
 </html>
