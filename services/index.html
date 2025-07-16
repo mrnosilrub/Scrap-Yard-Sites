@@ -87,7 +87,7 @@
   function toggleMobileMenu(){const menu=document.getElementById('mobileMenu');const btn=document.getElementById('menuToggle');menu.classList.toggle('hidden');const isOpen=!menu.classList.contains('hidden');document.body.classList.toggle('overflow-hidden',isOpen);btn.classList.toggle('open');}
   document.addEventListener('DOMContentLoaded',()=>{const currentPath=location.pathname.replace(/\/index.html$/,'').replace(/\/$/,'');document.querySelectorAll('#menu a:not(.no-highlight), #mobileMenu a:not(.no-highlight)').forEach(link=>{const linkPath=new URL(link.getAttribute('href'),location.origin).pathname.replace(/\/index.html$/,'').replace(/\/$/,'');if(linkPath===currentPath){link.classList.add('text-brand-orange');}});document.getElementById('menuToggle')?.addEventListener('click',toggleMobileMenu);document.getElementById('menuClose')?.addEventListener('click',toggleMobileMenu);});
   </script>
-  <main class="pt-0 pb-20 bg-gray-50">
+  <main class="pt-0 pb-0 bg-gray-50">
     <!-- Hero -->
     <section class="relative flex flex-col items-center justify-center min-h-[60vh] text-center">
       <img src="/assets/hero.jpg" alt="Grapple loading shred" class="absolute inset-0 w-full h-full object-cover">
@@ -98,14 +98,14 @@
     <!-- Shield Grid -->
     <section class="py-16 bg-gray-50 relative">
       <div class="relative max-w-5xl mx-auto grid md:grid-cols-2 gap-8 px-6">
-        <article class="service-card rounded-lg bg-gray-50 text-brand-charcoal shadow slide-up cursor-pointer">
+        <article class="service-card rounded-lg bg-white text-brand-charcoal shadow slide-up cursor-pointer">
           <div class="flip-inner p-6 relative">
             <div class="front">
-              <div class="flex items-center gap-2 mb-2"><i data-lucide="shield-check" class="w-6 h-6 text-brand-orange"></i><h3 class="font-semibold">Credibility Shield</h3></div>
+              <div class="flex items-center gap-2 mb-2"><i data-lucide="shield-check" class="w-6 h-6 card-icon text-brand-orange"></i><h3 class="font-semibold">Credibility Shield</h3></div>
               <p class="text-sm">Brokers know you’re legit—before they dial.</p>
             </div>
-            <div class="back absolute inset-0 p-6">
-              <ul class="mt-1 pl-4 list-disc text-xs">
+            <div class="back absolute inset-0 p-6 flex items-center justify-center text-center">
+              <ul class="space-y-1 list-none text-sm">
                 <li>&lt;2 sec load</li>
                 <li>HTTPS lock</li>
                 <li>Real loader pics</li>
@@ -113,14 +113,14 @@
             </div>
           </div>
         </article>
-        <article class="service-card rounded-lg bg-gray-50 text-brand-charcoal shadow slide-up cursor-pointer" data-aos-delay="100">
+        <article class="service-card rounded-lg bg-white text-brand-charcoal shadow slide-up cursor-pointer" data-aos-delay="100">
           <div class="flip-inner p-6 relative">
             <div class="front">
-              <div class="flex items-center gap-2 mb-2"><i data-lucide="shield-x" class="w-6 h-6 text-brand-orange"></i><h3 class="font-semibold">Objection Killer</h3></div>
+              <div class="flex items-center gap-2 mb-2"><i data-lucide="shield-x" class="w-6 h-6 card-icon text-brand-orange"></i><h3 class="font-semibold">Objection Killer</h3></div>
               <p class="text-sm">Phone stops ringing with tire‑kickers.</p>
             </div>
-            <div class="back absolute inset-0 p-6">
-              <ul class="mt-1 pl-4 list-disc text-xs">
+            <div class="back absolute inset-0 p-6 flex items-center justify-center text-center">
+              <ul class="space-y-1 list-none text-sm">
                 <li>What metals?</li>
                 <li>What margin?</li>
                 <li>When pickup?</li>
@@ -128,14 +128,14 @@
             </div>
           </div>
         </article>
-        <article class="service-card rounded-lg bg-gray-50 text-brand-charcoal shadow slide-up cursor-pointer" data-aos-delay="200">
+        <article class="service-card rounded-lg bg-white text-brand-charcoal shadow slide-up cursor-pointer" data-aos-delay="200">
           <div class="flip-inner p-6 relative">
             <div class="front">
-              <div class="flex items-center gap-2 mb-2"><i data-lucide="eye" class="w-6 h-6 text-brand-orange"></i><h3 class="font-semibold">Visibility Lock</h3></div>
+              <div class="flex items-center gap-2 mb-2"><i data-lucide="eye" class="w-6 h-6 card-icon text-brand-orange"></i><h3 class="font-semibold">Visibility Lock</h3></div>
               <p class="text-sm">LocalBusiness schema + “scrap-metal + city” H1s float you above nationals.</p>
             </div>
-            <div class="back absolute inset-0 p-6">
-              <ul class="mt-1 pl-4 list-disc text-xs">
+            <div class="back absolute inset-0 p-6 flex items-center justify-center text-center">
+              <ul class="space-y-1 list-none text-sm">
                 <li>LocalBusiness schema</li>
                 <li>SEO headlines</li>
                 <li>Internal links</li>
@@ -143,14 +143,14 @@
             </div>
           </div>
         </article>
-        <article class="service-card rounded-lg bg-gray-50 text-brand-charcoal shadow slide-up cursor-pointer" data-aos-delay="300">
+        <article class="service-card rounded-lg bg-white text-brand-charcoal shadow slide-up cursor-pointer" data-aos-delay="300">
           <div class="flip-inner p-6 relative">
             <div class="front">
-              <div class="flex items-center gap-2 mb-2"><i data-lucide="life-buoy" class="w-6 h-6 text-brand-orange"></i><h3 class="font-semibold">Break-Fix Warranty</h3></div>
+              <div class="flex items-center gap-2 mb-2"><i data-lucide="life-buoy" class="w-6 h-6 card-icon text-brand-orange"></i><h3 class="font-semibold">Break-Fix Warranty</h3></div>
               <p class="text-sm">24/7 monitor pings us, not you. Unlimited edits mean yesterday’s price board never haunts tomorrow’s sellers.</p>
             </div>
-            <div class="back absolute inset-0 p-6">
-              <ul class="mt-1 pl-4 list-disc text-xs">
+            <div class="back absolute inset-0 p-6 flex items-center justify-center text-center">
+              <ul class="space-y-1 list-none text-sm">
                 <li>24/7 monitoring</li>
                 <li>Unlimited edits</li>
                 <li>Daily backups</li>
@@ -161,7 +161,7 @@
       </div>
     </section>
     <!-- Deliverables Matrix -->
-    <section class="max-w-3xl mx-auto px-6">
+    <section class="max-w-3xl mx-auto px-6 pb-10">
       <table class="w-full text-sm border-collapse">
         <thead class="bg-gray-50 text-brand-charcoal">
           <tr><th class="text-left p-2">&nbsp;</th><th class="p-2 text-center">Standard</th><th class="p-2 text-center">Premium</th><th class="p-2 text-center">Care Plan</th></tr>
@@ -179,7 +179,8 @@
     <!-- Work / Demo -->
     <section id="work" class="scroll-mt-16 bg-white py-20">
       <div class="mx-auto max-w-6xl px-6 text-center">
-        <h2 class="text-3xl font-bold mb-10">View our live code</h2>
+        <h2 class="text-3xl font-bold">View our live code</h2>
+        <p class="text-brand-steel mb-10">Concept builds -- Real code. Fictitious yards.</p>
         <div id="portfolio-carousel" class="carousel-track flex px-4 md:grid md:grid-cols-3 gap-8">
           <a href="#contact" class="carousel-item block bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm p-10 flex flex-col items-center text-center hover:bg-gray-100 hover:shadow-lg transition transform hover:-translate-y-1 hover:cursor-pointer">
             <div class="w-full rounded-xl overflow-hidden border border-brand-steel/10">
@@ -205,12 +206,12 @@
         </div>
       </div>
     </section>
-    <div class="py-6 bg-gray-100 flex justify-center gap-4">
+    <div class="pt-6 pb-0 bg-gray-100 flex justify-center gap-4">
       <a href="/risk-calculator" class="btn-primary">Patch My Leak</a>
       <a href="/contact" class="btn-secondary">Book Call</a>
     </div>
   </main>
-  <footer class="bg-white py-8 text-center text-xs text-gray-400 mt-24">
+  <footer class="bg-white py-8 text-center text-xs text-gray-400">
       <nav class="mb-2 space-x-2">
       <a href="/">Home</a>
       <a href="/about">About</a>
