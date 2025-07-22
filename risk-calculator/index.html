@@ -1,172 +1,393 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="scroll-smooth overflow-x-hidden">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="preload" href="/assets/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
-  <title>Risk Calculator | Scrapyard Sites</title>
-  <link rel="icon" href="../favicon.svg"> <!-- prevents 404s on mobile -->
-  <script>
-    tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{orange:'#D75E02',steel:'#5E6367',charcoal:'#2B2B2B'}}}}};
-  </script>
-<script src="https://cdn.tailwindcss.com?plugins=typography"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="/assets/styles.css"/>
-  <style>
-    :root{--color-links:#D75E02;}
-    header nav ul a,#mobileMenu a:not(.bg-yellow-500):not(.btn-primary){position:relative;text-decoration:none;}
-    header nav ul a:hover,#mobileMenu a:not(.bg-yellow-500):not(.btn-primary):hover{color:currentColor!important;}
-    header nav ul a.text-brand-orange:hover{color:var(--color-links)!important;}
-    header nav ul a::after,#mobileMenu a:not(.bg-yellow-500):not(.btn-primary)::after{content:'';position:absolute;left:0;bottom:-2px;width:0;height:2px;background-color:var(--color-links);transition:width .3s ease;}
-    header nav ul a:hover::after,#mobileMenu a:not(.bg-yellow-500):not(.btn-primary):hover::after{width:100%;}
-    .site-title{position:relative;display:inline-block;}
-    .site-title::after{content:'';position:absolute;left:0;bottom:-2px;width:0;height:2px;background-color:var(--color-links);transition:width .3s ease;}
-    a:hover .site-title::after{width:100%;}
-  </style>
-</head>
-<body class="font-sans text-brand-charcoal antialiased bg-white overflow-x-hidden">
-  <header class="fixed top-0 left-0 right-0 w-full z-50 bg-white shadow-sm">
-    <nav class="max-w-7xl mx-auto relative flex items-center justify-between py-3 px-6">
-      <a href="/" class="flex items-center gap-2"><img src="/assets/logo.svg" alt="Scrapyard Sites logo" class="h-8 w-8"/><span class="site-title text-xl text-brand-charcoal"><span class="font-bold text-brand-orange">Scrapyard</span> <span class="font-bold">Sites</span></span></a>
-      <!-- Mobile hamburger (≤ 768 px) -->
-      <button id="menuToggle" class="md:hidden p-2">
-        <svg class="icon-open w-6 h-6" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <svg class="icon-close w-6 h-6" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M6 18L18 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-      <!-- Desktop links -->
-      <ul id="menu" class="text-brand-charcoal hidden md:flex md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 gap-6 text-sm font-medium">
-        <li><a href="/services">Services</a></li>
-        <li><a href="/process">Process</a></li>
-        <li><a href="/demos">Demos</a></li>
-        <li><a href="/pricing">Pricing</a></li>
-        <li><a href="/risk-calculator">Calculator</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
-      </ul>
-      <a href="/contact" class="btn-primary hidden md:block">Book Call</a>
-    </nav>
-    <!-- Full-screen mobile menu -->
-    <div id="mobileMenu" class="text-brand-charcoal md:hidden fixed inset-0 z-50 flex flex-col items-center justify-center gap-6 text-xl font-medium bg-white hidden">
-      <a href="/" class="absolute inset-x-0 top-0 flex justify-center items-center no-highlight"><img src="/assets/logo.svg" alt="Scrapyard Sites logo" class="h-20 w-20"/></a>
-      <button id="menuClose" class="absolute top-4 right-4 p-2">
-        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M6 18L18 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-      <a href="/services">Services</a>
-      <a href="/process">Process</a>
-      <a href="/demos">Demos</a>
-      <a href="/pricing">Pricing</a>
-      <a href="/risk-calculator">Calculator</a>
-      <a href="/about">About</a>
-      <a href="/contact">Contact</a>
-      <a href="/contact" class="btn-primary">Book Call</a>
-    </div>
-  </header>
-  <script>
-  /* full-screen mobile toggle */
-  function toggleMobileMenu() {
-    const menu = document.getElementById('mobileMenu');
-    const btn = document.getElementById('menuToggle');
-    menu.classList.toggle('hidden');
-    const isOpen = !menu.classList.contains('hidden');
-    document.body.classList.toggle('overflow-hidden', isOpen);
-    btn.classList.toggle('open');
-  }
-
-  document.addEventListener('DOMContentLoaded', () => {
-    const currentPath = location.pathname
-      .replace(/\/index.html$/, '')
-      .replace(/\/$/, '');
-    document.querySelectorAll('#menu a:not(.no-highlight), #mobileMenu a:not(.no-highlight)').forEach(link => {
-      const linkPath = new URL(link.getAttribute('href'), location.origin).pathname
-        .replace(/\/index.html$/, '')
-        .replace(/\/$/, '');
-      if (linkPath === currentPath) {
-        link.classList.add('text-brand-orange');
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link
+      rel="preload"
+      href="/assets/fonts/Inter-Variable.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <title>Risk Calculator | Scrapyard Sites</title>
+    <link rel="icon" href="../favicon.svg" />
+    <!-- prevents 404s on mobile -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { sans: ["Inter", "system-ui", "sans-serif"] },
+            colors: {
+              brand: {
+                orange: "#D75E02",
+                steel: "#5E6367",
+                charcoal: "#2B2B2B",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/styles.css" />
+    <style>
+      :root {
+        --color-links: #d75e02;
       }
-    });
-
-    document.getElementById('menuToggle')?.addEventListener('click', toggleMobileMenu);
-    document.getElementById('menuClose')?.addEventListener('click', toggleMobileMenu);
-  });
-
-  </script>
-  <main class="pt-16 pb-32 px-6">
-    <section class="py-16">
-      <div class="max-w-xl mx-auto px-6 text-center">
-      <h1 class="text-3xl font-bold text-center mx-auto w-max">Reputation Risk Calculator</h1>
-      <p class="text-sm max-w-md mx-auto text-center mt-2">
-        Every missed call is material on your competitor’s scale.
-        Run the numbers—see what procrastination costs.
-      </p>
-
-      <form id="calcForm" class="mt-10 grid gap-6 max-w-md mx-auto">
-        <input type="number" step="0.1" name="tons" inputmode="decimal" required
-               placeholder="Average load weight (tons)"
-               class="w-full rounded-md px-4 py-3 bg-white border border-brand-steel/20 text-brand-charcoal" />
-        <input type="number" step="0.1" name="margin" inputmode="decimal" required
-               placeholder="Average margin ($/ton)"
-               class="w-full rounded-md px-4 py-3 bg-white border border-brand-steel/20 text-brand-charcoal" />
-        <input type="number" name="missed" inputmode="numeric" required
-               placeholder="Loads missed per month"
-               class="w-full rounded-md px-4 py-3 bg-white border border-brand-steel/20 text-brand-charcoal" />
-        <button class="btn-primary w-full" type="submit">Calculate</button>
-      </form>
-
-      <div id="resultBox" class="hidden mt-10 text-center">
-        <h2 class="text-xl font-bold">You’re Leaking <span id="lossFig">$‑‑‑</span>/year</h2>
-        <p class="text-sm mt-2">
-          A Standard Launch pays for itself in <strong id="roiDays">‑‑</strong> days.
-        </p>
-        <a id="contactBtn" href="/contact" class="btn-primary mt-6 inline-block">
-          Patch My Leak
-        </a>
+      header nav ul a,
+      #mobileMenu a:not(.bg-yellow-500):not(.btn-primary) {
+        position: relative;
+        text-decoration: none;
+      }
+      header nav ul a:hover,
+      #mobileMenu a:not(.bg-yellow-500):not(.btn-primary):hover {
+        color: currentColor !important;
+      }
+      header nav ul a.text-brand-orange:hover {
+        color: var(--color-links) !important;
+      }
+      header nav ul a::after,
+      #mobileMenu a:not(.bg-yellow-500):not(.btn-primary)::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 0;
+        height: 2px;
+        background-color: var(--color-links);
+        transition: width 0.3s ease;
+      }
+      header nav ul a:hover::after,
+      #mobileMenu a:not(.bg-yellow-500):not(.btn-primary):hover::after {
+        width: 100%;
+      }
+      .site-title {
+        position: relative;
+        display: inline-block;
+      }
+      .site-title::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 0;
+        height: 2px;
+        background-color: var(--color-links);
+        transition: width 0.3s ease;
+      }
+      a:hover .site-title::after {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body
+    class="font-sans text-brand-charcoal antialiased bg-white overflow-x-hidden"
+  >
+    <header class="fixed top-0 left-0 right-0 w-full z-50 bg-white shadow-sm">
+      <nav
+        class="max-w-7xl mx-auto relative flex items-center justify-between py-3 px-6"
+      >
+        <a href="/" class="flex items-center gap-2"
+          ><img
+            src="/assets/logo.svg"
+            alt="Scrapyard Sites logo"
+            class="h-8 w-8"
+          /><span class="site-title text-xl text-brand-charcoal"
+            ><span class="font-bold text-brand-orange">Scrapyard</span>
+            <span class="font-bold">Sites</span></span
+          ></a
+        >
+        <!-- Mobile hamburger (≤ 768 px) -->
+        <button id="menuToggle" class="md:hidden p-2">
+          <svg class="icon-open w-6 h-6" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M3 6h18M3 12h18M3 18h18"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <svg class="icon-close w-6 h-6" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M6 6l12 12M6 18L18 6"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+        <!-- Desktop links -->
+        <ul
+          id="menu"
+          class="text-brand-charcoal hidden md:flex md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 gap-6 text-sm font-medium"
+        >
+          <li><a href="/services">Services</a></li>
+          <li><a href="/process">Process</a></li>
+          <li><a href="/demos">Demos</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/risk-calculator">Calculator</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+        <a href="/contact" class="btn-primary hidden md:block">Book Call</a>
+      </nav>
+      <!-- Full-screen mobile menu -->
+      <div
+        id="mobileMenu"
+        class="text-brand-charcoal md:hidden fixed inset-0 z-50 flex flex-col items-center justify-center gap-6 text-xl font-medium bg-white hidden"
+      >
+        <a
+          href="/"
+          class="absolute inset-x-0 top-0 flex justify-center items-center no-highlight"
+          ><img
+            src="/assets/logo.svg"
+            alt="Scrapyard Sites logo"
+            class="h-20 w-20"
+        /></a>
+        <button id="menuClose" class="absolute top-4 right-4 p-2">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M6 6l12 12M6 18L18 6"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+        <a href="/services">Services</a>
+        <a href="/process">Process</a>
+        <a href="/demos">Demos</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/risk-calculator">Calculator</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <a href="/contact" class="btn-primary">Book Call</a>
       </div>
-      </div>
-    </section>
-    <section class="mt-16 py-12 bg-brand-orange text-white text-center">
-      <h2 class="text-2xl font-bold mb-4">Ready to upgrade your yard's site?</h2>
-      <a href="/contact" class="btn-secondary">Book a Discovery Call</a>
-    </section>
-  </main>
-<footer class="bg-white py-8 text-center text-xs text-gray-400">
-  <nav class="mb-2 space-x-2">
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/services">Services</a>
-    <a href="/process">Process</a>
-    <a href="/demos">Demos</a>
-    <a href="/pricing">Pricing</a>
-    <a href="/risk-calculator">Calculator</a>
-    <a href="/blog">Blog</a>
-    <a href="/contact">Contact</a>
-    <a href="/privacy">Privacy</a>
-    <a href="/terms-of-service">Terms</a>
-  </nav>
-  <p>© <span id="year"></span> Scrapyard Sites — All rights reserved.</p>
-</footer>
-  <div id="cta" class="hidden fixed top-1/2 right-0 -translate-y-1/2 z-40 pr-4">
-    <a id="ctaLink" href="/contact" class="block bg-brand-orange text-white font-semibold px-4 py-2 rounded-l-md shadow hover:opacity-90">Patch My Leak</a>
-  </div>
-  <div class="fixed bottom-0 left-0 right-0 bg-brand-orange text-white text-center py-3 z-30 shadow-md">
-    <a href="/contact" class="font-semibold hover:opacity-90">Book 15‑min Reputation Risk Scan</a>
-  </div>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    function fmt(x){
-      return x.toLocaleString('en-US',{style:'currency',currency:'USD',minimumFractionDigits:0});
-    }
-    document.getElementById('calcForm').addEventListener('submit',e=>{
-      e.preventDefault();
-      const t=+e.target.tons.value, m=+e.target.margin.value, l=+e.target.missed.value;
-      if(!t||!m||!l) return alert('Fill every field');
-      const annual=t*m*l*12;
-      document.getElementById('lossFig').textContent=fmt(annual);
-      document.getElementById('roiDays').textContent=Math.ceil(2499/(annual/365));
-      document.getElementById('contactBtn').href=`/contact?leak=${annual}`;
-      document.getElementById('resultBox').classList.remove('hidden');
-      document.getElementById('ctaLink').href=`/contact?leak=${annual}`;
-      document.getElementById('cta').classList.remove('hidden');
-    });
-  </script>
-</body>
+    </header>
+    <script>
+      /* full-screen mobile toggle */
+      function toggleMobileMenu() {
+        const menu = document.getElementById("mobileMenu");
+        const btn = document.getElementById("menuToggle");
+        menu.classList.toggle("hidden");
+        const isOpen = !menu.classList.contains("hidden");
+        document.body.classList.toggle("overflow-hidden", isOpen);
+        btn.classList.toggle("open");
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const currentPath = location.pathname
+          .replace(/\/index.html$/, "")
+          .replace(/\/$/, "");
+        document
+          .querySelectorAll(
+            "#menu a:not(.no-highlight), #mobileMenu a:not(.no-highlight)",
+          )
+          .forEach((link) => {
+            const linkPath = new URL(
+              link.getAttribute("href"),
+              location.origin,
+            ).pathname
+              .replace(/\/index.html$/, "")
+              .replace(/\/$/, "");
+            if (linkPath === currentPath) {
+              link.classList.add("text-brand-orange");
+            }
+          });
+
+        document
+          .getElementById("menuToggle")
+          ?.addEventListener("click", toggleMobileMenu);
+        document
+          .getElementById("menuClose")
+          ?.addEventListener("click", toggleMobileMenu);
+      });
+    </script>
+    <main class="pt-16 pb-32 px-6">
+      <section class="py-16">
+        <div class="max-w-xl mx-auto px-6 text-center">
+          <h1 class="text-3xl font-bold">Reputation Risk Calculator</h1>
+          <p class="text-sm max-w-md mx-auto mt-2">
+            Use this interactive tool to estimate how much revenue you’re losing
+            from missed loads. Interactive calculators bridge the gap between
+            words and numbers—they translate complex data into personalized
+            insights and create a clear “aha” moment. Enter a few numbers to see
+            how quickly a reputation‑first website pays for itself.
+          </p>
+          <p class="text-xs text-gray-500 mt-1">
+            Not sure of your numbers? Use the average values provided or contact
+            us for a free 15‑min risk scan.
+          </p>
+          <div class="py-6 max-w-xl mx-auto text-center text-sm text-gray-600">
+            <p>
+              Interactive calculators bridge the gap between words and numbers.
+              They demonstrate your expertise by transforming abstract concepts
+              into personalized insights and create an “aha” moment that
+              inspires confidence. This Risk Calculator is designed to give you
+              a clear picture of your missed‑call losses—so you can make an
+              informed decision about improving your online presence.
+            </p>
+          </div>
+
+          <form id="calcForm" class="mt-10 grid gap-6 max-w-md mx-auto">
+            <label class="text-left">
+              <span class="block text-sm font-medium"
+                >Average load weight (tons)</span
+              >
+              <input
+                type="number"
+                step="0.1"
+                name="tons"
+                placeholder="e.g., 2"
+                value="2"
+                required
+                class="w-full rounded-md px-4 py-3 bg-white border border-brand-steel/20 text-brand-charcoal"
+              />
+            </label>
+            <label class="text-left">
+              <span class="block text-sm font-medium"
+                >Average margin ($/ton)</span
+              >
+              <input
+                type="number"
+                step="0.1"
+                name="margin"
+                placeholder="e.g., 50"
+                value="50"
+                required
+                class="w-full rounded-md px-4 py-3 bg-white border border-brand-steel/20 text-brand-charcoal"
+              />
+            </label>
+            <label class="text-left">
+              <span class="block text-sm font-medium"
+                >Loads missed per month</span
+              >
+              <input
+                type="number"
+                name="missed"
+                placeholder="e.g., 10"
+                value="10"
+                required
+                class="w-full rounded-md px-4 py-3 bg-white border border-brand-steel/20 text-brand-charcoal"
+              />
+            </label>
+            <button class="btn-primary w-full" type="submit">Calculate</button>
+          </form>
+
+          <div id="resultBox" class="hidden mt-10 text-center">
+            <h2 class="text-xl font-bold">
+              You’re leaking <span id="lossFig">$‑‑‑</span> per year
+            </h2>
+            <p class="text-sm mt-2">
+              We calculate this by multiplying your missed loads, average margin
+              and weight, then annualizing the result. Think of this as money
+              slipping through cracks in your process.
+            </p>
+            <p class="text-sm mt-2">
+              A Standard Launch ($2,499) pays for itself in
+              <strong id="roiDays">‑‑</strong> days—then starts putting money
+              back in your pocket.
+            </p>
+            <a
+              id="contactBtn"
+              href="/contact"
+              class="btn-primary mt-6 inline-block"
+              >Patch My Leak</a
+            >
+            <p class="text-xs mt-2">
+              Click to schedule a call and receive a personalized reputation
+              risk scan with your calculated leakage pre‑filled.
+            </p>
+          </div>
+          <section id="nextSteps" class="mt-12 hidden text-left">
+            <h3 class="text-lg font-semibold">Next Steps</h3>
+            <ol class="list-decimal pl-5 mt-2 space-y-1 text-sm">
+              <li>Download your leak summary (we’ll email it to you).</li>
+              <li>
+                Book a 15‑minute Reputation Risk Scan to interpret the numbers.
+              </li>
+              <li>
+                Start your seven‑day site build and stop the leak for good.
+              </li>
+            </ol>
+          </section>
+        </div>
+      </section>
+      <section class="mt-16 py-12 bg-brand-orange text-white text-center">
+        <h2 class="text-2xl font-bold mb-4">
+          Ready to upgrade your yard's site?
+        </h2>
+        <a href="/contact" class="btn-secondary">Book a Discovery Call</a>
+      </section>
+    </main>
+    <footer class="bg-white py-8 text-center text-xs text-gray-400">
+      <nav class="mb-2 space-x-2">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/services">Services</a>
+        <a href="/process">Process</a>
+        <a href="/demos">Demos</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/risk-calculator">Calculator</a>
+        <a href="/blog">Blog</a>
+        <a href="/contact">Contact</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms-of-service">Terms</a>
+      </nav>
+      <p>© <span id="year"></span> Scrapyard Sites — All rights reserved.</p>
+    </footer>
+    <div
+      id="cta"
+      class="hidden fixed top-1/2 right-0 -translate-y-1/2 z-40 pr-4"
+    >
+      <a
+        id="ctaLink"
+        href="/contact"
+        class="block bg-brand-orange text-white font-semibold px-4 py-2 rounded-l-md shadow hover:opacity-90"
+        >Patch My Leak</a
+      >
+    </div>
+    <div
+      class="fixed bottom-0 left-0 right-0 bg-brand-orange text-white text-center py-3 z-30 shadow-md"
+    >
+      <a href="/contact" class="font-semibold hover:opacity-90"
+        >Book Your 15‑min Reputation Risk Scan</a
+      >
+    </div>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+      function fmt(x) {
+        return x.toLocaleString("en-US", {
+          style: "currency",
+          currency: "USD",
+          minimumFractionDigits: 0,
+        });
+      }
+      document.getElementById("calcForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const t = +e.target.tons.value,
+          m = +e.target.margin.value,
+          l = +e.target.missed.value;
+        if (!t || !m || !l) return alert("Fill every field");
+        const annual = t * m * l * 12;
+        document.getElementById("lossFig").textContent = fmt(annual);
+        document.getElementById("roiDays").textContent = Math.ceil(
+          2499 / (annual / 365),
+        );
+        document.getElementById("contactBtn").href = `/contact?leak=${annual}`;
+        document.getElementById("resultBox").classList.remove("hidden");
+        document.getElementById("nextSteps").classList.remove("hidden");
+        document.getElementById("ctaLink").href = `/contact?leak=${annual}`;
+        document.getElementById("cta").classList.remove("hidden");
+      });
+    </script>
+  </body>
 </html>
