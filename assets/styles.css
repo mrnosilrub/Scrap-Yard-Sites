@@ -172,6 +172,14 @@ header nav ul a.text-brand-orange {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Hide default disclosure triangles on FAQ items */
+details summary::-webkit-details-marker {
+  display: none;
+}
+details summary::marker {
+  content: '';
+}
+
 /* Testimonial carousel buttons */
 #testimonialWrapper button {
   background: transparent;
