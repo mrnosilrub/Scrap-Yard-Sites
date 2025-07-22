@@ -30,6 +30,7 @@
   opacity: 1;
 }
 
+
 .btn-secondary {
   display: inline-flex;
   align-items: center;
@@ -50,6 +51,11 @@
   background-color: #D75E02;
   color: white;
   border-color: white;
+}
+
+/* Remove hover outlines for hero image CTAs */
+.hero-cta:hover {
+  border-color: transparent;
 }
 
 /* Fallback utility classes for custom brand colors */
