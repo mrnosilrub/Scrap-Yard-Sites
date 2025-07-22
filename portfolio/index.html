@@ -103,8 +103,8 @@
       </div>
     </section>
       <div class="mx-auto max-w-6xl px-6 mt-12">
-        <div class="grid gap-8 md:grid-cols-3">
-          <div class="bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm p-6 flex flex-col">
+        <div id="portfolio-carousel" class="carousel-track flex px-4 md:grid md:grid-cols-3 gap-8">
+          <div class="carousel-item bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm p-6 flex flex-col">
             <a href="demo-yard-1/">
               <img class="w-full rounded-md border border-brand-steel/10" src="https://placehold.co/600x400/2B2B2B/FFFFFF?text=Demo+Yard+1" alt="Demo Yard 1">
             </a>
@@ -118,7 +118,7 @@
             </table>
             <a href="demo-yard-1/" class="btn-primary mt-4 self-start">View Demo</a>
           </div>
-          <div class="bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm p-6 flex flex-col">
+          <div class="carousel-item bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm p-6 flex flex-col">
             <a href="demo-yard-2/">
               <img class="w-full rounded-md border border-brand-steel/10" src="https://placehold.co/600x400/2B2B2B/FFFFFF?text=Demo+Yard+2" alt="Demo Yard 2">
             </a>
@@ -132,7 +132,7 @@
             </table>
             <a href="demo-yard-2/" class="btn-primary mt-4 self-start">View Demo</a>
           </div>
-          <div class="bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm p-6 flex flex-col">
+          <div class="carousel-item bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm p-6 flex flex-col">
             <a href="demo-yard-3/">
               <img class="w-full rounded-md border border-brand-steel/10" src="https://placehold.co/600x400/2B2B2B/FFFFFF?text=Demo+Yard+3" alt="Demo Yard 3">
             </a>
@@ -173,5 +173,44 @@
   <p>© <span id="year"></span> Scrapyard Sites — All rights reserved.</p>
 </footer>
   <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+  <script>
+  function initCarousel(id) {
+    const track = document.getElementById(id);
+    if (!track) return;
+    const slides = Array.from(track.children);
+    const slideCount = slides.length;
+
+    const indicators = document.createElement('div');
+    indicators.className = 'carousel-indicators';
+    for (let i = 0; i < slideCount; i++) {
+      const dot = document.createElement('span');
+      if (i === 0) dot.classList.add('active');
+      indicators.appendChild(dot);
+    }
+    track.after(indicators);
+
+    let index = 0;
+
+    function updateDots(i) {
+      indicators.querySelectorAll('span').forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === i);
+      });
+    }
+
+    const slideWidth = slides[1] ? slides[1].offsetLeft - slides[0].offsetLeft : track.clientWidth;
+
+    track.addEventListener('scroll', () => {
+      const i = Math.round(track.scrollLeft / slideWidth);
+      if (i !== index) {
+        index = i;
+        updateDots(index);
+      }
+    });
+  }
+
+  if (window.matchMedia('(max-width: 767px)').matches) {
+    initCarousel('portfolio-carousel');
+  }
+  </script>
 </body>
 </html>
