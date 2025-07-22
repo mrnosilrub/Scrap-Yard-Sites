@@ -14,20 +14,24 @@
   border: 2px solid transparent;
   transition: background-color 0.2s, color 0.2s, border-color 0.2s;
 }
-.btn-primary:hover {
-  background-color: white;
-  color: #D75E02;
-  border-color: #D75E02;
+@media (hover: hover) {
+  .btn-primary:hover {
+    background-color: white;
+    color: #D75E02;
+    border-color: #D75E02;
+  }
 }
 
 /* Inverted hover style for the homepage pricing CTA */
 .btn-invert-hover {
   transition: background-color 0.2s, color 0.2s;
 }
-.btn-invert-hover:hover {
-  background-color: white;
-  color: #D75E02;
-  opacity: 1;
+@media (hover: hover) {
+  .btn-invert-hover:hover {
+    background-color: white;
+    color: #D75E02;
+    opacity: 1;
+  }
 }
 
 
@@ -47,15 +51,19 @@
   box-shadow: 0 1px 2px rgba(0,0,0,0.05);
   transition: background-color 0.2s, color 0.2s, border-color 0.2s;
 }
-.btn-secondary:hover {
-  background-color: #D75E02;
-  color: white;
-  border-color: white;
+@media (hover: hover) {
+  .btn-secondary:hover {
+    background-color: #D75E02;
+    color: white;
+    border-color: white;
+  }
 }
 
 /* Remove hover outlines for hero image CTAs */
-.hero-cta:hover {
-  border-color: transparent;
+@media (hover: hover) {
+  .hero-cta:hover {
+    border-color: transparent;
+  }
 }
 
 /* Fallback utility classes for custom brand colors */
@@ -167,9 +175,11 @@ header nav ul a.text-brand-orange {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
-.card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+@media (hover: hover) {
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
 }
 
 /* Hide default disclosure triangles on FAQ items */
@@ -199,5 +209,25 @@ details summary::marker {
   #mobileMenu a:not(.bg-yellow-500):hover::after,
   a:hover .site-title::after {
     width: 0 !important;
+  }
+}
+
+/* Disable hover transforms and shadows on touch devices */
+@media (hover: none) {
+  [class*="hover\\:-translate"]:hover,
+  [class*="hover\\:translate"]:hover {
+    transform: none !important;
+  }
+  [class*="hover\\:shadow"]:hover {
+    box-shadow: none !important;
+  }
+  [class*="hover\\:bg-"]:hover {
+    background-color: inherit !important;
+  }
+  [class*="hover\\:cursor"]:hover {
+    cursor: inherit !important;
+  }
+  [class*="transition"] {
+    transition: none !important;
   }
 }
