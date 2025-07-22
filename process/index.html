@@ -51,6 +51,40 @@
       margin-bottom: 0.25rem;
     }
     /* timeline no longer uses dark background */
+    
+    /* Mobile carousel styles */
+    @media (max-width: 767px) {
+      .carousel-track {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
+      }
+      .carousel-item {
+        flex: 0 0 100%;
+        scroll-snap-align: center;
+      }
+    }
+
+    .carousel-indicators {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 2.5rem;
+    }
+    .carousel-indicators span {
+      background: #D75E02;
+      border-radius: 9999px;
+      width: 0.5rem;
+      height: 0.5rem;
+      opacity: 0.5;
+      transition: width 0.3s ease, opacity 0.3s ease;
+    }
+    .carousel-indicators span.active {
+      width: 1.5rem;
+      opacity: 1;
+    }
   </style>
 </head>
 <body class="font-sans text-brand-charcoal antialiased bg-white overflow-x-hidden">
@@ -131,12 +165,12 @@
     <section id="process" class="py-16">
       <div class="max-w-5xl mx-auto px-6">
         <h2 class="text-2xl font-bold text-center mb-10">Our Process</h2>
-        <div class="grid gap-8 md:grid-cols-2">
+        <div id="process-carousel" class="carousel-track grid gap-8 px-4 md:grid-cols-2">
           <div class="p-6 bg-gray-50 border border-brand-steel/10 rounded-xl flex flex-col items-start text-left transition-transform hover:-translate-y-1">
-            <div class="flex items-center justify-center w-12 h-12 rounded-full bg-brand-orange mb-4 mx-auto">
-              <i data-lucide="search" class="w-6 h-6 text-white"></i>
+            <div class="flex items-center justify-center w-14 h-14 rounded-full bg-brand-orange mb-4">
+              <i data-lucide="search" class="w-8 h-8 text-white"></i>
             </div>
-            <h3 class="font-semibold mb-2 text-center">Assess &amp; Plan</h3>
+            <h3 class="font-semibold mb-2">Assess &amp; Plan</h3>
             <p class="text-base md:text-sm mb-2">We review your current online footprint and credentials, identify missing licenses or pages and map out everything your new site needs.</p>
             <ul class="list-disc list-inside text-base md:text-sm text-brand-steel text-left">
               <li>Quick reputation check</li>
@@ -145,10 +179,10 @@
             </ul>
           </div>
           <div class="p-6 bg-gray-50 border border-brand-steel/10 rounded-xl flex flex-col items-start text-left transition-transform hover:-translate-y-1">
-            <div class="flex items-center justify-center w-12 h-12 rounded-full bg-brand-orange mb-4 mx-auto">
-              <i data-lucide="pen-tool" class="w-6 h-6 text-white"></i>
+            <div class="flex items-center justify-center w-14 h-14 rounded-full bg-brand-orange mb-4">
+              <i data-lucide="pen-tool" class="w-8 h-8 text-white"></i>
             </div>
-            <h3 class="font-semibold mb-2 text-center">Design &amp; Build</h3>
+            <h3 class="font-semibold mb-2">Design &amp; Build</h3>
             <p class="text-base md:text-sm mb-2">We craft a modern site that reflects your yard’s character, answers sellers’ questions and displays your licenses, certifications and photos. The build is quick—usually within a week.</p>
             <ul class="list-disc list-inside text-base md:text-sm text-brand-steel text-left">
               <li>Custom design for every device</li>
@@ -157,10 +191,10 @@
             </ul>
           </div>
           <div class="p-6 bg-gray-50 border border-brand-steel/10 rounded-xl flex flex-col items-start text-left transition-transform hover:-translate-y-1">
-            <div class="flex items-center justify-center w-12 h-12 rounded-full bg-brand-orange mb-4 mx-auto">
-              <i data-lucide="badge-check" class="w-6 h-6 text-white"></i>
+            <div class="flex items-center justify-center w-14 h-14 rounded-full bg-brand-orange mb-4">
+              <i data-lucide="badge-check" class="w-8 h-8 text-white"></i>
             </div>
-            <h3 class="font-semibold mb-2 text-center">Optimize &amp; Launch</h3>
+            <h3 class="font-semibold mb-2">Optimize &amp; Launch</h3>
             <p class="text-base md:text-sm mb-2">We tune every page for local search so brokers and suppliers can find you, then handle all the technical details of going live.</p>
             <ul class="list-disc list-inside text-base md:text-sm text-brand-steel text-left">
               <li>Local SEO &amp; schema</li>
@@ -169,10 +203,10 @@
             </ul>
           </div>
           <div class="p-6 bg-gray-50 border border-brand-steel/10 rounded-xl flex flex-col items-start text-left transition-transform hover:-translate-y-1">
-            <div class="flex items-center justify-center w-12 h-12 rounded-full bg-brand-orange mb-4 mx-auto">
-              <i data-lucide="shield" class="w-6 h-6 text-white"></i>
+            <div class="flex items-center justify-center w-14 h-14 rounded-full bg-brand-orange mb-4">
+              <i data-lucide="shield" class="w-8 h-8 text-white"></i>
             </div>
-            <h3 class="font-semibold mb-2 text-center">Maintain &amp; Grow</h3>
+            <h3 class="font-semibold mb-2">Maintain &amp; Grow</h3>
             <p class="text-base md:text-sm mb-2">Ongoing care keeps your reputation strong: regular updates, security patches and backups for $100 per month.</p>
             <ul class="list-disc list-inside text-base md:text-sm text-brand-steel text-left">
               <li>Unlimited updates</li>
@@ -187,18 +221,18 @@
     <section class="py-12 bg-gray-50">
       <div class="mx-auto max-w-5xl px-6">
         <h2 class="text-2xl font-bold text-center mb-10">Straight‑Shooter Pricing</h2>
-        <div class="grid gap-8 md:grid-cols-3">
-          <div class="border border-brand-steel/10 rounded-xl bg-white p-6 text-center card-hover">
+        <div id="pricing-carousel" class="carousel-track grid gap-8 px-4 md:grid-cols-3">
+          <div class="border border-brand-steel/10 rounded-xl bg-white p-6 text-center">
             <h3 class="font-semibold text-xl mb-2">Standard Launch</h3>
             <p class="text-4xl font-extrabold">$2,499</p>
             <p class="text-sm mt-2">Includes everything in the first three phases above, perfect if you need a credible site quickly.</p>
           </div>
-          <div class="border border-brand-steel/10 rounded-xl bg-white p-6 text-center card-hover">
+          <div class="border border-brand-steel/10 rounded-xl bg-white p-6 text-center">
             <h3 class="font-semibold text-xl mb-2">Premium Launch</h3>
             <p class="text-4xl font-extrabold">$5,499</p>
             <p class="text-sm mt-2">Everything in Standard plus additional pages and local SEO enhancements.</p>
           </div>
-          <div class="border border-brand-steel/10 rounded-xl bg-white p-6 text-center card-hover">
+          <div class="border border-brand-steel/10 rounded-xl bg-white p-6 text-center">
           <h3 class="font-semibold text-xl mb-2">Care Plan</h3>
           <p class="text-4xl font-extrabold">$99<span class="text-base font-normal">/month</span></p>
           <p class="text-sm mt-2">Unlimited text and photo updates, security patches, backups and quarterly reports.</p>
@@ -286,7 +320,7 @@
     function fmt(x){
       return x.toLocaleString('en-US',{style:'currency',currency:'USD',minimumFractionDigits:0});
     }
-    document.getElementById('calcForm').addEventListener('submit',e=>{
+  document.getElementById('calcForm').addEventListener('submit',e=>{
       e.preventDefault();
       const t=+e.target.tons.value, m=+e.target.margin.value, l=+e.target.missed.value;
       if(!t||!m||!l) return alert('Fill every field');
@@ -294,8 +328,22 @@
       document.getElementById('lossFig').textContent=fmt(annual);
       document.getElementById('roiDays').textContent=Math.ceil(2499/(annual/365));
       document.getElementById('contactBtn').href=`/contact?leak=${annual}`;
-      document.getElementById('resultBox').classList.remove('hidden');
+  document.getElementById('resultBox').classList.remove('hidden');
     });
+  </script>
+  <script>
+  function initCarousel(id){
+    const track=document.getElementById(id);if(!track)return;const slides=Array.from(track.children);const slideCount=slides.length;
+    const indicators=document.createElement('div');indicators.className='carousel-indicators';
+    for(let i=0;i<slideCount;i++){const dot=document.createElement('span');if(i===0)dot.classList.add('active');indicators.appendChild(dot);}track.after(indicators);
+    let index=0;function updateDots(i){indicators.querySelectorAll('span').forEach((dot,idx)=>{dot.classList.toggle('active',idx===i);});}
+    const slideWidth=slides[1]?slides[1].offsetLeft-slides[0].offsetLeft:track.clientWidth;
+    track.addEventListener('scroll',()=>{const i=Math.round(track.scrollLeft/slideWidth);if(i!==index){index=i;updateDots(index);}});
+  }
+  if(window.matchMedia('(max-width: 767px)').matches){
+    initCarousel('process-carousel');
+    initCarousel('pricing-carousel');
+  }
   </script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <script>lucide.createIcons();</script>
