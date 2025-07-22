@@ -39,11 +39,6 @@
     a:hover .site-title::after{width:100%;}
     .slide-up{transform:translateY(30px);opacity:0;transition:opacity .6s ease,transform .6s ease;}
     .slide-up.aos-active{transform:translateY(0);opacity:1;}
-    .service-card { perspective:1000px; }
-    .flip-inner { position:relative; transform-style:preserve-3d; transition:transform .6s; }
-    .service-card:hover .flip-inner, .service-card.flip .flip-inner { transform:rotateY(180deg); }
-    .front, .back { backface-visibility:hidden; }
-    .back { transform:rotateY(180deg); }
 
   </style>
 </head>
@@ -91,99 +86,98 @@
   </script>
   <main class="pt-0 pb-0 bg-gray-50">
     <!-- Hero -->
-    <section class="relative flex flex-col items-center justify-center min-h-[60vh] text-center">
+    <section class="relative flex flex-col items-center justify-center min-h-[60vh] text-center py-16 gap-8">
       <img src="/assets/hero.jpg" alt="Grapple loading shred" class="absolute inset-0 w-full h-full object-cover">
       <div class="absolute inset-0 bg-black/80"></div>
-      <h1 class="relative z-10 text-4xl md:text-5xl font-extrabold text-white px-6">Four Shields. One Reputation Machine.</h1>
-      <p class="relative z-10 mt-4 text-white text-lg px-6 max-w-xl mx-auto">Launch a high-performing yard site in seven days. Each shield protects and enhances your reputation—from first impression to final load ticket.</p>
-    </section>
-    <!-- Shield Grid -->
-    <section class="py-16 bg-gray-50 relative">
-      <div class="relative max-w-5xl mx-auto grid md:grid-cols-2 gap-8 px-6">
-        <article class="service-card rounded-lg bg-white text-brand-charcoal shadow slide-up cursor-pointer">
-          <div class="flip-inner p-6 relative">
-            <div class="front">
-              <div class="flex items-center gap-2 mb-2"><i data-lucide="shield-check" class="w-6 h-6 card-icon text-brand-orange"></i><h3 class="font-semibold">Credibility Shield</h3></div>
-              <p class="text-sm">Brokers know you’re legit—before they dial.</p>
-            </div>
-            <div class="back absolute inset-0 p-6 flex items-center justify-center text-center">
-              <ul class="space-y-1 list-none text-sm">
-                <li>&lt;2 sec load</li>
-                <li>HTTPS lock</li>
-                <li>Real loader pics</li>
-                <li>Licenses visible</li>
-              </ul>
-            </div>
-          </div>
-        </article>
-        <article class="service-card rounded-lg bg-white text-brand-charcoal shadow slide-up cursor-pointer" data-aos-delay="100">
-          <div class="flip-inner p-6 relative">
-            <div class="front">
-              <div class="flex items-center gap-2 mb-2"><i data-lucide="shield-x" class="w-6 h-6 card-icon text-brand-orange"></i><h3 class="font-semibold">Objection Shield</h3></div>
-              <p class="text-sm">Stop tire‑kickers before they tie up your phone lines.</p>
-            </div>
-            <div class="back absolute inset-0 p-6 flex items-center justify-center text-center">
-              <ul class="space-y-1 list-none text-sm">
-                <li>What metals?</li>
-                <li>What margin?</li>
-                <li>When pickup?</li>
-              </ul>
-            </div>
-          </div>
-        </article>
-        <article class="service-card rounded-lg bg-white text-brand-charcoal shadow slide-up cursor-pointer" data-aos-delay="200">
-          <div class="flip-inner p-6 relative">
-            <div class="front">
-              <div class="flex items-center gap-2 mb-2"><i data-lucide="eye" class="w-6 h-6 card-icon text-brand-orange"></i><h3 class="font-semibold">Visibility Shield</h3></div>
-              <p class="text-sm">LocalBusiness schema, “scrap-metal + city” headlines and internal links float you above the nationals.</p>
-            </div>
-            <div class="back absolute inset-0 p-6 flex items-center justify-center text-center">
-              <ul class="space-y-1 list-none text-sm">
-                <li>LocalBusiness schema</li>
-                <li>SEO headlines</li>
-                <li>Internal links</li>
-              </ul>
-            </div>
-          </div>
-        </article>
-        <article class="service-card rounded-lg bg-white text-brand-charcoal shadow slide-up cursor-pointer" data-aos-delay="300">
-          <div class="flip-inner p-6 relative">
-            <div class="front">
-              <div class="flex items-center gap-2 mb-2"><i data-lucide="life-buoy" class="w-6 h-6 card-icon text-brand-orange"></i><h3 class="font-semibold">Reliability Shield</h3></div>
-              <p class="text-sm">24/7 monitoring and unlimited edits ensure your site never rusts.</p>
-            </div>
-            <div class="back absolute inset-0 p-6 flex items-center justify-center text-center">
-              <ul class="space-y-1 list-none text-sm">
-                <li>24/7 monitoring</li>
-                <li>Unlimited edits</li>
-                <li>Daily backups</li>
-              </ul>
-            </div>
-          </div>
-        </article>
+      <div class="relative z-10">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-white px-6">Build Your Reputation Engine</h1>
+        <p class="mt-4 text-white text-lg px-6 max-w-xl mx-auto">Launch a high-performing yard website in seven days. Every service we offer is designed to strengthen your reputation—from first impression to final load ticket.</p>
+        <a href="/contact" class="btn-primary inline-block mt-6">Book a Call</a>
       </div>
     </section>
-    <!-- Deliverables Matrix -->
-    <section class="max-w-3xl mx-auto px-6 pb-10">
-      <table class="w-full text-sm border-collapse">
-        <thead class="bg-gray-50 text-brand-charcoal">
-          <tr><th class="text-left p-2">&nbsp;</th><th class="p-2 text-center">Standard</th><th class="p-2 text-center">Premium</th><th class="p-2 text-center">Care Plan</th></tr>
+    <!-- Pillars -->
+    <section class="py-16 bg-gray-50">
+      <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-6">
+        <div class="bg-white rounded-lg shadow card-hover p-6 text-center">
+          <div class="flex items-center justify-center w-12 h-12 rounded-full bg-brand-orange mx-auto mb-4">
+            <i data-lucide="shield-check" class="w-6 h-6 text-white"></i>
+          </div>
+          <h3 class="font-semibold mb-2">Credibility</h3>
+          <p class="text-sm text-brand-steel">Earn trust from brokers, suppliers and regulators before they even call you.</p>
+        </div>
+        <div class="bg-white rounded-lg shadow card-hover p-6 text-center">
+          <div class="flex items-center justify-center w-12 h-12 rounded-full bg-brand-orange mx-auto mb-4">
+            <i data-lucide="check-square" class="w-6 h-6 text-white"></i>
+          </div>
+          <h3 class="font-semibold mb-2">Qualification</h3>
+          <p class="text-sm text-brand-steel">Filter tire‑kickers and answer common questions up front, so only serious sellers reach you.</p>
+        </div>
+        <div class="bg-white rounded-lg shadow card-hover p-6 text-center">
+          <div class="flex items-center justify-center w-12 h-12 rounded-full bg-brand-orange mx-auto mb-4">
+            <i data-lucide="map-pin" class="w-6 h-6 text-white"></i>
+          </div>
+          <h3 class="font-semibold mb-2">Visibility</h3>
+          <p class="text-sm text-brand-steel">Rise above the nationals with targeted local SEO and structured data.</p>
+        </div>
+        <div class="bg-white rounded-lg shadow card-hover p-6 text-center">
+          <div class="flex items-center justify-center w-12 h-12 rounded-full bg-brand-orange mx-auto mb-4">
+            <i data-lucide="clock" class="w-6 h-6 text-white"></i>
+          </div>
+          <h3 class="font-semibold mb-2">Reliability</h3>
+          <p class="text-sm text-brand-steel">Stay trustworthy with 24/7 uptime and ongoing support.</p>
+        </div>
+      </div>
+    </section>
+    <!-- Packages -->
+    <section class="max-w-5xl mx-auto px-6 pb-16">
+      <table class="w-full text-base">
+        <thead class="bg-gray-50">
+          <tr>
+            <th class="text-left p-2">Pillar</th>
+            <th class="p-2">Standard</th>
+            <th class="p-2">Premium</th>
+            <th class="p-2">Care Plan</th>
+          </tr>
         </thead>
         <tbody>
-          <tr class="border-b"><td class="p-2">Credibility Shield</td><td class="text-center">✔︎</td><td class="text-center">✔︎</td><td class="text-center">—</td></tr>
-          <tr class="border-b"><td class="p-2">Objection Shield</td><td class="text-center">✔︎</td><td class="text-center">✔︎</td><td class="text-center">—</td></tr>
-          <tr class="border-b"><td class="p-2">Visibility Shield</td><td class="text-center">—</td><td class="text-center">✔︎</td><td class="text-center">—</td></tr>
-          <tr class="border-b"><td class="p-2">Reliability Shield</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center">✔︎</td></tr>
-          <tr class="border-b"><td class="p-2">Pages included</td><td class="text-center">1</td><td class="text-center">7</td><td class="text-center">—</td></tr>
-          <tr><td class="p-2">SEO tuning window</td><td class="text-center">30 days</td><td class="text-center">60 days</td><td class="text-center">—</td></tr>
+          <tr class="border-b">
+            <td class="p-2 text-left">Credibility</td>
+            <td class="text-center text-brand-orange text-xl font-bold">✔︎</td>
+            <td class="text-center text-brand-orange text-xl font-bold">✔︎</td>
+            <td class="text-center text-gray-400">—</td>
+          </tr>
+          <tr class="border-b">
+            <td class="p-2 text-left">Qualification</td>
+            <td class="text-center text-brand-orange text-xl font-bold">✔︎</td>
+            <td class="text-center text-brand-orange text-xl font-bold">✔︎</td>
+            <td class="text-center text-gray-400">—</td>
+          </tr>
+          <tr class="border-b">
+            <td class="p-2 text-left">Visibility</td>
+            <td class="text-center text-gray-400">—</td>
+            <td class="text-center text-brand-orange text-xl font-bold">✔︎</td>
+            <td class="text-center text-gray-400">—</td>
+          </tr>
+          <tr class="border-b">
+            <td class="p-2 text-left">Reliability</td>
+            <td class="text-center text-gray-400">—</td>
+            <td class="text-center text-gray-400">—</td>
+            <td class="text-center text-brand-orange text-xl font-bold">✔︎</td>
+          </tr>
+          <tr>
+            <td class="p-2 font-semibold text-left">Description</td>
+            <td class="p-2 text-left text-sm">Quick, reputable web presence.</td>
+            <td class="p-2 text-left text-sm">Dominate local search results.</td>
+            <td class="p-2 text-left text-sm">Ongoing monitoring and updates.</td>
+          </tr>
         </tbody>
       </table>
     </section>
     <!-- Work / Demo -->
-    <section id="work" class="scroll-mt-16 bg-white py-20">
-      <div class="mx-auto max-w-6xl px-6 text-center">
-        <h2 class="text-3xl font-bold">View our live code</h2>
-        <p class="text-brand-steel mb-10">Concept builds -- Real code. Fictitious yards.</p>
+      <section id="work" class="scroll-mt-16 bg-white py-20">
+        <div class="mx-auto max-w-6xl px-6 text-center">
+          <h2 class="text-3xl font-bold">See It in Action</h2>
+          <p class="text-brand-steel mb-10">These demo yards are real code built with our reputation‑first approach.</p>
         <div id="portfolio-carousel" class="carousel-track flex px-4 md:grid md:grid-cols-3 gap-8">
           <a href="#contact" class="carousel-item block bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm p-10 flex flex-col items-center text-center hover:bg-gray-100 hover:shadow-lg transition transform hover:-translate-y-1 hover:cursor-pointer">
             <div class="w-full rounded-xl overflow-hidden border border-brand-steel/10">
@@ -279,12 +273,6 @@
   }
 </script>
   <script src="https://unpkg.com/lucide@latest"></script>
-  <script>
-    if (window.matchMedia('(max-width: 767px)').matches) {
-      document.querySelectorAll('.service-card')
-        .forEach(c=>c.addEventListener('click',()=>c.classList.toggle('flip')));
-    }
-  </script>
   <script>lucide.createIcons();</script>
 </body>
 </html>
