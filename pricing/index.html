@@ -94,14 +94,20 @@
 
   </script>
   <main class="pt-24 pb-20">
-    <section class="py-20 bg-white">
+    <!-- Hero -->
+    <section class="relative flex items-center justify-center min-h-[60vh] text-center">
+      <img src="/assets/hero.jpg" alt="Scrapyard hero" class="absolute inset-0 w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-black/70"></div>
+      <div class="relative z-10 px-6 py-24 text-white max-w-4xl mx-auto">
+        <h1 class="text-4xl md:text-5xl font-extrabold">Invest in Your Reputation</h1>
+        <p class="mt-4 text-lg">Transparent pricing for scrapyard sites. Two flat packages, no surprises.</p>
+        <a href="#packages" class="btn-primary btn-invert-hover hero-cta mt-8">Explore Packages</a>
+      </div>
+      
+    </section>
+    <!-- Packages -->
+    <section class="py-20 bg-white" id="packages">
       <div class="mx-auto max-w-6xl px-6 text-center">
-        <h1 class="text-3xl font-bold">Straight‑Shooter Pricing—with ROI Math</h1>
-        <p class="mt-2 text-sm">
-          Every missed roll‑off equals $2–3 k. One per month costs $30 k—more than our Premium build. Transparent pricing builds trust; there’s no “call for quote” here.
-        </p>
-
-        <!-- Packages -->
         <div id="pricing-carousel" class="carousel-track flex gap-10 px-4 mt-14 md:grid md:grid-cols-2 lg:grid-cols-3 relative z-40">
           <!-- Launch -->
           <div class="carousel-item relative z-30 overflow-visible bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm transition transform hover:-translate-y-1 px-6 py-10 md:p-10 flex flex-col">
@@ -111,39 +117,28 @@
               Most yards start here
             </span>
             <h3 class="text-xl font-semibold mb-4">Standard Launch</h3>
-            <p class="text-5xl font-extrabold tracking-tight">$2,499</p>
-            <ul class="text-base md:text-sm text-brand-steel mt-6 space-y-2 text-left">
-              <li>• Quick fix that stops missed-call bleed—for yards losing business right now.</li>
-              <li>• Contact form straight to your inbox</li>
-              <li>• Google Maps embed</li>
-              <li>• Google Business Profile tune-up + basic SEO</li>
-              <li>• 30 days of free tweaks</li>
-            </ul>
-              
+            <p class="text-5xl font-extrabold tracking-tight">$2,500</p>
+            <p class="text-base md:text-sm text-brand-steel mt-6 text-left">
+              Get trusted fast. A one‑page, high‑converting site that stops missed calls and proves you’re legitimate. Includes a contact form to your inbox, Google Map, Google Business Profile tune‑up and basic SEO. Thirty days of updates after launch.
+            </p>
+          
             </div>
             <!-- Premium Launch -->
           <div class="carousel-item z-30 bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm transition transform hover:-translate-y-1 px-6 py-10 md:p-10 flex flex-col">
             <h3 class="text-xl font-semibold mb-4">Premium Launch</h3>
-            <p class="text-5xl font-extrabold tracking-tight">$5,499</p>
-          <ul class="text-base md:text-sm text-brand-steel mt-6 space-y-2 text-left">
-            <li>• Full insurance policy: multi-page muscle so Google never buries you again.</li>
-            <li>• Contact forms on every key page</li>
-            <li>• Location pages with Google Maps</li>
-            <li>• Structured-data SEO + GBP cleanup</li>
-            <li>• 60 days of fine-tuning after go-live</li>
-          </ul>
-            
+            <p class="text-5xl font-extrabold tracking-tight">$5,500</p>
+          <p class="text-base md:text-sm text-brand-steel mt-6 text-left">
+            Dominate your market. A multi‑page site with all the muscle to outrank national chains. Up to seven pages with contact forms on every key page, dedicated location pages with maps, structured‑data SEO and Google Business cleanup. Sixty days of updates after launch.
+          </p>
+
           </div>
             <!-- Care Plan -->
           <div class="carousel-item z-30 bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm transition transform hover:-translate-y-1 px-6 py-10 md:p-10">
             <h3 class="text-xl font-semibold mb-4">Care Plan</h3>
-            <p class="text-5xl font-extrabold tracking-tight">$99<span class="text-2xl font-bold">/mo</span></p>
-            <ul class="text-base md:text-sm text-brand-steel mt-6 space-y-2 text-left">
-              <li>• Unlimited text & photo updates (24 hour turnaround)</li>
-              <li>• Security patches, backups, uptime checks</li>
-              <li>• Quarterly performance report</li>
-              <li>• Priority email support</li>
-            </ul>
+            <p class="text-5xl font-extrabold tracking-tight">$100<span class="text-2xl font-bold">/mo</span></p>
+            <p class="text-base md:text-sm text-brand-steel mt-6 text-left">
+              Stay ahead. Keep your site fresh and secure with unlimited text and photo updates (24‑hour turnaround), security patches, backups, uptime monitoring and quarterly performance reports. Priority email support included.
+            </p>
           </div>
         </div>
 
@@ -162,38 +157,38 @@
               <tr>
                 <td class="border px-2 py-1">Standard Launch</td>
                 <td class="border px-2 py-1">Leaky DIY sites</td>
-                <td class="border px-2 py-1">$2,499</td>
+                <td class="border px-2 py-1">$2,500</td>
                 <td class="border px-2 py-1">7 days</td>
                 <td class="border px-2 py-1">1‑page high‑converter, contact form, GBP tune‑up</td>
               </tr>
               <tr>
                 <td class="border px-2 py-1">Premium Launch</td>
                 <td class="border px-2 py-1">Multi‑location yards</td>
-                <td class="border px-2 py-1">$5,499</td>
+                <td class="border px-2 py-1">$5,500</td>
                 <td class="border px-2 py-1">10 days</td>
                 <td class="border px-2 py-1">Up to 7 pages, location pages, structured‑data SEO, 60‑day tuning</td>
               </tr>
               <tr>
                 <td class="border px-2 py-1">Care Plan</td>
                 <td class="border px-2 py-1">Peace of mind</td>
-                <td class="border px-2 py-1">$99/mo</td>
+                <td class="border px-2 py-1">$100/mo</td>
                 <td class="border px-2 py-1">–</td>
                 <td class="border px-2 py-1">Unlimited edits, security, quarterly KPIs</td>
               </tr>
             </tbody>
           </table>
         </div>
-        <p class="text-xs mt-2"><small>50 % deposit books your build week · ACH, card, or check · No surprise fees</small></p>
+        <p class="text-xs mt-2"><small>50 % deposit books your build week; balance due at launch. Cards, ACH or checks. No surprise fees.</small></p>
 
         <p class="mt-6 text-sm">
-          <strong>Need extras?</strong><br>
-          • Additional pages – $350/ea<br>
-          • On‑site photo/video – from $750 (Lower 48)<br>
-          • Hand‑off to your own server – $199 one‑time
+          <strong>Extras:</strong><br>
+          Add pages for $350 each<br>
+          On‑site photo or video from $750 (Lower 48)<br>
+          Hand‑off to your own server for $199
         </p>
 
         <p class="mt-6 text-sm">
-          <strong>Money‑Back Edge:</strong> If your new site doesn’t pay for itself within 90 days (measured in new loads or quotes), we refund the build fee—no hoops.
+          <strong>Reputation Promise:</strong> If your new site doesn’t pay for itself within 90 days, we refund the build fee—no hoops.
         </p>
 
         <div class="mt-6 text-center">
@@ -207,20 +202,23 @@
     <section class="mt-20 max-w-4xl mx-auto" id="faq">
       <h2 class="text-3xl font-bold text-center mb-10">FAQ</h2>
       <div class="space-y-6 text-center md:text-left">
-        <details class="group"><summary class="cursor-pointer font-semibold text-brand-charcoal group-open:text-brand-orange">How fast can my site go live?</summary><p class="mt-1 text-brand-steel text-base md:text-sm md:pl-4 md:border-l md:border-brand-orange/40">Seven calendar days from signed agreement and content hand-off.</p></details>
-        <details class="group"><summary class="cursor-pointer font-semibold text-brand-charcoal group-open:text-brand-orange">Do I own the domain and content?</summary><p class="mt-1 text-brand-steel text-base md:text-sm md:pl-4 md:border-l md:border-brand-orange/40">Yes. At launch the domain, copy, and images are 100% yours.</p></details>
-        <details class="group"><summary class="cursor-pointer font-semibold text-brand-charcoal group-open:text-brand-orange">Can I cancel the Care Plan?</summary><p class="mt-1 text-brand-steel text-base md:text-sm md:pl-4 md:border-l md:border-brand-orange/40">Anytime, no hard feelings—just email us and we’ll hand over full admin access.</p></details>
-        <details class="group"><summary class="cursor-pointer font-semibold text-brand-charcoal group-open:text-brand-orange">What do you need from me to start?</summary><p class="mt-1 text-brand-steel text-base md:text-sm md:pl-4 md:border-l md:border-brand-orange/40">Logo (if you have one), yard photos (phone pics are fine), and a brief call to nail your services, hours, and pricing flow.</p></details>
-        <details class="group"><summary class="cursor-pointer font-semibold text-brand-charcoal group-open:text-brand-orange">How do payments work?</summary><p class="mt-1 text-brand-steel text-base md:text-sm md:pl-4 md:border-l md:border-brand-orange/40">50% deposit to book your build week, 50% on launch day. Card, ACH, or check—whatever’s easiest.</p></details>
-        <details class="group"><summary class="cursor-pointer font-semibold text-brand-charcoal group-open:text-brand-orange">Is hosting included?</summary><p class="mt-1 text-brand-steel text-base md:text-sm md:pl-4 md:border-l md:border-brand-orange/40">Yes. Hosting, SSL, and domain hookup are baked into the $99/mo Care Plan. Prefer to self-host? We’ll deploy to your server for a one-time $199 hand-off.</p></details>
-        <details class="group"><summary class="cursor-pointer font-semibold text-brand-charcoal group-open:text-brand-orange">Can you add more pages later?</summary><p class="mt-1 text-brand-steel text-base md:text-sm md:pl-4 md:border-l md:border-brand-orange/40">Sure. Extra pages are $350 each or jump to Power-Launch if you need a larger build from the start.</p></details>
-        <details class="group"><summary class="cursor-pointer font-semibold text-brand-charcoal group-open:text-brand-orange">Will you write the copy and handle SEO?</summary><p class="mt-1 text-brand-steel text-base md:text-sm md:pl-4 md:border-l md:border-brand-orange/40">Absolutely. We draft the text, bake in industry keywords, and fine-tune meta tags so Google knows exactly what you buy and where you are.</p></details>
-        <details class="group"><summary class="cursor-pointer font-semibold text-brand-charcoal group-open:text-brand-orange">Do you shoot photos or video?</summary><p class="mt-1 text-brand-steel text-base md:text-sm md:pl-4 md:border-l md:border-brand-orange/40">We can—onsite photo/video packages start at $750 in the lower 48. Most yards start with their own shots and upgrade later.</p></details>
+        <details class="group"><summary class="cursor-pointer font-semibold text-brand-charcoal group-open:text-brand-orange">How fast can my site go live?</summary><p class="mt-1 text-brand-steel text-base md:text-sm md:pl-4 md:border-l md:border-brand-orange/40">Most sites launch in about a week for Standard or 10 days for Premium.</p></details>
+        <details class="group"><summary class="cursor-pointer font-semibold text-brand-charcoal group-open:text-brand-orange">Do I own the domain and content?</summary><p class="mt-1 text-brand-steel text-base md:text-sm md:pl-4 md:border-l md:border-brand-orange/40">Yes. The domain, copy and images are 100% yours from day one.</p></details>
+        <details class="group"><summary class="cursor-pointer font-semibold text-brand-charcoal group-open:text-brand-orange">Can I cancel the Care Plan?</summary><p class="mt-1 text-brand-steel text-base md:text-sm md:pl-4 md:border-l md:border-brand-orange/40">Yes. Cancel anytime and we’ll hand over full admin access, no hard feelings.</p></details>
+        <details class="group"><summary class="cursor-pointer font-semibold text-brand-charcoal group-open:text-brand-orange">What do you need from me?</summary><p class="mt-1 text-brand-steel text-base md:text-sm md:pl-4 md:border-l md:border-brand-orange/40">Send us your logo (if you have one), a few yard photos (phone pics are fine) and a quick call to nail your services, hours and pricing flow.</p></details>
+        <details class="group"><summary class="cursor-pointer font-semibold text-brand-charcoal group-open:text-brand-orange">How do payments work?</summary><p class="mt-1 text-brand-steel text-base md:text-sm md:pl-4 md:border-l md:border-brand-orange/40">We take a 50% deposit to secure your build week; the remainder is due at launch. We accept cards, ACH and checks.</p></details>
+        <details class="group"><summary class="cursor-pointer font-semibold text-brand-charcoal group-open:text-brand-orange">Is hosting included?</summary><p class="mt-1 text-brand-steel text-base md:text-sm md:pl-4 md:border-l md:border-brand-orange/40">Hosting, SSL and domain hookup are included in the $100/mo Care Plan. If you prefer to self-host, we’ll deploy to your server for a $199 one-time fee.</p></details>
+        <details class="group"><summary class="cursor-pointer font-semibold text-brand-charcoal group-open:text-brand-orange">Can you add more pages later?</summary><p class="mt-1 text-brand-steel text-base md:text-sm md:pl-4 md:border-l md:border-brand-orange/40">Absolutely. Extra pages cost $350 each, or you can choose the Premium package up front if you need more right away.</p></details>
+        <details class="group"><summary class="cursor-pointer font-semibold text-brand-charcoal group-open:text-brand-orange">Will you write the copy and handle SEO?</summary><p class="mt-1 text-brand-steel text-base md:text-sm md:pl-4 md:border-l md:border-brand-orange/40">Yes. We draft the text, weave in industry keywords and fine‑tune meta tags so Google knows exactly what you buy and where.</p></details>
+        <details class="group"><summary class="cursor-pointer font-semibold text-brand-charcoal group-open:text-brand-orange">Do you shoot photos or video?</summary><p class="mt-1 text-brand-steel text-base md:text-sm md:pl-4 md:border-l md:border-brand-orange/40">We can. On‑site photo/video packages start at $750 (Lower 48). Many yards start with their own shots and upgrade later.</p></details>
       </div>
     </section>
     <section class="mt-16 py-12 bg-brand-orange text-white text-center">
-      <h2 class="text-2xl font-bold mb-4">Ready to upgrade your yard's site?</h2>
-      <a href="/contact" class="btn-secondary">Book a Discovery Call</a>
+      <h2 class="text-2xl font-bold mb-4">Ready to protect your reputation? Lock in your build week now.</h2>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="https://book.stripe.com/eVqeVd8Vi9U45RbdJy73G00" class="btn-secondary">Start Standard Launch</a>
+        <a href="https://book.stripe.com/eVqeVd8Vi9U45RbdJy73G00" class="btn-primary">Start Premium Launch</a>
+      </div>
     </section>
   </main>
 <footer class="bg-white py-8 text-center text-xs text-gray-400">
