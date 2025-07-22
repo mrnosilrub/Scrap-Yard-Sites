@@ -4,7 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="preload" href="/assets/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
-  <title>Portfolio | Scrapyard Sites</title>
+  <title>Demos | Scrapyard Sites</title>
   <link rel="icon" href="../favicon.svg"> <!-- prevents 404s on mobile -->
   <script>
     tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{orange:'#D75E02',steel:'#5E6367',charcoal:'#2B2B2B'}}}}};
@@ -41,7 +41,7 @@
       <ul id="menu" class="text-brand-charcoal hidden md:flex md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 gap-6 text-sm font-medium">
         <li><a href="/services">Services</a></li>
         <li><a href="/process">Process</a></li>
-        <li><a href="/portfolio">Portfolio</a></li>
+        <li><a href="/demos">Demos</a></li>
         <li><a href="/pricing">Pricing</a></li>
         <li><a href="/risk-calculator">Calculator</a></li>
         <li><a href="/about">About</a></li>
@@ -57,7 +57,7 @@
       </button>
       <a href="/services">Services</a>
       <a href="/process">Process</a>
-      <a href="/portfolio">Portfolio</a>
+      <a href="/demos">Demos</a>
       <a href="/pricing">Pricing</a>
       <a href="/risk-calculator">Calculator</a>
       <a href="/about">About</a>
@@ -98,62 +98,69 @@
       <img src="/assets/hero.jpg" alt="Scrapyard hero" class="absolute inset-0 w-full h-full object-cover">
       <div class="absolute inset-0 bg-black/80"></div>
       <div class="relative z-10 px-6">
-        <h1 class="text-4xl md:text-5xl font-extrabold text-white">Reputation in Action</h1>
-        <p class="mt-4 text-lg text-white">See how a professional, trustworthy website transforms perception. These concept builds use real code and fictitious yards to show what’s possible when you put reputation first.</p>
+        <h1 class="text-4xl md:text-5xl font-extrabold text-white">Reputation in Action: Demo Yards</h1>
+        <p class="mt-4 text-lg text-white">Explore our concept builds designed with real scrap‑yard scenarios. Each demo shows how a professional website built on our reputation‑first pillars—credibility, qualification, visibility and reliability—can transform perception and drive results.</p>
       </div>
     </section>
+    <section class="explanation py-8 text-center px-6 max-w-3xl mx-auto">
+      <h2 class="text-2xl font-bold mb-2">Why Demos?</h2>
+      <p>Case studies and demos offer tangible proof of what’s possible. They cut through generic marketing claims by showcasing concrete results. We use these demo yards to illustrate how a reputation‑first website can elevate credibility and drive real-world outcomes. Think of these as mini case studies, showing you the power of our process before you invest.</p>
+    </section>
       <div class="mx-auto max-w-6xl px-6 mt-12">
-        <div id="portfolio-carousel" class="carousel-track flex px-4 md:grid md:grid-cols-3 gap-8">
-          <div class="carousel-item bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm p-6 flex flex-col">
+        <div id="demos-carousel" class="carousel-track flex px-4 md:grid md:grid-cols-3 gap-8">
+          <div class="carousel-item bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm p-6 flex flex-col demo-card">
             <a href="demo-yard-1/">
               <img class="w-full rounded-md border border-brand-steel/10" src="https://placehold.co/600x400/2B2B2B/FFFFFF?text=Demo+Yard+1" alt="Demo Yard 1">
             </a>
-            <p class="font-semibold mt-4">Custom design for a busy metro scrapyard.</p>
-            <table class="mt-4 text-sm w-full">
-              <caption class="sr-only">Projected Wins</caption>
-              <tbody>
-                <tr><td class="pr-4 font-medium">More Calls</td><td class="text-brand-steel">Tap‑to‑call header</td></tr>
-                <tr><td class="pr-4 font-medium">Faster Quotes</td><td class="text-brand-steel">Quick online form</td></tr>
-              </tbody>
-            </table>
-            <a href="demo-yard-1/" class="btn-primary mt-4 self-start">View Demo</a>
+            <h3 class="font-semibold mt-4">Metro Yard Demo</h3>
+            <p class="text-sm mt-1">A modern design for a busy urban scrapyard competing for attention against national brands.</p>
+            <ul class="mt-4 text-sm space-y-1 list-disc list-inside">
+              <li><strong>Credibility:</strong> Responsive design and secure SSL build trust instantly.</li>
+              <li><strong>Qualification:</strong> Quick‑quote form filters serious sellers.</li>
+              <li><strong>Visibility:</strong> SEO‑tuned pages help win “near me” searches.</li>
+              <li><strong>Reliability:</strong> 24/7 uptime ensures you never miss a lead.</li>
+            </ul>
+            <a href="demo-yard-1/" class="text-brand-orange mt-4">View Demo</a>
           </div>
-          <div class="carousel-item bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm p-6 flex flex-col">
+          <div class="carousel-item bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm p-6 flex flex-col demo-card">
             <a href="demo-yard-2/">
               <img class="w-full rounded-md border border-brand-steel/10" src="https://placehold.co/600x400/2B2B2B/FFFFFF?text=Demo+Yard+2" alt="Demo Yard 2">
             </a>
-            <p class="font-semibold mt-4">Mobile friendly layout with fast quote form.</p>
-            <table class="mt-4 text-sm w-full">
-              <caption class="sr-only">Projected Wins</caption>
-              <tbody>
-                <tr><td class="pr-4 font-medium">More Leads</td><td class="text-brand-steel">SEO‑tuned pages</td></tr>
-                <tr><td class="pr-4 font-medium">Higher Trust</td><td class="text-brand-steel">Clean modern design</td></tr>
-              </tbody>
-            </table>
-            <a href="demo-yard-2/" class="btn-primary mt-4 self-start">View Demo</a>
+            <h3 class="font-semibold mt-4">Mobile‑Friendly Demo</h3>
+            <p class="text-sm mt-1">Easy quoting from any device for sellers on the move.</p>
+            <ul class="mt-4 text-sm space-y-1 list-disc list-inside">
+              <li><strong>Credibility:</strong> SSL lock and responsive design.</li>
+              <li><strong>Qualification:</strong> Clear materials list up front filters calls.</li>
+              <li><strong>Visibility:</strong> Local SEO and speed boost mobile searches.</li>
+              <li><strong>Reliability:</strong> Instant call button connects you fast.</li>
+            </ul>
+            <a href="demo-yard-2/" class="text-brand-orange mt-4">View Demo</a>
           </div>
-          <div class="carousel-item bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm p-6 flex flex-col">
+          <div class="carousel-item bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm p-6 flex flex-col demo-card">
             <a href="demo-yard-3/">
               <img class="w-full rounded-md border border-brand-steel/10" src="https://placehold.co/600x400/2B2B2B/FFFFFF?text=Demo+Yard+3" alt="Demo Yard 3">
             </a>
-            <p class="font-semibold mt-4">Highlighting services for industrial clients.</p>
-            <table class="mt-4 text-sm w-full">
-              <caption class="sr-only">Projected Wins</caption>
-              <tbody>
-                <tr><td class="pr-4 font-medium">Bigger Loads</td><td class="text-brand-steel">Service pages</td></tr>
-                <tr><td class="pr-4 font-medium">Repeat Visits</td><td class="text-brand-steel">Easy location info</td></tr>
-              </tbody>
-            </table>
-            <a href="demo-yard-3/" class="btn-primary mt-4 self-start">View Demo</a>
+            <h3 class="font-semibold mt-4">Industrial Client Demo</h3>
+            <p class="text-sm mt-1">Service-focused layout built for large loads and multiple locations.</p>
+            <ul class="mt-4 text-sm space-y-1 list-disc list-inside">
+              <li><strong>Credibility:</strong> Certification badges and real photos.</li>
+              <li><strong>Qualification:</strong> Detailed service pages speak to industrial clients.</li>
+              <li><strong>Visibility:</strong> Optimized content attracts high-volume suppliers.</li>
+              <li><strong>Reliability:</strong> Dependable uptime proves you're ready for big jobs.</li>
+            </ul>
+            <a href="demo-yard-3/" class="text-brand-orange mt-4">View Demo</a>
           </div>
         </div>
       </div>
-      <section class="mt-16">
-        <div class="max-w-3xl mx-auto h-24 flex items-center justify-center border border-dashed border-brand-steel/30 text-brand-steel italic">Future testimonials will go here.</div>
+      <section class="beta-invite bg-gray-100 py-10 my-8 text-center px-6">
+        <h2 class="text-2xl font-bold mb-2">Be Part of Our First Wave</h2>
+        <p>We’re partnering with select scrapyards to finalize our services. Get early access, shape the platform, and enjoy priority support by joining our beta program.</p>
+        <a href="/contact" class="btn-primary mt-4 inline-block">Join the Beta</a>
       </section>
       <section class="mt-16 py-12 bg-brand-orange text-white text-center">
-        <h2 class="text-2xl font-bold mb-4">Ready to upgrade your yard's site?</h2>
-        <a href="/contact" class="btn-secondary">Book a Discovery Call</a>
+        <h2 class="text-2xl font-bold mb-4">Ready to Build Your Yard’s Reputation?</h2>
+        <p>Book a Discovery Call to discuss your yard’s unique needs and explore how our reputation‑first process can deliver measurable results.</p>
+        <a href="/contact" class="btn-secondary mt-4">Book a Discovery Call</a>
       </section>
     </main>
 <footer class="bg-white py-8 text-center text-xs text-gray-400">
@@ -162,7 +169,7 @@
     <a href="/about">About</a>
     <a href="/services">Services</a>
     <a href="/process">Process</a>
-    <a href="/portfolio">Portfolio</a>
+    <a href="/demos">Demos</a>
     <a href="/pricing">Pricing</a>
     <a href="/risk-calculator">Calculator</a>
     <a href="/blog">Blog</a>
@@ -209,7 +216,7 @@
   }
 
   if (window.matchMedia('(max-width: 767px)').matches) {
-    initCarousel('portfolio-carousel');
+    initCarousel('demos-carousel');
   }
   </script>
 </body>
