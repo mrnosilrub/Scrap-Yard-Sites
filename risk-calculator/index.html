@@ -340,17 +340,6 @@
       </nav>
       <p>© <span id="year"></span> Scrapyard Sites — All rights reserved.</p>
     </footer>
-    <div
-      id="cta"
-      class="hidden fixed top-1/2 right-0 -translate-y-1/2 z-40 pr-4"
-    >
-      <a
-        id="ctaLink"
-        href="/contact"
-        class="block bg-brand-orange text-white font-semibold px-4 py-2 rounded-l-md shadow hover:opacity-90"
-        >Patch My Leak</a
-      >
-    </div>
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
       function fmt(x) {
@@ -374,8 +363,6 @@
         document.getElementById("contactBtn").href = `/contact?leak=${annual}`;
         document.getElementById("resultBox").classList.remove("hidden");
         document.getElementById("nextSteps").classList.remove("hidden");
-        document.getElementById("ctaLink").href = `/contact?leak=${annual}`;
-        document.getElementById("cta").classList.remove("hidden");
       });
     </script>
   </body>
