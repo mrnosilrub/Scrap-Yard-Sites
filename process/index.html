@@ -353,6 +353,14 @@
     function fmt(x){
       return x.toLocaleString('en-US',{style:'currency',currency:'USD',minimumFractionDigits:0});
     }
+    function prefill(){
+      const p=new URLSearchParams(location.search);
+      ['tons','margin','missed'].forEach(n=>{
+        const el=document.querySelector(`#calcForm [name="${n}"]`);
+        if(el&&p.get(n)) el.value=p.get(n);
+      });
+    }
+    document.addEventListener('DOMContentLoaded', prefill);
   document.getElementById('calcForm').addEventListener('submit',e=>{
       e.preventDefault();
       const t=+e.target.tons.value, m=+e.target.margin.value, l=+e.target.missed.value;

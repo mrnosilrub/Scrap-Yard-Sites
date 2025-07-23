@@ -212,94 +212,46 @@
       });
     </script>
     <main class="pt-16 px-6">
-      <section class="py-16">
-        <div class="max-w-xl mx-auto px-6 text-center">
-          <h1 class="text-3xl font-bold">Reputation Risk Calculator</h1>
-          <p class="text-base leading-relaxed max-w-md mx-auto mt-2">
-            Use this interactive tool to estimate how much revenue you’re losing
-            from missed loads. Interactive calculators bridge the gap between
-            words and numbers—they translate complex data into personalized
-            insights and create a clear “aha” moment. Enter a few numbers to see
-            how quickly a reputation‑first website pays for itself.
-          </p>
-          <p class="text-base leading-relaxed max-w-md mx-auto mt-4 text-gray-600">
-            Interactive calculators bridge the gap between words and numbers.
-            They demonstrate your expertise by transforming abstract concepts
-            into personalized insights and create an “aha” moment that inspires
-            confidence. This Risk Calculator is designed to give you a clear
-            picture of your missed‑call losses—so you can make an informed
-            decision about improving your online presence.
-          </p>
-
-          <form id="calcForm" class="mt-10 grid gap-6 max-w-md mx-auto">
-            <label class="text-left">
-              <span class="block text-base font-medium"
-                >Average load weight (tons)</span
-              >
-              <input
-                type="number"
-                step="0.1"
-                name="tons"
-                placeholder="e.g., 2"
-                value="2"
-                required
-                class="w-full rounded-md px-4 py-3 bg-white border border-brand-steel/20 text-brand-charcoal"
-              />
-            </label>
-            <label class="text-left">
-              <span class="block text-base font-medium"
-                >Average margin ($/ton)</span
-              >
-              <input
-                type="number"
-                step="0.1"
-                name="margin"
-                placeholder="e.g., 50"
-                value="50"
-                required
-                class="w-full rounded-md px-4 py-3 bg-white border border-brand-steel/20 text-brand-charcoal"
-              />
-            </label>
-            <label class="text-left">
-              <span class="block text-base font-medium"
-                >Loads missed per month</span
-              >
-              <input
-                type="number"
-                name="missed"
-                placeholder="e.g., 10"
-                value="10"
-                required
-                class="w-full rounded-md px-4 py-3 bg-white border border-brand-steel/20 text-brand-charcoal"
-              />
-            </label>
-            <button class="btn-primary w-full" type="submit">Calculate</button>
-          </form>
-
-          <div id="resultBox" class="hidden mt-10 text-center">
-            <h2 class="text-xl font-bold">
-              You’re leaking <span id="lossFig">$‑‑‑</span> per year
-            </h2>
-            <p class="text-base leading-relaxed mt-2">
-              We calculate this by multiplying your missed loads, average margin
-              and weight, then annualizing the result. Think of this as money
-              slipping through cracks in your process.
+      <section class="py-12 bg-gray-50">
+        <div class="mx-auto max-w-3xl px-6">
+          <div class="border border-brand-steel/20 rounded-xl p-6 bg-white">
+            <h1 class="text-2xl font-bold text-center">Reputation&nbsp;Risk&nbsp;Calculator</h1>
+            <p class="text-base leading-relaxed max-w-md mx-auto mt-2">
+              Use this interactive tool to estimate how much revenue you’re losing
+              from missed loads. Interactive calculators bridge the gap between
+              words and numbers—they translate complex data into personalized
+              insights and create a clear “aha” moment. Enter a few numbers to see
+              how quickly a reputation‑first website pays for itself.
             </p>
-            <p class="text-base leading-relaxed mt-2">
-              A Standard Launch ($2,499) pays for itself in
-              <strong id="roiDays">‑‑</strong> days—then starts putting money
-              back in your pocket.
+            <p class="text-base leading-relaxed max-w-md mx-auto mt-4 text-gray-600">
+              Interactive calculators bridge the gap between words and numbers.
+              They demonstrate your expertise by transforming abstract concepts
+              into personalized insights and create an “aha” moment that inspires
+              confidence. This Risk Calculator is designed to give you a clear
+              picture of your missed‑call losses—so you can make an informed
+              decision about improving your online presence.
             </p>
-            <a
-              id="contactBtn"
-              href="/contact"
-              class="btn-primary mt-6 inline-block"
-              >Patch My Leak</a
-            >
-            <p class="text-xs mt-6">
-              Click to schedule a call and receive a personalized reputation
-              risk scan.
-            </p>
+            <form id="calcForm" class="mt-6 grid gap-6 max-w-md mx-auto">
+              <input type="number" step="0.1" name="tons" inputmode="decimal" required
+                     placeholder="Average monthly tons"
+                     class="w-full rounded-md px-4 py-3 bg-white border border-brand-steel/20 text-brand-charcoal" />
+              <input type="number" step="0.1" name="margin" inputmode="decimal" required
+                     placeholder="Margin per ton ($)"
+                     class="w-full rounded-md px-4 py-3 bg-white border border-brand-steel/20 text-brand-charcoal" />
+              <input type="number" name="missed" inputmode="numeric" required
+                     placeholder="Missed calls per month"
+                     class="w-full rounded-md px-4 py-3 bg-white border border-brand-steel/20 text-brand-charcoal" />
+              <button class="btn-primary w-full" type="submit">Calculate</button>
+            </form>
+            <div id="resultBox" class="hidden mt-6 text-center bg-gray-100 rounded-lg p-6 text-lg">
+              <h3 class="font-bold text-2xl">You’re Leaking <span id="lossFig">$‑‑‑</span>/year</h3>
+              <p class="text-sm mt-2">
+                A Standard Launch pays for itself in <strong id="roiDays">‑‑</strong> days.
+              </p>
+              <a id="contactBtn" href="/contact" class="btn-primary mt-6 inline-block">
+                Patch My Leak &amp; Book a Call
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -328,13 +280,17 @@
     </footer>
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
-      function fmt(x) {
-        return x.toLocaleString("en-US", {
-          style: "currency",
-          currency: "USD",
-          minimumFractionDigits: 0,
+      function fmt(x){
+        return x.toLocaleString('en-US',{style:'currency',currency:'USD',minimumFractionDigits:0});
+      }
+      function prefill(){
+        const p=new URLSearchParams(location.search);
+        ['tons','margin','missed'].forEach(n=>{
+          const el=document.querySelector(`#calcForm [name="${n}"]`);
+          if(el&&p.get(n)) el.value=p.get(n);
         });
       }
+      document.addEventListener('DOMContentLoaded', prefill);
       document.getElementById("calcForm").addEventListener("submit", (e) => {
         e.preventDefault();
         const t = +e.target.tons.value,
