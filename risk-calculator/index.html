@@ -298,23 +298,11 @@
               class="btn-primary mt-6 inline-block"
               >Patch My Leak</a
             >
-            <p class="text-xs mt-2">
+            <p class="text-xs mt-6">
               Click to schedule a call and receive a personalized reputation
               risk scan with your calculated leakage pre‑filled.
             </p>
           </div>
-          <section id="nextSteps" class="mt-12 hidden text-left">
-            <h3 class="text-lg font-semibold">Next Steps</h3>
-            <ol class="list-decimal pl-5 mt-2 space-y-1 text-sm">
-              <li>Download your leak summary (we’ll email it to you).</li>
-              <li>
-                Book a 15‑minute Reputation Risk Scan to interpret the numbers.
-              </li>
-              <li>
-                Start your seven‑day site build and stop the leak for good.
-              </li>
-            </ol>
-          </section>
         </div>
       </section>
       <section class="mt-16 py-12 bg-brand-orange text-white text-center -mx-6">
@@ -362,7 +350,6 @@
         );
         document.getElementById("contactBtn").href = `/contact?leak=${annual}`;
         document.getElementById("resultBox").classList.remove("hidden");
-        document.getElementById("nextSteps").classList.remove("hidden");
       });
     </script>
   </body>
