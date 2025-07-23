@@ -4,7 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="preload" href="/assets/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
-  <title>Blog | Scrapyard Sites</title>
+  <title>Pre-Qualify Scrap Sellers | Scrapyard Sites</title>
   <link rel="icon" href="../favicon.svg"> <!-- prevents 404s on mobile -->
   <script>
     tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{brand:{orange:'#D75E02',steel:'#5E6367',charcoal:'#2B2B2B'}}}}};
@@ -89,55 +89,17 @@
   });
   </script>
   <main class="pt-16 pb-20 px-6">
-    <section class="hero py-16 text-center">
-      <h1 class="text-3xl font-bold">Reputation &amp; Growth Insights</h1>
-      <p class="text-sm max-w-xl mx-auto mt-2 text-brand-steel">
-        Practical articles on credibility, lead qualification, local visibility and operational reliability—written specifically for scrap yard owners.
-      </p>
-      <a href="/contact" class="btn-primary mt-6">Book a Discovery Call</a>
-    </section>
-
-    <div class="mt-8 flex flex-wrap justify-center gap-2">
-      <a href="#" class="px-3 py-1 text-sm rounded-full border border-brand-orange text-brand-orange">Credibility</a>
-      <a href="#" class="px-3 py-1 text-sm rounded-full border border-brand-orange text-brand-orange">Qualification</a>
-      <a href="#" class="px-3 py-1 text-sm rounded-full border border-brand-orange text-brand-orange">Visibility</a>
-      <a href="#" class="px-3 py-1 text-sm rounded-full border border-brand-orange text-brand-orange">Reliability</a>
-      <a href="#" class="px-3 py-1 text-sm rounded-full border border-brand-orange text-brand-orange">News</a>
-    </div>
-    <form action="#" class="max-w-md mx-auto mt-6 flex">
-      <input type="text" placeholder="Search articles..." class="w-full rounded-l-md px-4 py-2 border border-brand-steel/20" />
-      <button type="submit" class="btn-primary rounded-l-none">Search</button>
-    </form>
-
-    <section class="post-grid max-w-7xl mx-auto mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      <article class="blog-card border rounded-md overflow-hidden shadow-sm">
-        <img src="/assets/hero.jpg" alt="Scrapyard SEO basics" class="w-full h-40 object-cover rounded-t-md">
-        <div class="p-4">
-          <span class="text-xs uppercase text-brand-orange">Visibility</span>
-          <h3 class="text-lg font-semibold mt-2"><a href="/blog/posts/seo-basics-for-scrap-yards.html" class="hover:underline">SEO Basics for Scrap Yards</a></h3>
-          <p class="text-sm text-brand-steel mt-2">Learn how structured data and local listings help you appear first in “near me” searches.</p>
-          <a href="/blog/posts/seo-basics-for-scrap-yards.html" class="text-brand-orange text-sm mt-3 inline-block">Read more &rarr;</a>
-        </div>
-      </article>
-      <article class="blog-card border rounded-md overflow-hidden shadow-sm">
-        <img src="/assets/hero.jpg" alt="Intake forms" class="w-full h-40 object-cover rounded-t-md">
-        <div class="p-4">
-          <span class="text-xs uppercase text-brand-orange">Qualification</span>
-          <h3 class="text-lg font-semibold mt-2"><a href="/blog/posts/pre-qualify-scrap-sellers.html" class="hover:underline">Pre-Qualify Scrap Sellers</a></h3>
-          <p class="text-sm text-brand-steel mt-2">Use smarter web forms to weed out tire kickers and attract serious sellers.</p>
-          <a href="/blog/posts/pre-qualify-scrap-sellers.html" class="text-brand-orange text-sm mt-3 inline-block">Read more &rarr;</a>
-        </div>
-      </article>
-      <article class="blog-card border rounded-md overflow-hidden shadow-sm">
-        <img src="/assets/hero.jpg" alt="Security patches" class="w-full h-40 object-cover rounded-t-md">
-        <div class="p-4">
-          <span class="text-xs uppercase text-brand-orange">Reliability</span>
-          <h3 class="text-lg font-semibold mt-2"><a href="/blog/posts/care-plan-essentials.html" class="hover:underline">Care Plan Essentials</a></h3>
-          <p class="text-sm text-brand-steel mt-2">Security patches, backups and monitoring keep your site running 24/7.</p>
-          <a href="/blog/posts/care-plan-essentials.html" class="text-brand-orange text-sm mt-3 inline-block">Read more &rarr;</a>
-        </div>
-      </article>
-    </section>
+    <article class="max-w-3xl mx-auto prose prose-lg">
+      <img src="/assets/hero.jpg" alt="Hero image" class="w-full h-64 object-cover rounded-md mb-4">
+      <p class="text-xs uppercase text-brand-orange">Qualification</p>
+      <h1 class="text-3xl font-bold mt-2">Pre-Qualify Scrap Sellers</h1>
+      <p class="text-sm text-brand-steel mt-1">By Scrapyard Sites | January 2, 2024</p>
+      <p class="mt-4">Use detailed intake forms to screen leads so you only spend time on serious sellers</p>
+      <!-- Add as many paragraphs/headings as needed -->
+      <div class="mt-8">
+        <a href="/blog" class="text-brand-orange hover:underline">&larr; Back to blog</a>
+      </div>
+    </article>
   </main>
 <footer class="bg-white py-8 text-center text-xs text-gray-400">
   <nav class="mb-2 flex flex-wrap justify-center gap-x-2 gap-y-1">
@@ -155,6 +117,6 @@
   </nav>
   <p>© <span id="year"></span> Scrapyard Sites — All rights reserved.</p>
 </footer>
-  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>
