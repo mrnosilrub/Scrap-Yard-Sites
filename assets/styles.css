@@ -219,3 +219,8 @@ details summary::marker {
     transition: none !important;
   }
 }
+
+/* Blog post card sizing */
+.blog-card {
+  max-width: 700px;
+}
