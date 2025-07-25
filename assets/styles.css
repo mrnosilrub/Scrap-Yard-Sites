@@ -72,6 +72,9 @@
     border-color: transparent;
   }
 }
+.hero-cta {
+  flex-direction: column;
+}
 .cta-subtext {
   display: block;
   font-size: 0.75rem;
