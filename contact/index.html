@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#D75E02"/>
   <link rel="preload" href="/assets/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
   <title>Contact | Scrapyard Sites</title>
   <link rel="icon" href="../favicon.svg"> <!-- prevents 404s on mobile -->
@@ -76,6 +77,8 @@
     const isOpen = !menu.classList.contains('hidden');
     document.body.classList.toggle('overflow-hidden', isOpen);if(banner) banner.classList.toggle('hidden', isOpen);
     btn.classList.toggle('open');
+    const themeMeta=document.querySelector('meta[name=theme-color]');
+    if(themeMeta) themeMeta.setAttribute('content', isOpen ? '#ffffff' : '#D75E02');
   window.dispatchEvent(new Event('resize'));
   }
   document.addEventListener('DOMContentLoaded', () => {
