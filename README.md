@@ -12,3 +12,12 @@ For social previews, you can also include a JPG thumbnail at `assets/thumbnail.j
 4. Update both the card heading link and the "Read more" link to point to `/blog/posts/your-slug.html`.
 
 Following this process keeps posts organized and ensures the header and footer remain consistent across the site.
+
+## Call-to-Action Guidelines
+
+Use these CTAs across the site to capture leads and close sales.
+
+| Tier | Purpose | Recommended Language | Placement |
+| --- | --- | --- | --- |
+| **Primary CTA** (relationship-starter) | Low-friction first step; qualifies leads and lets you diagnose their pain. | **“Book a Discovery Call”**  <br>*(sub-text: “15 min • No obligation”)* | - Nav button  <br>- Hero sections  <br>- Footer |
+| **Secondary CTA** (transactional) | Converts warm prospects who already understand the offer. | **“Pay Deposit & Reserve My Build Week”**  <br>*(sub-text: “50 % today • Balance at launch”)* | - Pricing page  <br>- Post-calculator results  <br>- Promotional banner |
