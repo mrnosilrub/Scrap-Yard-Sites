@@ -179,6 +179,8 @@ body.overflow-hidden #promoBanner {
   justify-content: center;
   display: inline-flex;
   pointer-events: auto;
+  position: relative;
+  z-index: 70;
 }
 
 @media (min-width: 1024px) {
