@@ -8,7 +8,7 @@
   if(diff <= 0){
     const btn = banner.querySelector('a');
     if(btn) btn.remove();
-    if(countdownEl) countdownEl.textContent = 'Slots now full';
+    if(countdownEl) countdownEl.remove();
   } else if(countdownEl){
     countdownEl.textContent = diff + ' day' + (diff === 1 ? '' : 's') + ' left';
   }
