@@ -156,6 +156,11 @@ header.fixed {
   }
 }
 
+/* Hide promo banner when mobile menu is open */
+body.overflow-hidden #promoBanner {
+  display: none;
+}
+
 /* Ensure mobile menu toggle icons remain visible */
 #menuToggle svg {
   color: #2b2b2b;
