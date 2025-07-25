@@ -79,7 +79,7 @@
 </head>
 <body class="font-sans text-brand-charcoal antialiased bg-white overflow-x-hidden">
   <header class="fixed top-0 left-0 right-0 w-full z-50 bg-white shadow-sm">
-<div id="promoBanner" class="bg-white text-brand-orange text-center text-sm px-4 py-2 flex flex-col sm:flex-row items-center gap-2 justify-center">
+<div id="promoBanner" class="bg-brand-orange text-white text-center text-sm px-4 py-2 flex flex-col sm:flex-row items-center gap-2 justify-center">
   <span>Save 10% on your build — pay your deposit by Aug 30. Lock in your slot; go live before peak Q4 scrap season.</span>
   <a href="https://book.stripe.com/eVqeVd8Vi9U45RbdJy73G00" class="btn-secondary whitespace-nowrap">Pay Deposit →</a>
   <span data-days-left class="text-xs"></span>
@@ -122,7 +122,7 @@
   </header>
   <script>
   /* full-screen mobile toggle */
-  function toggleMobileMenu(){const menu=document.getElementById('mobileMenu');const btn=document.getElementById('menuToggle');menu.classList.toggle('hidden');const isOpen=!menu.classList.contains('hidden');document.body.classList.toggle('overflow-hidden',isOpen);btn.classList.toggle('open');}
+  function toggleMobileMenu(){const menu=document.getElementById('mobileMenu');const btn=document.getElementById('menuToggle');const banner=document.getElementById('promoBanner');menu.classList.toggle('hidden');const isOpen=!menu.classList.contains('hidden');document.body.classList.toggle('overflow-hidden', isOpen);if(banner) banner.classList.toggle('hidden', isOpen);btn.classList.toggle('open');}
   document.addEventListener('DOMContentLoaded',()=>{const currentPath=location.pathname.replace(/\/index.html$/,'').replace(/\/$/,'');document.querySelectorAll('#menu a:not(.no-highlight), #mobileMenu a:not(.no-highlight)').forEach(link=>{const linkPath=new URL(link.getAttribute('href'),location.origin).pathname.replace(/\/index.html$/,'').replace(/\/$/,'');if(linkPath===currentPath){link.classList.add('text-brand-orange');}});document.getElementById('menuToggle')?.addEventListener('click',toggleMobileMenu);document.getElementById('menuClose')?.addEventListener('click',toggleMobileMenu);});
   </script>
   <main class="pb-0 bg-gray-50">
