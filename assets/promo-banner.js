@@ -1,7 +1,6 @@
 (function(){
   const banner = document.getElementById('promoBanner');
   if(!banner) return;
-  const countdownEl = banner.querySelector('[data-days-left]');
   // Update countdown target to keep the banner active
   const target = new Date('2025-08-31T00:00:00');
   const now = new Date();
@@ -9,8 +8,5 @@
   if(diff <= 0){
     const btn = banner.querySelector('a.btn-secondary');
     if(btn) btn.remove();
-    if(countdownEl) countdownEl.remove();
-  } else if(countdownEl){
-    countdownEl.textContent = diff + ' day' + (diff === 1 ? '' : 's') + ' left';
   }
 })();
