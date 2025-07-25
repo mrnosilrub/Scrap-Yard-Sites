@@ -29,6 +29,11 @@
   </style>
 </head>
 <body class="font-sans text-brand-charcoal antialiased bg-white overflow-x-hidden">
+<div id="promoBanner" class="bg-brand-orange text-white text-center text-sm px-4 py-2 flex flex-col sm:flex-row items-center gap-2 justify-center">
+  <span>Save 10% on your build — pay your deposit by Aug 30. Lock in your slot; go live before peak Q4 scrap season.</span>
+  <a href="https://book.stripe.com/eVqeVd8Vi9U45RbdJy73G00" class="btn-secondary whitespace-nowrap">Pay Deposit →</a>
+  <span data-days-left class="text-xs"></span>
+</div>
   <header class="fixed top-0 left-0 right-0 w-full z-50 bg-white shadow-sm">
     <nav class="max-w-7xl mx-auto relative flex items-center justify-between py-3 px-6">
       <a href="/" class="flex items-center gap-2"><img src="/assets/logo.svg" alt="Scrapyard Sites logo" class="h-8 w-8"/><span class="site-title text-xl text-brand-charcoal"><span class="font-bold text-brand-orange">Scrapyard</span> <span class="font-bold">Sites</span></span></a>
@@ -237,5 +242,6 @@
   }
   if(window.matchMedia('(max-width: 767px)').matches){initCarousel('pricing-carousel');}
   </script>
+<script src="/assets/promo-banner.js"></script>
 </body>
 </html>
