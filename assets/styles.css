@@ -151,6 +151,8 @@ header.fixed {
 /* Default charcoal text for navigation links */
 header nav ul a {
   color: #2B2B2B;
+  /* Align with logo and buttons */
+  line-height: 1;
 }
 
 /* Highlight active link in the desktop nav */
