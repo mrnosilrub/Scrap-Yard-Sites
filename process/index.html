@@ -140,6 +140,7 @@
     const isOpen = !menu.classList.contains('hidden');
     document.body.classList.toggle('overflow-hidden', isOpen);if(banner) banner.classList.toggle('hidden', isOpen);
     btn.classList.toggle('open');
+  window.dispatchEvent(new Event('resize'));
   }
   document.addEventListener('DOMContentLoaded', () => {
     const currentPath = location.pathname
