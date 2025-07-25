@@ -135,12 +135,25 @@ header.fixed {
   z-index: 50;
 }
 
-/* Keep promo banner above the fixed header */
+/* Consistent promo banner styling */
 #promoBanner {
   position: relative;
   z-index: 60;
-  /* gap between banner lines is 0.5rem (gap-2); double it for bottom padding */
-  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #d75e02;
+  color: #fff;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  #promoBanner {
+    flex-direction: row;
+  }
 }
 
 /* Ensure mobile menu toggle icons remain visible */
@@ -160,6 +173,7 @@ header.fixed {
   align-items: center;
   justify-content: center;
   display: inline-flex;
+  pointer-events: auto;
 }
 
 @media (min-width: 1024px) {
