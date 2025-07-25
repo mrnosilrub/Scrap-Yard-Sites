@@ -169,6 +169,11 @@ header nav ul a.text-brand-orange {
   color: #D75E02 !important;
 }
 
+/* Vertically center brand title in the nav */
+header .site-title {
+  line-height: 1;
+}
+
 
 /* Hide default disclosure triangles on FAQ items */
 details summary::-webkit-details-marker {
