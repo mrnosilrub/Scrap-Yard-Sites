@@ -6,7 +6,7 @@
   const now = new Date();
   const diff = Math.ceil((target - now) / (1000*60*60*24));
   if(diff <= 0){
-    const btn = banner.querySelector('a');
+    const btn = banner.querySelector('a.btn-secondary');
     if(btn) btn.remove();
     if(countdownEl) countdownEl.remove();
   } else if(countdownEl){
