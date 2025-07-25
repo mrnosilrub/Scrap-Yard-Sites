@@ -136,7 +136,8 @@ header.fixed {
 #promoBanner {
   position: relative;
   z-index: 60;
-  padding-bottom: 0.75rem; /* extra space below last line */
+  /* gap between banner lines is 0.5rem (gap-2); double it for bottom padding */
+  padding-bottom: 1rem;
 }
 
 /* Ensure mobile menu toggle icons remain visible */
