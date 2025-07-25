@@ -126,6 +126,12 @@ header.fixed {
   z-index: 50;
 }
 
+/* Keep promo banner above the fixed header */
+#promoBanner {
+  position: relative;
+  z-index: 60;
+}
+
 /* Ensure mobile menu toggle icons remain visible */
 #menuToggle svg {
   color: #2B2B2B;
