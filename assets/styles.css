@@ -146,7 +146,7 @@ header.fixed {
   display: inline-flex;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   /* Hide hamburger on desktop */
   #menuToggle { display: none; }
 }
@@ -202,7 +202,7 @@ details summary::marker {
 }
 
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   header nav ul a::after,
   #mobileMenu a:not(.bg-yellow-500)::after,
   .site-title::after {
