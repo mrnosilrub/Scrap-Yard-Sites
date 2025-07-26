@@ -173,14 +173,17 @@ body.overflow-hidden #promoBanner {
 /* Position the close button in the top-right corner */
 
 /* Center icons inside mobile menu toggle buttons */
-#menuToggle,
-#menuClose {
+#menuToggle {
   align-items: center;
   justify-content: center;
   display: inline-flex;
   pointer-events: auto;
   position: relative;
   z-index: 70;
+}
+
+#menuClose {
+  display: none;
 }
 
 @media (min-width: 1024px) {
@@ -200,6 +203,7 @@ body.overflow-hidden #promoBanner {
 #menuToggle.open .icon-close {
   display: inline;
 }
+
 
 /* Default charcoal text for navigation links */
 header nav ul a {
