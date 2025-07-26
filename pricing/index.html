@@ -27,6 +27,8 @@
     .carousel-indicators span{background:#D75E02;border-radius:9999px;width:.5rem;height:.5rem;opacity:.5;transition:width .3s ease,opacity .3s ease;}
     .carousel-indicators span.active{width:1.5rem;opacity:1;}
     a:hover .site-title::after{width:100%;}
+    @keyframes highlightOrange{0%,100%{color:#5E6367;}50%{color:#D75E02;}}
+    .highlight-promise{animation:highlightOrange 2s ease-in-out;}
   </style>
 </head>
 <body class="font-sans text-brand-charcoal antialiased bg-white overflow-x-hidden">
@@ -171,7 +173,7 @@
 </div>
       <!-- FAQ stays below packages -->
     </section>
-<section id="how-it-works" class="mt-16 py-12 bg-gray-50">
+<section id="how-it-works" class="scroll-mt-16 mt-16 py-12 bg-gray-50">
   <div class="max-w-2xl mx-auto px-6 text-left">
     <h2 class="text-2xl font-bold mb-4 text-center">How It Works</h2>
     <ul class="list-disc pl-5 mt-2 text-sm text-brand-steel">
@@ -248,7 +250,25 @@
   }
   if(window.matchMedia('(max-width: 767px)').matches){initCarousel('pricing-carousel');}
   </script>
-<script src="/assets/header-offset.js"></script>
-<script src="/assets/promo-banner.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded',()=>{
+    document.querySelectorAll('a[href="#roi"]').forEach(link=>{
+      link.addEventListener('click',e=>{
+        e.preventDefault();
+        const header=document.querySelector('header');
+        const section=document.getElementById('how-it-works');
+        const top=section.getBoundingClientRect().top+window.pageYOffset-header.getBoundingClientRect().height;
+        window.scrollTo({top,behavior:'smooth'});
+        const highlight=document.querySelector('#roi strong');
+        if(highlight){
+          highlight.classList.add('highlight-promise');
+          setTimeout(()=>highlight.classList.remove('highlight-promise'),2000);
+        }
+      });
+    });
+  });
+  </script>
+  <script src="/assets/header-offset.js"></script>
+  <script src="/assets/promo-banner.js"></script>
 </body>
 </html>
