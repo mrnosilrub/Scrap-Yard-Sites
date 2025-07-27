@@ -249,22 +249,24 @@
   </script>
   <script>
   document.addEventListener('DOMContentLoaded',()=>{
+    const header=document.querySelector('header');
+    const nav=header?header.querySelector('nav'):null;
+    const section=document.getElementById('how-it-works');
+    function scrollToROI(){
+      if(!section) return;
+      const offset=nav?nav.getBoundingClientRect().height:header.getBoundingClientRect().height;
+      const top=section.getBoundingClientRect().top+window.pageYOffset-offset;
+      window.scrollTo({top,behavior:'smooth'});
+      const highlight=document.querySelector('#roi strong');
+      if(highlight){
+        highlight.classList.add('highlight-promise');
+        setTimeout(()=>highlight.classList.remove('highlight-promise'),2000);
+      }
+    }
     document.querySelectorAll('a[href="#roi"]').forEach(link=>{
-      link.addEventListener('click',e=>{
-        e.preventDefault();
-        const header=document.querySelector('header');
-        const nav=header?header.querySelector('nav'):null;
-        const section=document.getElementById('how-it-works');
-        const offset=nav?nav.getBoundingClientRect().height:header.getBoundingClientRect().height;
-        const top=section.getBoundingClientRect().top+window.pageYOffset-offset;
-        window.scrollTo({top,behavior:'smooth'});
-        const highlight=document.querySelector('#roi strong');
-        if(highlight){
-          highlight.classList.add('highlight-promise');
-          setTimeout(()=>highlight.classList.remove('highlight-promise'),2000);
-        }
-      });
+      link.addEventListener('click',e=>{e.preventDefault();scrollToROI();});
     });
+    if(window.location.hash==='#roi'){scrollToROI();}
   });
   </script>
   <script src="/assets/header-offset.js"></script>
