@@ -254,8 +254,10 @@
       link.addEventListener('click',e=>{
         e.preventDefault();
         const header=document.querySelector('header');
+        const nav=header?header.querySelector('nav'):null;
         const section=document.getElementById('how-it-works');
-        const top=section.getBoundingClientRect().top+window.pageYOffset-header.getBoundingClientRect().height;
+        const offset=nav?nav.getBoundingClientRect().height:header.getBoundingClientRect().height;
+        const top=section.getBoundingClientRect().top+window.pageYOffset-offset;
         window.scrollTo({top,behavior:'smooth'});
         const highlight=document.querySelector('#roi strong');
         if(highlight){
