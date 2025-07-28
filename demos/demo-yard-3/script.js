@@ -349,6 +349,45 @@ function initTeamCarousel() {
 
 }
 
+function initMaterialsCarousel() {
+  if (!window.matchMedia('(max-width: 767px)').matches) return;
+  const track = document.getElementById('materials-carousel');
+  if (!track) return;
+  const slides = Array.from(track.children);
+  const indicators = document.createElement('div');
+  indicators.className = 'carousel-indicators';
+  slides.forEach((_, i) => {
+    const dot = document.createElement('span');
+    if (i === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => goTo(i));
+    indicators.appendChild(dot);
+  });
+  track.after(indicators);
+
+  let index = 0;
+  const slideWidth = slides[1] ? slides[1].offsetLeft - slides[0].offsetLeft : track.clientWidth;
+
+  function updateDots(i) {
+    indicators.querySelectorAll('span').forEach((dot, idx) => {
+      dot.classList.toggle('active', idx === i);
+    });
+  }
+
+  function goTo(i) {
+    index = i;
+    track.scrollTo({ left: slideWidth * index, behavior: 'smooth' });
+    updateDots(index);
+  }
+
+  track.addEventListener('scroll', () => {
+    const i = Math.round(track.scrollLeft / slideWidth);
+    if (i !== index) {
+      index = i;
+      updateDots(index);
+    }
+  });
+}
+
 function initPage() {
   highlightActiveNav();
   initMenu();
@@ -368,6 +407,8 @@ function initPage() {
   initValuesCarousel();
 
   initTeamCarousel();
+
+  initMaterialsCarousel();
 
 
 }

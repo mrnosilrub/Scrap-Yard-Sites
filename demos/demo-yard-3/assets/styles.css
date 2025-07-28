@@ -367,3 +367,37 @@ header nav a:hover::after,
 .fade-in {
   animation: values-fade-in 0.5s ease;
 }
+
+/* Mobile carousel styles reused from the main site */
+@media (max-width: 767px) {
+  .carousel-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+  .carousel-item {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+  }
+}
+
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2.5rem;
+}
+.carousel-indicators span {
+  background: var(--color-links);
+  border-radius: 9999px;
+  width: 0.5rem;
+  height: 0.5rem;
+  opacity: 0.5;
+  transition: width 0.3s ease, opacity 0.3s ease;
+}
+.carousel-indicators span.active {
+  width: 1.5rem;
+  opacity: 1;
+}
