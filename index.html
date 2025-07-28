@@ -78,26 +78,12 @@
       width: 100%;
     }
 
-    /* Brand title underline animation */
     .site-title {
       position: relative;
       display: inline-block;
     }
 
-    .site-title::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -4px;
-      width: 0;
-      height: 2px;
-      background-color: var(--color-links);
-      transition: width 0.3s ease;
-    }
 
-    a:hover .site-title::after {
-      width: 100%;
-    }
 
     /* AOS fade-up utility */
     [data-aos] {
