@@ -350,19 +350,24 @@ function initTeamCarousel() {
 }
 
 function initMaterialsCarousel() {
-  if (!window.matchMedia('(max-width: 767px)').matches) return;
   const track = document.getElementById('materials-carousel');
   if (!track) return;
   const slides = Array.from(track.children);
-  const indicators = document.createElement('div');
-  indicators.className = 'carousel-indicators';
-  slides.forEach((_, i) => {
-    const dot = document.createElement('span');
-    if (i === 0) dot.classList.add('active');
+  let indicators = track.parentElement.querySelector('.carousel-indicators');
+  if (!indicators) {
+    indicators = document.createElement('div');
+    indicators.className = 'carousel-indicators';
+    slides.forEach((_, i) => {
+      const dot = document.createElement('span');
+      if (i === 0) dot.classList.add('active');
+      indicators.appendChild(dot);
+    });
+    track.after(indicators);
+  }
+  const dots = Array.from(indicators.querySelectorAll('span'));
+  dots.forEach((dot, i) => {
     dot.addEventListener('click', () => goTo(i));
-    indicators.appendChild(dot);
   });
-  track.after(indicators);
 
   let index = 0;
   const slideWidth = slides[1] ? slides[1].offsetLeft - slides[0].offsetLeft : track.clientWidth;
