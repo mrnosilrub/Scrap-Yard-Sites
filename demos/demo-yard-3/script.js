@@ -10,6 +10,20 @@ function toggleMenu() {
   }
 }
 
+function highlightActiveNav() {
+  const current = location.pathname
+    .replace(/\/index.html$/, '')
+    .replace(/\/$/, '');
+  document.querySelectorAll('header nav a, #mobileMenu a').forEach(link => {
+    const linkPath = new URL(link.getAttribute('href'), location.origin).pathname
+      .replace(/\/index.html$/, '')
+      .replace(/\/$/, '');
+    if (linkPath === current) {
+      link.classList.add('text-brand-orange');
+    }
+  });
+}
+
 function initMenu() {
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const btn = document.getElementById('menuButton');
@@ -336,6 +350,7 @@ function initTeamCarousel() {
 }
 
 function initPage() {
+  highlightActiveNav();
   initMenu();
   initFlyOver();
   initYardMap();
