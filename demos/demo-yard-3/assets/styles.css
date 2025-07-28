@@ -211,7 +211,14 @@ header nav a:hover::after,
 
 /* Animated background for the stats section */
 .stats-gradient {
-  background: linear-gradient(-45deg, #4169e1, #4169e1, #4169e1, #4169e1);
+  /* Subtle animated gradient in royal blue tones */
+  background: linear-gradient(
+    -45deg,
+    #274bdb,
+    #4169e1,
+    #5a7fe8,
+    #274bdb
+  );
   background-size: 600% 600%;
   animation: stats-gradient-animation 10s ease infinite;
 }
