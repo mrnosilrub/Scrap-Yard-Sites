@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scrapyard Sites | Premium Demo</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Inter', 'system-ui', 'sans-serif']
+        },
+        colors: {
+          brand: {
+            orange: '#D75E02',
+            steel:  '#5E6367',
+            charcoal: '#2B2B2B'
+          }
+        }
+      }
+    }
+  };
+</script>
+<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+<link href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap' rel='stylesheet'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="assets/styles.css">
+<meta name="description" content="See what scrap metals Demo Yard accepts for recycling.">
+<meta property="og:title" content="Accepted Materials | Demo Yard">
+<meta property="og:description" content="See what scrap metals Demo Yard accepts for recycling.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.demoyard.com/accepted-materials.html">
+<meta property="og:image" content="https://www.demoyard.com/assets/hero.jpg">
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg" sizes="any"/>
+  <link rel="icon" type="image/png" href="assets/logo.png"/>
+  <link rel="mask-icon" href="assets/logo.svg" color="#D75E02"/>
+  <link rel="apple-touch-icon" href="assets/logo.svg"/>
+</head>
+<body class="font-sans text-brand-charcoal antialiased bg-white min-h-screen flex flex-col">
+<header class="bg-white sticky top-0 w-full z-50 shadow-sm navbar-border">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center h-16">
+    <a id="homeButton" href="index.html" class="flex items-center gap-2">
+      <img src="assets/logo.svg" alt="Demo Yard logo" class="h-6 w-6 md:h-8 md:w-8">
+      <span class="site-title text-xl md:text-2xl font-black tracking-tight">
+        <span class="text-brand-orange">Premium</span>
+        <span class="text-brand-charcoal">Demo</span>
+      </span>
+    </a>
+    <nav class="hidden md:flex flex-1 justify-center space-x-6">
+      <a href="services.html" class="text-sm font-medium text-gray-300">Services</a><a href="process.html" class="text-sm font-medium text-gray-300">Process</a><a href="accepted-materials.html" class="text-sm font-medium text-brand-orange">Materials</a><a href="about.html" class="text-sm font-medium text-gray-300">About Us</a><a href="our-team.html" class="text-sm font-medium text-gray-300">Our Team</a><a href="contact.html" class="text-sm font-medium text-gray-300">Contact</a><a href="faq.html" class="text-sm font-medium text-gray-300">FAQ</a>
+    </nav>
+    <a href="contact.html" class="hidden md:inline-block rounded-md bg-brand-orange px-5 py-2 font-semibold text-white shadow-sm hover:opacity-90 transition ml-6">Request a Quote</a>
+    <a href="contact.html" class="md:hidden inline-block rounded-md bg-brand-orange px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:opacity-90 transition ml-auto mr-3">Request a Quote</a>
+    <button id="menuButton" class="md:hidden text-gray-300 focus:outline-none">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+    </div>
+    <div id="mobileMenu" class="fixed inset-0 bg-white z-60 flex flex-col items-center justify-center space-y-6 text-xl text-white transform translate-x-full transition-transform duration-300 md:hidden hidden">
+      <button id="closeMenu" class="absolute top-4 right-4 text-white focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+
+      <a href="services.html">Services</a>
+      <a href="process.html">Process</a>
+      <a href="accepted-materials.html" class="text-brand-orange">Materials</a>
+
+      <a href="about.html">About Us</a>
+      <a href="our-team.html">Our Team</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html" class="inline-block rounded-md bg-brand-orange px-8 py-3 font-semibold text-white shadow hover:opacity-90 transition">Request a Quote</a>
+    </div>
+  </header>
+<main class="flex-grow">
+  <!-- Hero -->
+  <section id="top" class="scroll-mt-16 relative isolate flex items-center justify-center text-center min-h-[calc(100vh-4rem)]">
+    <div class="absolute inset-0 -z-10 bg-[url('assets/hero.jpg')] bg-cover bg-center brightness-[.55]"></div>
+    <div class="absolute inset-0 -z-10 bg-black/70"></div>
+    <div class="flex flex-col items-center justify-center w-full h-full px-6">
+      <h1 class="font-extrabold text-white leading-tight" style="font-size:clamp(40px,7vw,56px)">Accepted Materials</h1>
+      <p class="mt-4 text-white text-lg">Top prices for copper, aluminum, steel and more—zero hidden fees.</p>
+      <div class="mt-10 flex flex-col sm:flex-row gap-4 hero-cta">
+        <a href="contact.html" class="rounded-md bg-brand-orange px-8 py-3 text-white font-semibold shadow hover:opacity-90 transition">Request a Quote</a>
+        <a href="#details" class="rounded-md bg-white px-8 py-3 text-brand-orange font-semibold shadow-lg hover:bg-gray-100 transition flex items-center justify-center gap-2">View Details <i class="fa-solid fa-arrow-down"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Select Grid -->
+  <section id="materials" class="pt-32 pb-20 bg-gray-100">
+    <div class="mx-auto max-w-6xl px-6 text-center">
+      <h2 class="text-3xl font-bold mb-8">What We Buy</h2>
+    </div>
+    <div class="mt-12 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-3 max-w-[1140px] mx-auto px-6">
+      <a href="#copper" class="group rounded-xl bg-white border border-brand-steel/10 shadow transition transform hover:-translate-y-1 p-6 flex flex-col items-center text-center">
+        <img src="assets/copper.jpg" alt="Copper &amp; Brass" class="w-40 h-40 object-cover rounded-lg border border-brand-steel/10 group-hover:scale-105 transition" />
+        <h3 class="font-semibold text-lg mt-4">Copper &amp; Brass</h3>
+        <p class="text-sm text-brand-steel">Highest copper prices in county</p>
+      </a>
+      <a href="#aluminum" class="group rounded-xl bg-white border border-brand-steel/10 shadow transition transform hover:-translate-y-1 p-6 flex flex-col items-center text-center">
+        <img src="assets/aluminum.jpg" alt="Aluminum" class="w-40 h-40 object-cover rounded-lg border border-brand-steel/10 group-hover:scale-105 transition" />
+        <h3 class="font-semibold text-lg mt-4">Aluminum</h3>
+        <p class="text-sm text-brand-steel">Clean extrusion &amp; sheet</p>
+      </a>
+      <a href="#steel" class="group rounded-xl bg-white border border-brand-steel/10 shadow transition transform hover:-translate-y-1 p-6 flex flex-col items-center text-center">
+        <img src="assets/steel.jpg" alt="Steel &amp; Iron" class="w-40 h-40 object-cover rounded-lg border border-brand-steel/10 group-hover:scale-105 transition" />
+        <h3 class="font-semibold text-lg mt-4">Steel &amp; Iron</h3>
+        <p class="text-sm text-brand-steel">HMS &amp; prepared plate</p>
+      </a>
+      <a href="#stainless" class="group rounded-xl bg-white border border-brand-steel/10 shadow transition transform hover:-translate-y-1 p-6 flex flex-col items-center text-center">
+        <img src="assets/stainless.jpg" alt="Stainless Steel" class="w-40 h-40 object-cover rounded-lg border border-brand-steel/10 group-hover:scale-105 transition" />
+        <h3 class="font-semibold text-lg mt-4">Stainless Steel</h3>
+        <p class="text-sm text-brand-steel">304/316 solids</p>
+      </a>
+      <a href="#cats" class="group rounded-xl bg-white border border-brand-steel/10 shadow transition transform hover:-translate-y-1 p-6 flex flex-col items-center text-center">
+        <img src="assets/catalytic.jpg" alt="Catalytic Converters" class="w-40 h-40 object-cover rounded-lg border border-brand-steel/10 group-hover:scale-105 transition" />
+        <h3 class="font-semibold text-lg mt-4">Catalytic Converters</h3>
+        <p class="text-sm text-brand-steel">OEM &amp; DPF</p>
+      </a>
+      <a href="#escrap" class="group rounded-xl bg-white border border-brand-steel/10 shadow transition transform hover:-translate-y-1 p-6 flex flex-col items-center text-center">
+        <img src="assets/batteries.jpg" alt="E‑Scrap &amp; Batteries" class="w-40 h-40 object-cover rounded-lg border border-brand-steel/10 group-hover:scale-105 transition" />
+        <h3 class="font-semibold text-lg mt-4">E‑Scrap &amp; Batteries</h3>
+        <p class="text-sm text-brand-steel">Boards and lead‑acid</p>
+      </a>
+    </div>
+  </section>
+
+
+  <!-- Details Accordion -->
+  <section id="details" class="space-y-8 max-w-6xl mx-auto px-6 pt-20">
+    <h2 class="text-3xl font-bold mb-8 text-center">Details</h2>
+    <section id="copper" class="material-details">
+      <details>
+        <summary class="flex items-center justify-between p-4 bg-white border rounded-lg cursor-pointer">
+          <span class="flex items-center gap-3">
+            <i class="fa-solid fa-coins text-2xl" data-aos="fade-up" data-aos-delay="0"></i>
+            <h2 class="text-lg font-bold">Copper &amp; Brass</h2>
+          </span>
+          <svg class="arrow w-5 h-5 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </summary>
+        <div class="details-body p-4 flex flex-col md:flex-row md:divide-x divide-gray-200">
+          <div class="flex-1 md:pr-6">
+            <h3 class="font-semibold mb-2">We pay top dollar for:</h3>
+            <ul class="list-disc list-inside space-y-1">
+              <li>#1 Bright &amp; Shiny wire</li>
+              <li>Insulated copper cable</li>
+              <li>Yellow brass solids</li>
+            </ul>
+          </div>
+          <div class="flex-1 md:pl-6 mt-6 md:mt-0">
+            <h3 class="font-semibold mb-2">We can&rsquo;t accept:</h3>
+            <ul class="list-disc list-inside space-y-1">
+              <li>Air-conditioning coils with freon</li>
+              <li>Greasy or food-contaminated copper</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section id="aluminum" class="material-details">
+      <details>
+        <summary class="flex items-center justify-between p-4 bg-white border rounded-lg cursor-pointer">
+          <span class="flex items-center gap-3">
+            <i class="fa-solid fa-circle text-2xl" data-aos="fade-up" data-aos-delay="80"></i>
+            <h2 class="text-lg font-bold">Aluminum</h2>
+          </span>
+          <svg class="arrow w-5 h-5 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </summary>
+        <div class="details-body p-4 flex flex-col md:flex-row md:divide-x divide-gray-200">
+          <div class="flex-1 md:pr-6">
+            <h3 class="font-semibold mb-2">We pay top dollar for:</h3>
+            <ul class="list-disc list-inside space-y-1">
+              <li>Extrusion and sheet</li>
+              <li>Cast wheels and blocks</li>
+            </ul>
+          </div>
+          <div class="flex-1 md:pl-6 mt-6 md:mt-0">
+            <h3 class="font-semibold mb-2">We can&rsquo;t accept:</h3>
+            <ul class="list-disc list-inside space-y-1">
+              <li>Foil pans</li>
+              <li>Food-contaminated scrap</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section id="steel" class="material-details">
+      <details>
+        <summary class="flex items-center justify-between p-4 bg-white border rounded-lg cursor-pointer">
+          <span class="flex items-center gap-3">
+            <i class="fa-solid fa-industry text-2xl" data-aos="fade-up" data-aos-delay="160"></i>
+            <h2 class="text-lg font-bold">Steel &amp; Iron</h2>
+          </span>
+          <svg class="arrow w-5 h-5 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </summary>
+        <div class="details-body p-4 flex flex-col md:flex-row md:divide-x divide-gray-200">
+          <div class="flex-1 md:pr-6">
+            <h3 class="font-semibold mb-2">We pay top dollar for:</h3>
+            <ul class="list-disc list-inside space-y-1">
+              <li>HMS and prepared plate</li>
+              <li>Cast iron machinery</li>
+            </ul>
+          </div>
+          <div class="flex-1 md:pl-6 mt-6 md:mt-0">
+            <h3 class="font-semibold mb-2">We can&rsquo;t accept:</h3>
+            <ul class="list-disc list-inside space-y-1">
+              <li>Pressurized tanks</li>
+              <li>Paint cans</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section id="stainless" class="material-details">
+      <details>
+        <summary class="flex items-center justify-between p-4 bg-white border rounded-lg cursor-pointer">
+          <span class="flex items-center gap-3">
+            <i class="fa-solid fa-utensils text-2xl" data-aos="fade-up" data-aos-delay="240"></i>
+            <h2 class="text-lg font-bold">Stainless Steel</h2>
+          </span>
+          <svg class="arrow w-5 h-5 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </summary>
+        <div class="details-body p-4 flex flex-col md:flex-row md:divide-x divide-gray-200">
+          <div class="flex-1 md:pr-6">
+            <h3 class="font-semibold mb-2">We pay top dollar for:</h3>
+            <ul class="list-disc list-inside space-y-1">
+              <li>304/316 solids</li>
+              <li>Food-grade tanks</li>
+            </ul>
+          </div>
+          <div class="flex-1 md:pl-6 mt-6 md:mt-0">
+            <h3 class="font-semibold mb-2">We can&rsquo;t accept:</h3>
+            <ul class="list-disc list-inside space-y-1">
+              <li>Greasy restaurant scrap</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section id="cats" class="material-details">
+      <details>
+        <summary class="flex items-center justify-between p-4 bg-white border rounded-lg cursor-pointer">
+          <span class="flex items-center gap-3">
+            <i class="fa-solid fa-car text-2xl" data-aos="fade-up" data-aos-delay="320"></i>
+            <h2 class="text-lg font-bold">Catalytic Converters</h2>
+          </span>
+          <svg class="arrow w-5 h-5 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </summary>
+        <div class="details-body p-4 flex flex-col md:flex-row md:divide-x divide-gray-200">
+          <div class="flex-1 md:pr-6">
+            <h3 class="font-semibold mb-2">We pay top dollar for:</h3>
+            <ul class="list-disc list-inside space-y-1">
+              <li>OEM units</li>
+              <li>DPF and foil cats</li>
+            </ul>
+          </div>
+          <div class="flex-1 md:pl-6 mt-6 md:mt-0">
+            <h3 class="font-semibold mb-2">We can&rsquo;t accept:</h3>
+            <ul class="list-disc list-inside space-y-1">
+              <li>Empty or punched shells</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section id="escrap" class="material-details">
+      <details>
+        <summary class="flex items-center justify-between p-4 bg-white border rounded-lg cursor-pointer">
+          <span class="flex items-center gap-3">
+            <i class="fa-solid fa-battery-full text-2xl" data-aos="fade-up" data-aos-delay="400"></i>
+            <h2 class="text-lg font-bold">E‑Scrap &amp; Batteries</h2>
+          </span>
+          <svg class="arrow w-5 h-5 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </summary>
+        <div class="details-body p-4 flex flex-col md:flex-row md:divide-x divide-gray-200">
+          <div class="flex-1 md:pr-6">
+            <h3 class="font-semibold mb-2">We pay top dollar for:</h3>
+            <ul class="list-disc list-inside space-y-1">
+              <li>Server boards</li>
+              <li>Lead-acid &amp; Li‑ion packs</li>
+            </ul>
+          </div>
+          <div class="flex-1 md:pl-6 mt-6 md:mt-0">
+            <h3 class="font-semibold mb-2">We can&rsquo;t accept:</h3>
+            <ul class="list-disc list-inside space-y-1">
+              <li>CRT monitors</li>
+              <li>Alkaline batteries</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+    </section>
+  </section>
+
+  <!-- Compliance Stripe -->
+  <section class="my-16 bg-orange-50 border-l-4 border-brand-orange py-14 px-6">
+    <p class="max-w-4xl mx-auto text-center">State law reminder: A valid photo ID is required for non‑ferrous sales. No fuel, oil, or refrigerants may remain in scrap items.</p>
+  </section>
+
+  <!-- Scrapyard Sites CTA -->
+  <section class="py-20 bg-gray-100 text-center">
+    <div class="max-w-3xl mx-auto px-6">
+      <p class="text-xl mb-6">If this digital experience matches the service you want on the scale deck, let’s launch yours next.</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="https://scrapyardsites.com/#contact" class="rounded-md bg-brand-orange px-8 py-3 font-semibold text-white shadow hover:opacity-90 transition">Book a Demo</a>
+        <a href="https://scrapyardsites.com" target="_blank" rel="noopener" class="rounded-md bg-white px-8 py-3 font-semibold text-brand-orange shadow hover:bg-gray-100 transition">Visit ScrapyardSites.com</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="bg-white py-8 text-center text-xs text-brand-steel">
+  <p>© <span id="year"></span> Scrapyard Sites — All rights reserved.</p>
+</footer>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+<script src="script.js"></script>
+</body>
+</html>
