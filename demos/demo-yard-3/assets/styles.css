@@ -388,7 +388,7 @@ header nav a:hover::after,
 /* Limit material card width for all screens */
 #materials-carousel > a,
 .carousel-item {
-  max-width: 16rem;
+  max-width: 14rem;
   margin-left: auto;
   margin-right: auto;
 }
