@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth overflow-x-hidden bg-white">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Scrapyard Sites | Standard Demo</title>
+  <meta name="description" content="Get top dollar for scrap metal in Demo City. Fast service, honest weights, and instant payment."/>
+  <meta property="og:title" content="Demo Yard — Scrap Metal Buyers"/>
+  <meta property="og:description" content="Fast, fair, and reliable scrap services in Demo City."/>
+  <meta property="og:image" content="assets/og-image.jpg"/>
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg" sizes="any"/>
+  <link rel="icon" type="image/png" href="assets/logo.png"/>
+  <link rel="mask-icon" href="assets/logo.svg" color="#D75E02"/>
+  <link rel="apple-touch-icon" href="assets/logo.svg"/>
+  <!-- Tailwind 3 CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter','system-ui','sans-serif'] },
+          colors: {
+            brand: {
+              orange:   '#D75E02',     /* OSHA orange accent   */
+              steel:    '#5E6367',     /* muted steel gray     */
+              charcoal: '#2B2B2B'      /* dark base            */
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <!-- Nav & brand underline animation + AOS utility -->
+  <style>
+    :root {
+      --color-links: #D75E02;
+    }
+
+    /* Nav bar underline animation */
+    header nav a,
+    #mobileMenu a:not(.bg-yellow-500):not(.btn-primary) {
+      position: relative;
+      text-decoration: none;
+    }
+
+    header nav a:hover,
+    #mobileMenu a:not(.bg-yellow-500):not(.btn-primary):hover {
+      color: currentColor !important;
+    }
+
+    /* Keep active nav item orange even when hovered */
+    header nav a.text-brand-orange:hover {
+      color: var(--color-links) !important;
+    }
+
+    header nav a::after,
+    #mobileMenu a:not(.bg-yellow-500):not(.btn-primary)::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 0;
+      height: 2px;
+      background-color: var(--color-links);
+      transition: width 0.3s ease;
+    }
+
+    header nav a:hover::after,
+    #mobileMenu a:not(.bg-yellow-500):not(.btn-primary):hover::after {
+      width: 100%;
+    }
+
+    /* Brand title underline animation */
+    .site-title {
+      position: relative;
+      display: inline-block;
+    }
+
+    .site-title::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 0;
+      height: 2px;
+      background-color: var(--color-links);
+      transition: width 0.3s ease;
+    }
+
+    a:hover .site-title::after {
+      width: 100%;
+    }
+
+    /* Default charcoal text for navigation links */
+    header nav a {
+      color: #2b2b2b;
+      line-height: 1;
+    }
+
+    /* Highlight active link in the desktop nav */
+    header nav a.text-brand-orange {
+      color: var(--color-links);
+    }
+
+    /* Ensure active link highlights in the mobile menu */
+    #mobileMenu a.text-brand-orange {
+      color: #d75e02;
+    }
+
+    /* Force "Scrapyard" word to appear orange */
+    .site-title span:first-child {
+      color: #d75e02 !important;
+    }
+
+    /* Vertically center brand title in the nav */
+    header .site-title {
+      line-height: 1;
+    }
+
+    [data-aos] {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .aos-active {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+  </style>
+
+  <!-- JSON‑LD (unchanged) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScrapYard",
+    "name": "Demo Yard",
+    "url": "https://yourgithubusername.github.io/Standard-Launch-Demo/",
+    "logo": "assets/logo.png",
+    "image": "assets/hero-bg.jpg",
+    "telephone": "+1-555-123-4567",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 Demo Rd",
+      "addressLocality": "Demo City",
+      "addressRegion": "TX",
+      "postalCode": "77001",
+      "addressCountry": "US"
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"17:00" },
+      { "@type": "OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"13:00" }
+    ],
+    "sameAs": []
+  }
+  </script>
+</head>
+
+<body class="font-sans text-brand-charcoal antialiased bg-white overflow-x-hidden">
+
+<!-- ── Header ───────────────────────────────────────────────-->
+<header class="bg-white fixed top-0 inset-x-0 w-full z-50 shadow-sm">
+  <div class="max-w-7xl mx-auto relative flex items-center justify-between px-6 py-3">
+    <a href="#top" class="flex items-center gap-2">
+      <img src="assets/logo.svg" alt="Demo Yard logo" class="h-6 w-6 md:h-8 md:w-8"/>
+      <span class="site-title text-xl md:text-2xl font-black tracking-tight">
+        <span class="text-brand-orange">Standard</span> Demo
+      </span>
+    </a>
+    <nav class="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-8 text-sm font-medium">
+      <a href="#how"       class="hover:text-brand-orange">How It Works</a>
+      <a href="#services"  class="hover:text-brand-orange">Services</a>
+      <a href="#materials" class="hover:text-brand-orange">What We Buy</a>
+      <a href="#visit"     class="hover:text-brand-orange">Visit</a>
+      <a href="#contact"   class="hover:text-brand-orange">Contact</a>
+      <a href="#faq"       class="hover:text-brand-orange">FAQ</a>
+    </nav>
+    <a href="#contact"
+       class="inline-block rounded-md bg-brand-orange px-5 py-2 text-white font-semibold shadow hover:opacity-90 transition">
+      Request a Quote
+    </a>
+  </div>
+</header>
+
+<!-- ── Hero ─────────────────────────────────────────────────-->
+<section id="top" class="scroll-mt-16 min-h-screen flex items-center justify-center text-center relative isolate pt-16">
+  <div class="absolute inset-0 -z-10 bg-[url('assets/hero-bg.jpg')] bg-cover bg-center"></div>
+  <div class="absolute inset-0 -z-10 bg-black/80"></div>
+
+  <div class="max-w-3xl mx-auto px-6">
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight text-white drop-shadow-lg">
+      Top Dollar for <span class="text-brand-orange">Scrap Metal</span>
+    </h1>
+    <p class="mt-5 text-lg sm:text-xl text-gray-100">
+      Fast, fair, and reliable service in Demo City.
+    </p>
+    <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+      <a href="#contact"
+         class="rounded-md bg-brand-orange px-8 py-3 text-white font-semibold shadow hover:opacity-90 transition">
+        Request a Quote
+      </a>
+      <a href="#materials"
+         class="rounded-md bg-white px-8 py-3 text-brand-orange font-semibold shadow-lg hover:bg-gray-100 transition">
+        What We Buy
+      </a>
+    </div>
+  </div>
+</section>
+<!-- Trust-Badge Strip -->
+<section class="bg-white py-4 shadow-inner">
+  <div class="max-w-4xl mx-auto flex flex-wrap justify-center gap-6 text-sm font-semibold text-brand-steel">
+    <span class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-orange"></i>ReMA Member</span>
+    <span class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-orange"></i>BBB A+</span>
+    <span class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-orange"></i>X Years Accident-Free</span>
+  </div>
+</section>
+<!-- -- How It Works ------------------------------ -->
+<section id="how" class="scroll-mt-16 py-20 bg-gray-100">
+  <div class="mx-auto max-w-6xl px-6 text-center">
+    <h2 class="text-3xl font-bold mb-8">How It Works</h2>
+  </div>
+  <div class="mt-12 grid gap-8 md:grid-cols-3 max-w-6xl mx-auto px-6">
+    <div class="rounded-xl bg-white border border-brand-steel/10 shadow p-8 flex items-start gap-4 transition transform hover:-translate-y-1" data-aos>
+      <span class="text-5xl font-bold text-brand-orange">1</span>
+      <div>
+        <h3 class="font-semibold mb-2">Check Your Material</h3>
+        <p class="text-sm text-brand-steel">Copper, aluminum, steel, converters, batteries & more.</p>
+      </div>
+    </div>
+    <div class="rounded-xl bg-white border border-brand-steel/10 shadow p-8 flex items-start gap-4 transition transform hover:-translate-y-1" data-aos data-aos-delay="50">
+      <span class="text-5xl font-bold text-brand-orange">2</span>
+      <div>
+        <h3 class="font-semibold mb-2">Drive On & Unload</h3>
+        <p class="text-sm text-brand-steel">Roll onto the scale and our crew takes care of the rest.</p>
+      </div>
+    </div>
+    <div class="rounded-xl bg-white border border-brand-steel/10 shadow p-8 flex items-start gap-4 transition transform hover:-translate-y-1" data-aos data-aos-delay="100">
+      <span class="text-5xl font-bold text-brand-orange">3</span>
+      <div>
+        <h3 class="font-semibold mb-2">Get Paid</h3>
+        <p class="text-sm text-brand-steel">Choose cash, check or ACH before you leave.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Commercial Services Call-out -->
+  <section id="services" class="py-12 bg-white">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <h2 class="text-2xl font-bold mb-8">Commercial Services</h2>
+    <div class="grid gap-6 md:grid-cols-3 text-sm">
+      <div class="rounded-lg border border-brand-steel/20 bg-white p-6 flex flex-col items-center gap-3 shadow transition transform hover:-translate-y-1" data-aos>
+        <i class="fa-solid fa-dumpster text-3xl text-brand-orange"></i>
+        <p>Roll-off containers (20–40 yd)</p>
+      </div>
+      <div class="rounded-lg border border-brand-steel/20 bg-white p-6 flex flex-col items-center gap-3 shadow transition transform hover:-translate-y-1" data-aos data-aos-delay="50">
+        <i class="fa-solid fa-recycle text-3xl text-brand-orange"></i>
+        <p>Demo scrap removal</p>
+      </div>
+      <div class="rounded-lg border border-brand-steel/20 bg-white p-6 flex flex-col items-center gap-3 shadow transition transform hover:-translate-y-1" data-aos data-aos-delay="100">
+        <i class="fa-solid fa-calendar-check text-3xl text-brand-orange"></i>
+        <p>Scheduled plant pickups</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Materials ────────────────────────────────────────────-->
+<section id="materials" class="scroll-mt-16 py-20 bg-gray-100">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold mb-4">Materials We Buy</h2>
+    <p class="mx-auto max-w-2xl text-brand-steel text-lg">
+      From household scrap to industrial loads—if it’s metal, we’ll weigh it and pay it.
+    </p>
+  </div>
+
+  <div class="mt-16 grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 max-w-6xl mx-auto px-6">
+    <!-- card -->
+    <div class="flex flex-col items-center text-center transition transform hover:-translate-y-1" data-aos>
+      <img src="assets/copper.jpg" alt="Copper" class="w-20 h-20 rounded-full object-cover mb-3">
+      <p class="font-medium">Copper & Brass</p>
+    </div>
+    <div class="flex flex-col items-center text-center transition transform hover:-translate-y-1" data-aos data-aos-delay="50">
+      <img src="assets/aluminum.jpg" alt="Aluminum" class="w-20 h-20 rounded-full object-cover mb-3">
+      <p class="font-medium">Aluminum</p>
+    </div>
+    <div class="flex flex-col items-center text-center transition transform hover:-translate-y-1" data-aos data-aos-delay="100">
+      <img src="assets/steel.jpg" alt="Steel" class="w-20 h-20 rounded-full object-cover mb-3">
+      <p class="font-medium">Steel & Iron</p>
+    </div>
+    <div class="flex flex-col items-center text-center transition transform hover:-translate-y-1" data-aos data-aos-delay="150">
+      <img src="assets/stainless.jpg" alt="Stainless" class="w-20 h-20 rounded-full object-cover mb-3">
+      <p class="font-medium">Stainless Steel</p>
+    </div>
+    <div class="flex flex-col items-center text-center transition transform hover:-translate-y-1" data-aos data-aos-delay="200">
+      <img src="assets/catalytic.jpg" alt="Cat Converters" class="w-20 h-20 rounded-full object-cover mb-3">
+      <p class="font-medium">Catalytic Converters</p>
+    </div>
+    <div class="flex flex-col items-center text-center transition transform hover:-translate-y-1" data-aos data-aos-delay="250">
+      <img src="assets/batteries.jpg" alt="Batteries" class="w-20 h-20 rounded-full object-cover mb-3">
+      <p class="font-medium">E‑Scrap &amp; Batteries</p>
+    </div>
+  </div>
+  <div class="mt-12 text-center">
+    <a href="#contact" class="rounded-md bg-brand-orange px-8 py-3 font-semibold text-white shadow hover:opacity-90 transition">Request a Quote</a>
+  </div>
+</section>
+<!-- Before-You-Arrive Checklist -->
+<section id="checklist" class="py-16 bg-white">
+  <div class="max-w-4xl mx-auto px-6">
+    <h2 class="text-2xl font-bold mb-8 text-center">Before You Arrive</h2>
+    <div class="grid gap-4 sm:grid-cols-3 text-sm text-brand-steel">
+      <div class="bg-white border border-brand-steel/20 rounded-md p-4 transition transform hover:-translate-y-1 flex flex-col items-center text-center gap-2 shadow" data-aos>
+        <i class="fa-solid fa-id-card text-2xl text-brand-orange"></i>
+        <span>ID's are required to sell your material (state law)</span>
+      </div>
+      <div class="bg-white border border-brand-steel/20 rounded-md p-4 transition transform hover:-translate-y-1 flex flex-col items-center text-center gap-2 shadow" data-aos data-aos-delay="50">
+        <i class="fa-solid fa-hard-hat text-2xl text-brand-orange"></i>
+        <span>Bring the required safety gear (boots, gloves & eye protection)</span>
+      </div>
+      <div class="bg-white border border-brand-steel/20 rounded-md p-4 transition transform hover:-translate-y-1 flex flex-col items-center text-center gap-2 shadow" data-aos data-aos-delay="100">
+        <i class="fa-solid fa-ban text-2xl text-brand-orange"></i>
+        <span>Prohibited items (Freon tanks, sealed drums, ammo)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Micro-Testimonials Carousel -->
+<section class="bg-gray-100 py-4 text-brand-charcoal text-center overflow-hidden">
+  <p id="testimonialText" class="text-sm h-6 flex items-center justify-center"></p>
+</section>
+
+<!-- ── Visit ───────────────────────────────────────────────-->
+<section id="visit" class="scroll-mt-16 py-20 bg-white">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold mb-4">Visit Our Yard</h2>
+    <p class="text-brand-steel text-base md:text-sm">
+      <strong>Hours:</strong> Mon–Fri 8 am–5 pm · Sat 8 am–1 pm<br/>
+      <strong>Address:</strong> 123 Demo Rd, Demo City, TX 77001<br/>
+      <strong>Phone:</strong> <a href="tel:+15551234567" class="underline">555‑123‑4567</a>
+    </p>
+    <iframe class="mt-10 w-full h-[350px] border-0 rounded-lg shadow" loading="lazy" src="https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=Demo+City+TX"></iframe>
+  </div>
+</section>
+
+
+<!-- ── Contact ─────────────────────────────────────────────-->
+<section id="contact" class="scroll-mt-16 py-20 bg-gray-100">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold">Get a Fast Quote</h2>
+    <p class="mt-2 text-brand-steel text-base md:text-sm">
+      Drop your details and we'll email you back within one business hour.
+    </p>
+
+    <form action="https://formspree.io/f/your-form-id" method="POST"
+          class="mt-10 grid gap-6">
+      <input type="text" name="name" required placeholder="Name"
+             class="w-full rounded-md px-4 py-3 bg-white border border-brand-steel/20 text-brand-charcoal"/>
+      <input type="tel" name="phone" required placeholder="Phone"
+             class="w-full rounded-md px-4 py-3 bg-white border border-brand-steel/20 text-brand-charcoal"/>
+      <input type="email" name="email" required placeholder="Email"
+             class="w-full rounded-md px-4 py-3 bg-white border border-brand-steel/20 text-brand-charcoal"/>
+      <textarea name="message" rows="4" placeholder="Tell us about your material…"
+                class="w-full rounded-md px-4 py-3 bg-white border border-brand-steel/20 text-brand-charcoal"></textarea>
+      <!-- honeypot -->
+      <input type="text" name="_gotcha" class="hidden" aria-hidden="true">
+      <button type="submit"
+              class="rounded-md bg-brand-orange px-8 py-3 font-semibold text-white shadow hover:opacity-90 transition">
+        Send →
+      </button>
+    </form>
+    <p class="mt-4 text-xs text-brand-steel">
+      By submitting you agree to our <a href="#" class="underline">privacy policy</a>. No spam—ever.
+    </p>
+  </div>
+</section>
+
+<!-- ── FAQ ─────────────────────────────────────────────── -->
+
+<section id="faq" class="scroll-mt-16 py-20 bg-white">
+  <div class="mx-auto max-w-4xl px-6">
+    <h2 class="text-3xl font-bold text-center mb-10">FAQ</h2>
+    <div class="space-y-6 text-center md:text-left">
+      <details class="group">
+        <summary class="cursor-pointer font-semibold text-brand-charcoal group-open:text-brand-orange">What prices do you pay?</summary>
+        <p class="mt-1 text-brand-steel text-base md:text-sm md:pl-4 md:border-l md:border-brand-orange/40">Prices change daily—call for today's rates.</p>
+      </details>
+      <details class="group">
+        <summary class="cursor-pointer font-semibold text-brand-charcoal group-open:text-brand-orange">What ID do I need?</summary>
+        <p class="mt-1 text-brand-steel text-base md:text-sm md:pl-4 md:border-l md:border-brand-orange/40">Bring a current driver's license or state ID.</p>
+      </details>
+      <details class="group">
+        <summary class="cursor-pointer font-semibold text-brand-charcoal group-open:text-brand-orange">Do you accept appliances?</summary>
+        <p class="mt-1 text-brand-steel text-base md:text-sm md:pl-4 md:border-l md:border-brand-orange/40">Yes, but refrigerants must be evacuated first.</p>
+      </details>
+      <details class="group">
+        <summary class="cursor-pointer font-semibold text-brand-charcoal group-open:text-brand-orange">Can I watch the scale?</summary>
+        <p class="mt-1 text-brand-steel text-base md:text-sm md:pl-4 md:border-l md:border-brand-orange/40">Absolutely—we welcome customers to observe.</p>
+      </details>
+      <details class="group">
+        <summary class="cursor-pointer font-semibold text-brand-charcoal group-open:text-brand-orange">How do you pay me?</summary>
+        <p class="mt-1 text-brand-steel text-base md:text-sm md:pl-4 md:border-l md:border-brand-orange/40">Choose cash, check or ACH on the spot.</p>
+      </details>
+    </div>
+  </div>
+</section>
+<section class="py-20 bg-gray-100 text-center">
+    <div class="max-w-3xl mx-auto px-6">
+      <p class="text-xl mb-6">If this digital experience matches the service you want on the scale deck, let’s launch yours next.</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="https://scrapyardsites.com/#contact" class="rounded-md bg-brand-orange px-8 py-3 font-semibold text-white shadow hover:opacity-90 transition">Book a Demo</a>
+        <a href="https://scrapyardsites.com" target="_blank" rel="noopener" class="rounded-md bg-white px-8 py-3 font-semibold text-brand-orange shadow hover:bg-gray-100 transition">Visit ScrapyardSites.com</a>
+      </div>
+    </div>
+</section>
+<!-- ── Footer ──────────────────────────────────────────────-->
+<footer class="bg-white py-8 text-center text-xs text-gray-400">
+  <p>© <span id="year"></span> <a href="https://scrapyardsites.com" target="_blank" class="underline">Scrapyard Sites</a> — All rights reserved.</p>
+</footer>
+<!-- Scripts -->
+<script>
+  /* dynamic year */
+  document.getElementById('year').textContent = new Date().getFullYear();
+  /* AOS minimal (intersection‑observer) */
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const aosEls = document.querySelectorAll('[data-aos]');
+  if (aosEls.length && !prefersReduced) {
+    const obs = new IntersectionObserver((entries,o)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('aos-active'); o.unobserve(e.target);} });
+    },{threshold:0.1});
+    aosEls.forEach(el=>obs.observe(el));
+  } else { aosEls.forEach(el=>el.classList.add('aos-active')); }
+  /* micro testimonial carousel */
+  const quotes = [
+  '<span class="text-yellow-400 mr-1">★★★★★</span> "Fair prices and friendly staff!"',
+  '<span class="text-yellow-400 mr-1">★★★★★</span> "Quick in and out at the scales."',
+  '<span class="text-yellow-400 mr-1">★★★★★</span> "Best scrapyard in town!"',
+  ];
+  let qi = 0;
+  function rotateQuote(){
+    document.getElementById("testimonialText").innerHTML = quotes[qi];
+    qi = (qi + 1) % quotes.length;
+  }
+  if(document.getElementById("testimonialText")){
+    rotateQuote();
+    setInterval(rotateQuote, 4000);
+  }
+  /* dynamic scroll offset for fixed header */
+  function updateOffsets(){
+    const header = document.querySelector('header');
+    if(!header) return;
+    const offset = header.offsetHeight;
+    document.querySelectorAll('section[id]').forEach(el=>{
+      el.style.scrollMarginTop = offset + 'px';
+    });
+  }
+  updateOffsets();
+  window.addEventListener('resize', updateOffsets);
+</script>
+</body>
+</html>
