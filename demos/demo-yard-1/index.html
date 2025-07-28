@@ -184,26 +184,23 @@
   <div id="demoBanner" class="bg-brand-orange text-white text-center text-sm px-4 py-2 flex flex-col sm:flex-row items-center gap-2 justify-center">
     <a href="https://scrapyardsites.com" class="underline">Return to ScrapyardSites.com</a>
   </div>
-  <div class="max-w-7xl mx-auto relative flex items-center justify-between px-6 py-3">
+  <nav class="max-w-7xl mx-auto relative flex items-center justify-between py-3 px-6">
     <a href="#top" class="flex items-center gap-2">
-      <img src="assets/logo.svg" alt="Demo Yard logo" class="h-6 w-6 md:h-8 md:w-8"/>
-      <span class="site-title text-xl md:text-2xl font-black tracking-tight">
-        <span class="text-brand-orange">Standard</span> Demo
+      <img src="assets/logo.svg" alt="Demo Yard logo" class="h-8 w-8"/>
+      <span class="site-title text-xl md:text-2xl font-black tracking-tight text-brand-charcoal">
+        <span class="text-brand-orange">Standard</span>&nbsp;Demo
       </span>
     </a>
-    <nav class="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-8 text-sm font-medium">
-      <a href="#how"       class="hover:text-brand-orange">How It Works</a>
-      <a href="#services"  class="hover:text-brand-orange">Services</a>
-      <a href="#materials" class="hover:text-brand-orange">What We Buy</a>
-      <a href="#visit"     class="hover:text-brand-orange">Visit</a>
-      <a href="#contact"   class="hover:text-brand-orange">Contact</a>
-      <a href="#faq"       class="hover:text-brand-orange">FAQ</a>
-    </nav>
-    <a href="#contact"
-       class="inline-block rounded-md bg-brand-orange px-5 py-2 text-white font-semibold shadow hover:opacity-90 transition">
-      Request a Quote
-    </a>
-  </div>
+    <ul id="menu" class="text-brand-charcoal hidden md:flex flex-1 justify-center items-center gap-6 text-sm font-medium">
+      <li><a href="#how"       class="hover:text-brand-orange">How&nbsp;It&nbsp;Works</a></li>
+      <li><a href="#services"  class="hover:text-brand-orange">Services</a></li>
+      <li><a href="#materials" class="hover:text-brand-orange">What&nbsp;We&nbsp;Buy</a></li>
+      <li><a href="#visit"     class="hover:text-brand-orange">Visit</a></li>
+      <li><a href="#contact"   class="hover:text-brand-orange">Contact</a></li>
+      <li><a href="#faq"       class="hover:text-brand-orange">FAQ</a></li>
+    </ul>
+    <a href="#contact" class="btn-primary">Request&nbsp;a&nbsp;Quote</a>
+  </nav>
 </header>
 
 <!-- ── Hero ─────────────────────────────────────────────────-->
@@ -484,6 +481,21 @@
   }
   updateOffsets();
   window.addEventListener('resize', updateOffsets);
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const currentPath = location.pathname
+      .replace(/\/index.html$/, '')
+      .replace(/\/$/, '');
+    document.querySelectorAll('#menu a').forEach(link => {
+      const linkPath = new URL(link.getAttribute('href'), location.origin).pathname
+        .replace(/\/index.html$/, '')
+        .replace(/\/$/, '');
+      if (linkPath === currentPath) {
+        link.classList.add('text-brand-orange');
+      }
+    });
+  });
 </script>
 </body>
 </html>
