@@ -34,6 +34,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="../../assets/styles.css"/>
 
   <!-- Nav & brand underline animation + AOS utility -->
   <style>
@@ -42,7 +43,7 @@
     }
 
     /* Nav bar underline animation */
-    header nav a,
+    header nav a:not(.site-title-link),
     #mobileMenu a:not(.bg-yellow-500):not(.btn-primary) {
       position: relative;
       text-decoration: none;
@@ -58,7 +59,7 @@
       color: var(--color-links) !important;
     }
 
-    header nav a::after,
+    header nav a:not(.site-title-link)::after,
     #mobileMenu a:not(.bg-yellow-500):not(.btn-primary)::after {
       content: '';
       position: absolute;
@@ -185,7 +186,7 @@
     <a href="https://scrapyardsites.com" class="underline">Return to ScrapyardSites.com</a>
   </div>
   <nav class="max-w-7xl mx-auto relative flex items-center justify-between py-3 px-6">
-    <a href="#top" class="flex items-center gap-2">
+    <a href="#top" class="flex items-center gap-2 site-title-link">
       <img src="assets/logo.svg" alt="Demo Yard logo" class="h-8 w-8"/>
       <span class="site-title text-xl md:text-2xl font-black tracking-tight text-brand-charcoal">
         <span class="text-brand-orange">Standard</span>&nbsp;Demo
@@ -355,7 +356,7 @@
 <section id="visit" class="scroll-mt-16 py-20 bg-white">
   <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
     <div class="rounded-xl bg-white border border-brand-steel/10 shadow-sm overflow-hidden">
-      <iframe class="w-full h-[350px] border-0" loading="lazy" src="https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=Demo+City+TX" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.0618258223353!2d-77.03171872383582!3d38.89970147172352!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b7bee1b5b123%3A0x5026809f2561b278!2sRecycled%20Materials%20Association!5e0!3m2!1sen!2sus!4v1751164589301!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="w-full"></iframe>
     </div>
     <div>
       <h2 class="text-3xl font-bold mb-4">Visit Our Yard</h2>
