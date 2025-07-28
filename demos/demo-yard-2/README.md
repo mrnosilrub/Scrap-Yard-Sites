@@ -9,8 +9,7 @@ All images and downloadable files referenced by the HTML pages live in the `asse
 The site currently expects the following assets:
 
 - `../demo-yard-1/assets/logo.svg` – shared logo used for the favicon and navigation bar.
+- `../demo-yard-1/assets/logo.png` – PNG fallback for the favicon.
 - `assets/hero.jpg` – hero image used on both pages.
-- `assets/favicon.svg` – primary favicon in SVG format.
-- `assets/favicon.png` – fallback favicon in PNG format.
 
 Image files are not tracked in version control. Ensure any additional images or documents are saved in the `assets/` folder and referenced by their relative path.
