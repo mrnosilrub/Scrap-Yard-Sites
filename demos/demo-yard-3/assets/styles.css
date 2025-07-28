@@ -6,8 +6,8 @@
   --color-body: #FFFFFF;      /* white page background */
   --color-cards: #F3F4F6;     /* light gray section background */
   --color-headlines: #2B2B2B; /* charcoal headlines and body text */
-  --color-links: #D75E02;     /* OSHA‑orange primary accent */
-  --color-accent: #FF6A00;   /* hot-metal orange for callouts */
+  --color-links: #4169e1;     /* royal blue primary accent */
+  --color-accent: #4169e1;   /* royal blue callouts */
   --color-success: #5E6367;   /* muted steel for secondary accents */
 }
 
@@ -69,7 +69,7 @@ body {
   justify-content: center;
   gap: 0.25rem;
   padding: 0.5rem 1rem;
-  background-color: #d75e02;
+  background-color: #4169e1;
   color: #fff;
   text-align: center;
 }
@@ -138,7 +138,7 @@ header nav a.text-brand-orange {
 
 /* Ensure active link highlights in the mobile menu */
 #mobileMenu a.text-brand-orange {
-  color: #d75e02;
+  color: #4169e1;
 }
 
 /* Nav bar underline animation */
@@ -211,7 +211,7 @@ header nav a:hover::after,
 
 /* Animated background for the stats section */
 .stats-gradient {
-  background: linear-gradient(-45deg, #D75E02, #FFA726, #FF6A00, #D75E02);
+  background: linear-gradient(-45deg, #4169e1, #4169e1, #4169e1, #4169e1);
   background-size: 600% 600%;
   animation: stats-gradient-animation 10s ease infinite;
 }
