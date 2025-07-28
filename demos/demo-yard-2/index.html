@@ -87,6 +87,7 @@
       width: 100%;
     }
 
+
     /* Mobile carousel styles reused from the main site */
     @media (max-width: 767px) {
       .carousel-track {
@@ -119,6 +120,16 @@
     .carousel-indicators span.active {
       width: 1.5rem;
       opacity: 1;
+
+    /* Ensure nav bar remains fixed even without Tailwind utilities */
+    header.fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      z-index: 50;
+
     }
   </style>
 </head>
