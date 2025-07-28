@@ -19,4 +19,4 @@ The HTML also links to a number of external resources:
 - A Google Maps iframe is embedded and requires a valid API key.
 
 Image files are not tracked in version control. Before you deploy or customize the site, populate `assets/` with your own images matching the file names above.
-The repository's `.gitignore` ignores common image extensions so you can keep your assets locally without committing them.
+The repository's `.gitignore` ignores common image extensions so you can keep your assets locally without committing them. For quick previews you can also reuse the sample images found in `../demo-yard-3/assets/`.
