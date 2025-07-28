@@ -87,6 +87,40 @@
       width: 100%;
     }
 
+
+    /* Mobile carousel styles reused from the main site */
+    @media (max-width: 767px) {
+      .carousel-track {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
+      }
+      .carousel-item {
+        flex: 0 0 100%;
+        scroll-snap-align: center;
+      }
+    }
+
+    .carousel-indicators {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 2.5rem;
+    }
+    .carousel-indicators span {
+      background: var(--color-links);
+      border-radius: 9999px;
+      width: 0.5rem;
+      height: 0.5rem;
+      opacity: 0.5;
+      transition: width 0.3s ease, opacity 0.3s ease;
+    }
+    .carousel-indicators span.active {
+      width: 1.5rem;
+      opacity: 1;
+
     /* Ensure nav bar remains fixed even without Tailwind utilities */
     header.fixed {
       position: fixed;
@@ -95,6 +129,7 @@
       right: 0;
       width: 100%;
       z-index: 50;
+
     }
   </style>
 </head>
@@ -200,23 +235,23 @@
         <p class="mt-4 text-black">If it’s metal, chances are we buy it. Below are our most common items—call for bulk or specialty loads.</p>
       </div>
 
-      <div class="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-        <div class="rounded-lg bg-white p-6 text-center shadow border border-gray-200">
+      <div id="materials-carousel" class="mt-16 carousel-track flex px-4 sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div class="carousel-item rounded-lg bg-white p-6 text-center shadow border border-gray-200">
           <img src="../demo-yard-3/assets/aluminum.jpg" alt="Aluminum scrap" class="w-full h-32 object-cover rounded mb-4">
           <h3 class="text-lg font-semibold">Aluminum</h3>
           <p class="mt-2 text-black">Cans, siding, wheels, cast &amp; sheet.</p>
         </div>
-        <div class="rounded-lg bg-white p-6 text-center shadow border border-gray-200">
+        <div class="carousel-item rounded-lg bg-white p-6 text-center shadow border border-gray-200">
           <img src="../demo-yard-3/assets/copper.jpg" alt="Copper wire and tubing" class="w-full h-32 object-cover rounded mb-4">
           <h3 class="text-lg font-semibold">Copper</h3>
           <p class="mt-2 text-black">Wire, tubing, insulated cable, motors.</p>
         </div>
-        <div class="rounded-lg bg-white p-6 text-center shadow border border-gray-200">
+        <div class="carousel-item rounded-lg bg-white p-6 text-center shadow border border-gray-200">
           <img src="../demo-yard-3/assets/steel.jpg" alt="Scrap automobiles" class="w-full h-32 object-cover rounded mb-4">
           <h3 class="text-lg font-semibold">Automobiles</h3>
           <p class="mt-2 text-black">End‑of‑life vehicles (title required).</p>
         </div>
-        <div class="rounded-lg bg-white p-6 text-center shadow border border-gray-200">
+        <div class="carousel-item rounded-lg bg-white p-6 text-center shadow border border-gray-200">
           <img src="../demo-yard-3/assets/stainless.jpg" alt="Appliances and mixed scrap" class="w-full h-32 object-cover rounded mb-4">
           <h3 class="text-lg font-semibold">Appliances &amp; Misc.</h3>
           <p class="mt-2 text-black">Refrigerators, washers, farm equipment &amp; mixed scrap.</p>
@@ -346,6 +381,41 @@
           link.classList.add('text-brand-500');
         }
       });
+
+      function initCarousel(id) {
+        const track = document.getElementById(id);
+        if (!track) return;
+        const slides = Array.from(track.children);
+        const indicators = document.createElement('div');
+        indicators.className = 'carousel-indicators';
+        slides.forEach((_, i) => {
+          const dot = document.createElement('span');
+          if (i === 0) dot.classList.add('active');
+          indicators.appendChild(dot);
+        });
+        track.after(indicators);
+
+        let index = 0;
+        const slideWidth = slides[1] ? slides[1].offsetLeft - slides[0].offsetLeft : track.clientWidth;
+
+        function updateDots(i) {
+          indicators.querySelectorAll('span').forEach((dot, idx) => {
+            dot.classList.toggle('active', idx === i);
+          });
+        }
+
+        track.addEventListener('scroll', () => {
+          const i = Math.round(track.scrollLeft / slideWidth);
+          if (i !== index) {
+            index = i;
+            updateDots(index);
+          }
+        });
+      }
+
+      if (window.matchMedia('(max-width: 767px)').matches) {
+        initCarousel('materials-carousel');
+      }
     });
   </script>
 </body>
