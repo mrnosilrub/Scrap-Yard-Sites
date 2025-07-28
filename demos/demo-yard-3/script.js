@@ -1,8 +1,12 @@
 function toggleMenu() {
   const menu = document.getElementById('mobileMenu');
+  const banner = document.getElementById('demoBanner');
   if (menu) {
     menu.classList.toggle('hidden');
     menu.classList.toggle('translate-x-full');
+    const isOpen = !menu.classList.contains('hidden');
+    document.body.classList.toggle('overflow-hidden', isOpen);
+    if (banner) banner.classList.toggle('hidden', isOpen);
   }
 }
 

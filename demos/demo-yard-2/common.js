@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
   if (location.hash) {
     const target = document.querySelector(location.hash);
-    const nav = document.querySelector('nav');
-    if (target && nav) {
-      const offset = nav.getBoundingClientRect().height;
+    const header = document.querySelector('header');
+    if (target && header) {
+      const offset = header.getBoundingClientRect().height;
       const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
       window.scrollTo({ top, behavior: 'smooth' });
     }
@@ -22,9 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
       event.preventDefault();
       const id = href.substring(href.indexOf('#'));
       const target = document.querySelector(id);
-      const nav = document.querySelector('nav');
-      if (target && nav) {
-        const offset = nav.getBoundingClientRect().height;
+      const header = document.querySelector('header');
+      if (target && header) {
+        const offset = header.getBoundingClientRect().height;
         const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
         window.scrollTo({ top, behavior: 'smooth' });
         history.pushState(null, '', id);
