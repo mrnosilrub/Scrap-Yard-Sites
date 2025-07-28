@@ -370,6 +370,7 @@ header nav a:hover::after,
 
 /* Mobile carousel styles reused from the main site */
 @media (max-width: 767px) {
+  #materials-carousel,
   .carousel-track {
     display: flex;
     overflow-x: auto;
@@ -377,6 +378,7 @@ header nav a:hover::after,
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
   }
+  #materials-carousel > a,
   .carousel-item {
     flex: 0 0 100%;
     scroll-snap-align: center;
