@@ -10,10 +10,10 @@
   <link rel="stylesheet" href="tailwind.css">
   <style>
     :root {
-      --color-links: #D75E02;
+      --color-links: #2C663D;
     }
     #demoBanner{
-      background-color:#D75E02;
+      background-color:#2C663D;
     }
     @media (min-width:640px){
       #demoBanner{flex-direction:row;}
@@ -23,6 +23,7 @@
     .site-title {
       position: relative;
       display: inline-block;
+      font-weight: bold;
     }
 
     .site-title::after {
@@ -47,18 +48,18 @@
     }
 
     /* Highlight active link in the desktop nav */
-    header nav a.text-brand-orange {
+    header nav a.text-brand-500 {
       color: var(--color-links);
     }
 
     /* Ensure active link highlights in the mobile menu */
-    #mobileMenu a.text-brand-orange {
-      color: #d75e02;
+    #mobileMenu a.text-brand-500 {
+      color: #2C663D;
     }
 
     /* Force "Scrapyard" word to appear orange */
     .site-title span:first-child {
-      color: #d75e02 !important;
+      color: #2C663D !important;
     }
 
     /* Vertically center brand title in the nav */
@@ -79,7 +80,7 @@
     }
 
     /* Keep active nav item orange even when hovered */
-    header nav ul a.text-brand-orange:hover {
+    header nav ul a.text-brand-500:hover {
       color: var(--color-links) !important;
     }
 
@@ -103,14 +104,14 @@
 </head>
 <body class="font-sans antialiased text-black scroll-smooth flex flex-col min-h-screen overflow-x-hidden">
   <header class="fixed top-0 left-0 right-0 w-full z-50 bg-white shadow-sm">
-    <div id="demoBanner" class="bg-brand-orange text-white text-center text-sm px-4 py-2 flex flex-col sm:flex-row items-center gap-2 justify-center">
+    <div id="demoBanner" class="bg-brand-500 text-white text-center text-sm px-4 py-2 flex flex-col sm:flex-row items-center gap-2 justify-center">
       <a href="https://scrapyardsites.com" class="underline">Return to ScrapyardSites.com</a>
     </div>
     <nav class="max-w-7xl mx-auto relative flex items-center justify-between py-3 px-6">
       <a href="index.html#home" class="flex items-center gap-2">
         <img src="../demo-yard-1/assets/logo.svg" alt="Demo Yard logo" class="h-8 w-8"/>
         <span class="site-title text-xl md:text-2xl font-black tracking-tight text-brand-charcoal">
-          <span class="text-brand-orange">Standard</span> Demo
+          <span class="text-brand-500">Standard</span> Demo
         </span>
       </a>
         <ul id="menu" class="text-brand-charcoal hidden md:flex flex-1 justify-center items-center gap-6 text-sm font-medium">
@@ -120,9 +121,7 @@
           <li><a href="index.html#map" class="transition-colors hover:text-brand-100">Directions</a></li>
           <li><a href="index.html#contact" class="transition-colors hover:text-brand-100">Contact</a></li>
         </ul>
-      <div class="ml-auto">
-        <a href="tel:13044251788" class="btn-primary">Call&nbsp;Now</a>
-      </div>
+      <a href="tel:15001234567" class="inline-block rounded-md bg-brand-500 px-6 py-2 font-semibold text-white hover:bg-brand-600 transition-colors ml-auto">Call&nbsp;Now</a>
     </nav>
   </header>
   <main class="flex-grow pt-24">
@@ -135,7 +134,7 @@
 
     <div class="mx-auto max-w-3xl py-32 px-6 text-center text-white lg:px-8">
       <h1 class="text-4xl font-extrabold sm:text-6xl leading-tight">
-        Princeton’s Trusted <br class="hidden sm:inline" />
+        Appalachia’s Trusted <br class="hidden sm:inline" />
         <span class="text-brand-500" style="text-shadow:0 2px 4px rgba(0,0,0,0.5)">Scrap Metal Recycling</span> Partner
       </h1>
       <p class="mt-6 text-lg text-white">
@@ -157,10 +156,10 @@
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="mx-auto max-w-2xl text-center">
         <h2 class="text-3xl font-bold tracking-tight text-black sm:text-4xl">
-          Why Choose Recycle WV?
+          Why Choose Us?
         </h2>
         <p class="mt-4 text-black">
-          Family‑owned, locally operated and rooted in West Virginia values since 2007—our mission is simple:
+          Family‑owned, locally operated and rooted in Appalachian values since 2007—our mission is simple:
           reward customers, safeguard the planet, and strengthen the regional economy.
         </p>
       </div>
@@ -225,7 +224,7 @@
       </div>
 
       <p class="mt-10 text-center text-sm text-black">
-        Unsure? Call <a href="tel:13044251788" class="font-medium text-brand-500 underline transition-colors hover:text-brand-600">304.425.1788</a> and our buyers will guide you.
+        Unsure? Call <a href="tel:15001234567" class="font-medium text-brand-500 underline transition-colors hover:text-brand-600">500.123.4567</a> and our buyers will guide you.
       </p>
     </div>
   </section>
@@ -261,23 +260,10 @@
   <section id="map" class="bg-gray-50 py-20 scroll-mt-20">
   <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
     <div class="rounded-xl bg-white border border-gray-200 shadow-sm overflow-hidden">
-      <iframe class="w-full h-96" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1623300.215743917!2d-83.52426904375!3d37.3778114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x884e6bf2af342f7f%3A0x3dc1cd7aa28a6039!2sRecycle%20WV!5e0!3m2!1sen!2sus!4v1750810938652!5m2!1sen!2sus" style="border:0;" allowfullscreen="" loading="eager" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-    <div>
-      <h2 class="text-3xl font-bold sm:text-4xl mb-4">Get Directions</h2>
-      <div class="space-y-4 text-black">
-        <p><strong>From 1-77 (West Virginia Turnpike):</strong><br>Take exit 9 for US-460W toward Pearisburg VA/Princeton. Travel approx. 1.5 miles on U5-460, then turn right on Locust St. Turn left on Rogers St (WV-104). Turn right on S 2nd St. Turn right on Virginian Industrial Park Rd., then follow signs to RecycleWV.</p>
-        <p><strong>From US-460:</strong><br>Turn right (westbound) or left (eastbound) on Locust St. Turn left on Rogers St (WV-l 04).Turn right on S 2nd St. Turn right on Virginian Industrial Park Rd., then follow signs to RecycleWV.</p>
-      </div>
+      <iframe class="w-full h-96" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.0618258223353!2d-77.03171872383582!3d38.89970147172352!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b7bee1b5b123:0x5026809f2561b278!2sRecycled%20Materials%20Association!5e0!3m2!1sen!2sus!4v1751164589301!5m2!1sen!2sus" style="border:0;" allowfullscreen="" loading="eager" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </div>
 </section>
-
-  <!-- ========== CONTACT & CTA ========== -->
-  <section id="contact" class="bg-white py-20 scroll-mt-20">
-    <div class="mx-auto max-w-5xl px-6 lg:px-8">
-      <div class="grid gap-12 lg:grid-cols-2">
-        <!-- Contact details -->
         <div>
           <h2 class="text-3xl font-bold">Let’s Talk Scrap</h2>
           <p class="mt-4 text-black">
@@ -286,10 +272,10 @@
           </p>
 
           <ul class="mt-8 space-y-4 text-black">
-            <li><strong>Phone:</strong> <a href="tel:13044251788" class="text-brand-500 underline transition-colors hover:text-brand-600">304.425.1788</a></li>
-            <li><strong>Fax:</strong> <a href="tel:13044251796" class="text-brand-500 underline transition-colors hover:text-brand-600">304.425.1796</a></li>
-            <li><strong>Email:</strong> <a href="mailto:jobs@recyclewv.com" class="text-brand-500 underline transition-colors hover:text-brand-600">jobs@recyclewv.com</a></li>
-            <li><strong>Address:</strong><br>951 Virginian Industrial Park Rd<br>Princeton, WV 24740</li>
+            <li><strong>Phone:</strong> <a href="tel:15001234567" class="text-brand-500 underline transition-colors hover:text-brand-600">500.123.4567</a></li>
+            <li><strong>Fax:</strong> <a href="tel:111234567" class="text-brand-500 underline transition-colors hover:text-brand-600">111.234.567</a></li>
+            <li><strong>Email:</strong> <a href="mailto:hello@scrapyardsites.com" class="text-brand-500 underline transition-colors hover:text-brand-600">hello@scrapyardsites.com</a></li>
+            <li><strong>Address:</strong><br>123 Demo Road<br>Demo City, NY 12345</li>
             <li><strong>Hours:</strong> Mon–Fri 8:00 AM – 4:30 PM</li>
           </ul>
 
@@ -318,9 +304,9 @@
         </form>
       </div>
       <div class="mt-8 flex flex-col gap-4">
-        <a href="https://www.indeed.com/cmp/Recycle-Wv-1/jobs" target="_blank" class="inline-block rounded-md bg-brand-500 px-6 py-3 text-center font-semibold text-white hover:bg-brand-600 transition-colors">Open Positions</a>
-        <a href="assets/driver-application.pdf" download class="inline-block rounded-md border border-brand-500 px-6 py-3 text-center font-semibold text-brand-500 hover:bg-brand-50 transition-colors">Driver Application</a>
-        <a href="assets/job-application.pdf" download class="inline-block rounded-md border border-brand-500 px-6 py-3 text-center font-semibold text-brand-500 hover:bg-brand-50 transition-colors">Job Application</a>
+        <a href="#" class="inline-block rounded-md bg-brand-500 px-6 py-3 text-center font-semibold text-white hover:bg-brand-600 transition-colors">Open Positions</a>
+        <a href="#" class="inline-block rounded-md border border-brand-500 px-6 py-3 text-center font-semibold text-brand-500 hover:bg-brand-50 transition-colors">Driver Application</a>
+        <a href="#" class="inline-block rounded-md border border-brand-500 px-6 py-3 text-center font-semibold text-brand-500 hover:bg-brand-50 transition-colors">Job Application</a>
       </div>
     </div>
   </section>
@@ -328,7 +314,7 @@
 
   <!-- ========== FOOTER ========== -->
   <footer class="bg-white py-8 text-center text-sm text-black">
-    © 2025 Recycle WV — All rights reserved<br>
+    © 2025 Scrapyard Sites — All rights reserved<br>
     Designed, hosted, and supported by <a href="https://scrapyardsites.com" class="text-brand-600 underline transition-colors hover:text-brand-700">Scrapyard Sites</a>.
   </footer>
 
@@ -346,7 +332,7 @@
           .replace(/\/index.html$/, '')
           .replace(/\/$/, '');
         if (linkPath === currentPath) {
-          link.classList.add('text-brand-orange');
+          link.classList.add('text-brand-500');
         }
       });
     });
