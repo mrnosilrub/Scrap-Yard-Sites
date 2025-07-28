@@ -132,6 +132,22 @@
       transform: translateY(0);
       transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     }
+
+    /* Banner linking back to ScrapyardSites.com */
+    #demoBanner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.25rem;
+      padding: 0.5rem 1rem;
+      background-color: #d75e02;
+      color: #fff;
+      text-align: center;
+    }
+    @media (min-width: 640px) {
+      #demoBanner { flex-direction: row; }
+    }
   </style>
 
   <!-- JSON‑LD (unchanged) -->
@@ -165,6 +181,9 @@
 
 <!-- ── Header ───────────────────────────────────────────────-->
 <header class="bg-white fixed top-0 inset-x-0 w-full z-50 shadow-sm">
+  <div id="demoBanner" class="bg-brand-orange text-white text-center text-sm px-4 py-2 flex flex-col sm:flex-row items-center gap-2 justify-center">
+    <a href="https://scrapyardsites.com" class="underline">Return to ScrapyardSites.com</a>
+  </div>
   <div class="max-w-7xl mx-auto relative flex items-center justify-between px-6 py-3">
     <a href="#top" class="flex items-center gap-2">
       <img src="assets/logo.svg" alt="Demo Yard logo" class="h-6 w-6 md:h-8 md:w-8"/>

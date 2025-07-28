@@ -59,6 +59,27 @@ body {
 .from-red-500 { --tw-gradient-from: var(--color-links) var(--tw-gradient-from-position); }
 .to-red-700 { --tw-gradient-to: var(--color-success) var(--tw-gradient-to-position); }
 
+/* Banner linking back to ScrapyardSites.com */
+#demoBanner {
+  position: relative;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  padding: 0.5rem 1rem;
+  background-color: #d75e02;
+  color: #fff;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  #demoBanner {
+    flex-direction: row;
+  }
+}
+
 .bg-green-700 { background-color: var(--color-success) !important; }
 
 /* Brand utility classes mirroring ScrapyardSites.com */

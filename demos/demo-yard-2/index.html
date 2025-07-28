@@ -8,24 +8,35 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="icon" type="image/png" href="assets/favicon.png" />
   <link rel="stylesheet" href="tailwind.css">
-  
-
+  <style>
+    #demoBanner{
+      background-color:#D75E02;
+    }
+    @media (min-width:640px){
+      #demoBanner{flex-direction:row;}
+    }
+  </style>
 </head>
 <body class="font-sans antialiased text-black scroll-smooth flex flex-col min-h-screen overflow-x-hidden">
-  <nav style="position:fixed;top:0;z-index:20;width:100%;" class="bg-white flex w-full items-center justify-between px-6 py-4 lg:px-8 text-black shadow">
-    <a href="index.html#home" class="mr-6"><img src="assets/logo.jpg" alt="Recycle WV logo" class="h-8 w-auto" /></a>
-      <ul class="hidden md:flex flex-wrap gap-4 text-sm">
-        <li><a href="index.html#services" class="transition-colors hover:text-brand-100">Services</a></li>
-        <li><a href="index.html#materials" class="transition-colors hover:text-brand-100">Materials</a></li>
-        <li><a href="index.html#process" class="transition-colors hover:text-brand-100">How&nbsp;It&nbsp;Works</a></li>
-        <li><a href="index.html#map" class="transition-colors hover:text-brand-100">Directions</a></li>
-        <li><a href="index.html#contact" class="transition-colors hover:text-brand-100">Contact</a></li>
-      </ul>
-    <div class="ml-auto">
-      <a href="tel:13044251788" class="inline-flex items-center gap-2 rounded-md bg-brand-500 px-4 py-2 text-sm font-medium text-white hover:bg-brand-600 transition-colors">Call&nbsp;Now</a>
+  <header style="position:fixed;top:0;z-index:20;width:100%;">
+    <div id="demoBanner" class="text-white text-center text-sm px-4 py-2 flex flex-col sm:flex-row items-center gap-2 justify-center">
+      <a href="https://scrapyardsites.com" class="underline">Return to ScrapyardSites.com</a>
     </div>
-  </nav>
-  <main class="flex-grow pt-20">
+    <nav class="bg-white flex w-full items-center justify-between px-6 py-4 lg:px-8 text-black shadow">
+      <a href="index.html#home" class="mr-6"><img src="assets/logo.jpg" alt="Recycle WV logo" class="h-8 w-auto" /></a>
+        <ul class="hidden md:flex flex-wrap gap-4 text-sm">
+          <li><a href="index.html#services" class="transition-colors hover:text-brand-100">Services</a></li>
+          <li><a href="index.html#materials" class="transition-colors hover:text-brand-100">Materials</a></li>
+          <li><a href="index.html#process" class="transition-colors hover:text-brand-100">How&nbsp;It&nbsp;Works</a></li>
+          <li><a href="index.html#map" class="transition-colors hover:text-brand-100">Directions</a></li>
+          <li><a href="index.html#contact" class="transition-colors hover:text-brand-100">Contact</a></li>
+        </ul>
+      <div class="ml-auto">
+        <a href="tel:13044251788" class="inline-flex items-center gap-2 rounded-md bg-brand-500 px-4 py-2 text-sm font-medium text-white hover:bg-brand-600 transition-colors">Call&nbsp;Now</a>
+      </div>
+    </nav>
+  </header>
+  <main class="flex-grow pt-24">
   <!-- ========== HERO ========== -->
   <header id="home" class="relative isolate bg-black flex items-center justify-center overflow-hidden min-h-screen">
     <img src="assets/hero.jpg" alt="Scrap metal piles ready for recycling"
