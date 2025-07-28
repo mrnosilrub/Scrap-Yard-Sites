@@ -352,6 +352,9 @@ function initTeamCarousel() {
 function initMaterialsCarousel() {
   const track = document.getElementById('materials-carousel');
   if (!track) return;
+  // Only enable the carousel on small screens
+  const isMobile = window.matchMedia('(max-width: 767px)').matches;
+  if (!isMobile) return;
   const slides = Array.from(track.children);
   let indicators = track.parentElement.querySelector('.carousel-indicators');
   if (!indicators) {
