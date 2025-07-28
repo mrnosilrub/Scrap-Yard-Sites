@@ -19,27 +19,13 @@
       #demoBanner{flex-direction:row;}
     }
 
-    /* Brand title underline animation */
     .site-title {
       position: relative;
       display: inline-block;
       font-weight: bold;
     }
 
-    .site-title::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -2px;
-      width: 0;
-      height: 2px;
-      background-color: var(--color-links);
-      transition: width 0.3s ease;
-    }
 
-    a:hover .site-title::after {
-      width: 100%;
-    }
 
     /* Default charcoal text for navigation links */
     header nav a {
@@ -206,18 +192,22 @@
 
       <div class="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
         <div class="rounded-lg bg-white p-6 text-center shadow border border-gray-200">
+          <img src="../demo-yard-3/assets/aluminum.jpg" alt="Aluminum scrap" class="w-full h-32 object-cover rounded mb-4">
           <h3 class="text-lg font-semibold">Aluminum</h3>
           <p class="mt-2 text-black">Cans, siding, wheels, cast &amp; sheet.</p>
         </div>
         <div class="rounded-lg bg-white p-6 text-center shadow border border-gray-200">
+          <img src="../demo-yard-3/assets/copper.jpg" alt="Copper wire and tubing" class="w-full h-32 object-cover rounded mb-4">
           <h3 class="text-lg font-semibold">Copper</h3>
           <p class="mt-2 text-black">Wire, tubing, insulated cable, motors.</p>
         </div>
         <div class="rounded-lg bg-white p-6 text-center shadow border border-gray-200">
+          <img src="../demo-yard-3/assets/steel.jpg" alt="Scrap automobiles" class="w-full h-32 object-cover rounded mb-4">
           <h3 class="text-lg font-semibold">Automobiles</h3>
           <p class="mt-2 text-black">End‑of‑life vehicles (title required).</p>
         </div>
         <div class="rounded-lg bg-white p-6 text-center shadow border border-gray-200">
+          <img src="../demo-yard-3/assets/stainless.jpg" alt="Appliances and mixed scrap" class="w-full h-32 object-cover rounded mb-4">
           <h3 class="text-lg font-semibold">Appliances &amp; Misc.</h3>
           <p class="mt-2 text-black">Refrigerators, washers, farm equipment &amp; mixed scrap.</p>
         </div>
