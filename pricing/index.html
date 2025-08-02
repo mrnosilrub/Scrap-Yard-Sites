@@ -33,7 +33,7 @@
   <header class="fixed top-0 left-0 right-0 w-full z-50 bg-white shadow-sm">
 <div id="promoBanner" class="bg-brand-orange text-white text-center text-sm px-4 py-2 flex flex-col sm:flex-row items-center gap-2 justify-center">
   <span>Save 10% on your build — pay your deposit by Aug 30.</span>
-  <span class="text-xs"><a href="#roi" class="underline">50% today, balance at launch – 90‑day ROI guarantee</a></span>
+  <span class="text-xs"><a href="#guarantee" class="underline">50% today, balance at launch – 90-day warm lead guarantee</a></span>
 </div>
     <nav class="max-w-7xl mx-auto relative flex items-center justify-between py-3 px-6">
       <a href="/" class="flex items-center gap-2"><img src="/assets/logo.svg" alt="Scrapyard Sites logo" class="h-8 w-8"/><span class="site-title text-xl text-brand-charcoal"><span class="font-bold text-brand-orange">Scrapyard</span> <span class="font-bold">Sites</span></span></a>
@@ -166,7 +166,7 @@
           
 <div class="mt-10 text-center">
   <a href="https://book.stripe.com/eVqeVd8Vi9U45RbdJy73G00" class="btn-primary">Pay Deposit & Reserve My Build Week</a>
-  <p class="text-xs text-brand-steel mt-2">50% deposit now, balance at launch. <a href="#roi" class="underline">90‑day ROI guarantee</a>.</p>
+  <p class="text-xs text-brand-steel mt-2">50% deposit now, balance at launch. <a href="#guarantee" class="underline">90-day warm lead guarantee</a>.</p>
 </div>
 </div>
       <!-- FAQ stays below packages -->
@@ -178,7 +178,7 @@
       <li><strong>Book your build week:</strong> Pay a 50% deposit to secure your slot.</li>
       <li><strong>Launch your site:</strong> Remaining 50% due when your new site goes live.</li>
       <li><strong>Payment methods:</strong> Cards, Apple Pay, or Link—no hidden fees.</li>
-      <li id="roi"><strong>Our promise:</strong> If your site doesn’t pay for itself within 90 days, we refund the build fee.</li>
+      <li id="guarantee"><strong>Our promise:</strong> If you don’t receive a warm lead within 90 days, we refund the build fee.</li>
     </ul>
 
     <h2 class="text-2xl font-bold mb-4 mt-8 text-center">Extras</h2>
@@ -203,7 +203,7 @@
         <details class="group"><summary class="flex items-center gap-2 cursor-pointer font-semibold text-brand-charcoal group-open:text-brand-orange">Can I add pages later?<span class="ml-auto transition-transform group-open:rotate-180">▾</span></summary><p class="mt-1 text-brand-steel text-base md:text-sm md:pl-4 md:border-l md:border-brand-orange/40">Yes. Extra pages are $350 each, or you can choose Premium up front if you need more right away.</p></details>
         <details class="group"><summary class="flex items-center gap-2 cursor-pointer font-semibold text-brand-charcoal group-open:text-brand-orange">Will you handle copywriting and SEO?<span class="ml-auto transition-transform group-open:rotate-180">▾</span></summary><p class="mt-1 text-brand-steel text-base md:text-sm md:pl-4 md:border-l md:border-brand-orange/40">We write all the copy, incorporate industry keywords and optimize meta tags to help you rank locally.</p></details>
         <details class="group"><summary class="flex items-center gap-2 cursor-pointer font-semibold text-brand-charcoal group-open:text-brand-orange">Do you offer photography or video services?<span class="ml-auto transition-transform group-open:rotate-180">▾</span></summary><p class="mt-1 text-brand-steel text-base md:text-sm md:pl-4 md:border-l md:border-brand-orange/40">On-site photo/video packages start at $750 in the Lower 48. Many clients start with their own photos and upgrade later.</p></details>
-        <details class="group"><summary class="flex items-center gap-2 cursor-pointer font-semibold text-brand-charcoal group-open:text-brand-orange">What if my site doesn’t perform?<span class="ml-auto transition-transform group-open:rotate-180">▾</span></summary><p class="mt-1 text-brand-steel text-base md:text-sm md:pl-4 md:border-l md:border-brand-orange/40">We stand behind our work. If your new site doesn’t pay for itself within 90 days, we refund the build fee.</p></details>
+        <details class="group"><summary class="flex items-center gap-2 cursor-pointer font-semibold text-brand-charcoal group-open:text-brand-orange">What if my site doesn’t perform?<span class="ml-auto transition-transform group-open:rotate-180">▾</span></summary><p class="mt-1 text-brand-steel text-base md:text-sm md:pl-4 md:border-l md:border-brand-orange/40">We stand behind our work. If you don’t receive a warm lead within 90 days, we refund the build fee.</p></details>
         </div>
     </div>
     </section>
@@ -250,21 +250,21 @@
     const header=document.querySelector('header');
     const nav=header?header.querySelector('nav'):null;
     const section=document.getElementById('how-it-works');
-    function scrollToROI(){
+    function scrollToGuarantee(){
       if(!section) return;
       const offset=nav?nav.getBoundingClientRect().height:header.getBoundingClientRect().height;
       const top=section.getBoundingClientRect().top+window.pageYOffset-offset;
       window.scrollTo({top,behavior:'smooth'});
-      const highlight=document.querySelector('#roi strong');
+      const highlight=document.querySelector('#guarantee strong');
       if(highlight){
         highlight.classList.add('highlight-promise');
         setTimeout(()=>highlight.classList.remove('highlight-promise'),2000);
       }
     }
-    document.querySelectorAll('a[href="#roi"]').forEach(link=>{
-      link.addEventListener('click',e=>{e.preventDefault();scrollToROI();});
+    document.querySelectorAll('a[href="#guarantee"]').forEach(link=>{
+      link.addEventListener('click',e=>{e.preventDefault();scrollToGuarantee();});
     });
-    if(window.location.hash==='#roi'){scrollToROI();}
+    if(window.location.hash==='#guarantee'){scrollToGuarantee();}
   });
   </script>
   <script src="/assets/header-offset.js"></script>
