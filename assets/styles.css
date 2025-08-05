@@ -3,6 +3,13 @@ html {
   scrollbar-gutter: stable;
 }
 
+/* Fallback for browsers that don't support `scrollbar-gutter` */
+@supports not (scrollbar-gutter: stable) {
+  html {
+    overflow-y: scroll;
+  }
+}
+
 .btn-primary {
   display: inline-flex;
   align-items: center;
