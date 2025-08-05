@@ -1,3 +1,5 @@
+let scrollPosition = 0;
+
 function toggleMenu() {
   const menu = document.getElementById('mobileMenu');
   const banner = document.getElementById('demoBanner');
@@ -5,7 +7,19 @@ function toggleMenu() {
     menu.classList.toggle('hidden');
     menu.classList.toggle('translate-x-full');
     const isOpen = !menu.classList.contains('hidden');
-    document.body.classList.toggle('overflow-hidden', isOpen);
+
+    if (isOpen) {
+      scrollPosition = window.scrollY;
+      document.body.style.top = `-${scrollPosition}px`;
+      document.body.style.position = 'fixed';
+      document.body.classList.add('overflow-hidden');
+    } else {
+      document.body.classList.remove('overflow-hidden');
+      document.body.style.position = '';
+      document.body.style.top = '';
+      window.scrollTo(0, scrollPosition);
+    }
+
     if (banner) banner.classList.toggle('hidden', isOpen);
   }
 }

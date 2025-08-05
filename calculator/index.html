@@ -164,48 +164,7 @@
         <a href="/contact" class="btn-primary">Book a Discovery Call</a>
       </div>
     </header>
-    <script>
-      /* full-screen mobile toggle */
-      function toggleMobileMenu() {
-        const menu = document.getElementById("mobileMenu");
-        const btn = document.getElementById("menuToggle");const banner=document.getElementById("promoBanner");
-        menu.classList.toggle("hidden");
-        const isOpen = !menu.classList.contains("hidden");
-        document.body.classList.toggle("overflow-hidden", isOpen);if(banner) banner.classList.toggle("hidden", isOpen);
-        btn.classList.toggle("open");
-        const themeMeta = document.querySelector('meta[name=theme-color]');
-        if(themeMeta) themeMeta.setAttribute("content", isOpen ? "#ffffff" : "#D75E02");
-        window.dispatchEvent(new Event('resize'));
-      }
-
-      document.addEventListener("DOMContentLoaded", () => {
-        const currentPath = location.pathname
-          .replace(/\/index.html$/, "")
-          .replace(/\/$/, "");
-        document
-          .querySelectorAll(
-            "#menu a:not(.no-highlight), #mobileMenu a:not(.no-highlight)",
-          )
-          .forEach((link) => {
-            const linkPath = new URL(
-              link.getAttribute("href"),
-              location.origin,
-            ).pathname
-              .replace(/\/index.html$/, "")
-              .replace(/\/$/, "");
-            if (linkPath === currentPath) {
-              link.classList.add("text-brand-orange");
-            }
-          });
-
-        document
-          .getElementById("menuToggle")
-          ?.addEventListener("click", toggleMobileMenu);
-        document
-          .getElementById("menuClose")
-          ?.addEventListener("click", toggleMobileMenu);
-      });
-    </script>
+    <script src="/assets/mobile-menu.js"></script>
     <main class="px-6">
       <section class="pt-12 pb-28 bg-gray-50 -mx-6">
         <div class="border border-brand-steel/20 rounded-xl p-6 bg-white mx-6 sm:mx-auto max-w-3xl px-6">
