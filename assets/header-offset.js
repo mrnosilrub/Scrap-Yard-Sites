@@ -6,6 +6,7 @@
     const height=header.getBoundingClientRect().height;
     main.style.paddingTop=height+'px';
   }
+  window.applyHeaderOffset=applyOffset;
   window.addEventListener('load', applyOffset);
   document.addEventListener('DOMContentLoaded', applyOffset);
   window.addEventListener('resize', applyOffset);
