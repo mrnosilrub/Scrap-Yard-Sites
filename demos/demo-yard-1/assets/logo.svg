@@ -9,11 +9,11 @@
 
   <!-- Thicker orange border -->
   <rect x="5" y="5" width="190" height="190"
-        fill="none" stroke="#2C663D" stroke-width="10"/>
+        fill="none" stroke="#D75E02" stroke-width="10"/>
 
   <!-- Angled orange lifting magnet -->
   <g transform="translate(135 75) rotate(18)">
-    <circle cx="0" cy="0" r="34" fill="#2C663D"/>
+    <circle cx="0" cy="0" r="34" fill="#D75E02"/>
   </g>
 
   <!-- Scrap pile (overlaps border) -->
