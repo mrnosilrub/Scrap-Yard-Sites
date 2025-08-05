@@ -36,7 +36,7 @@ function toggleMobileMenu() {
 
   const themeMeta = document.querySelector('meta[name=theme-color]');
   if (themeMeta) themeMeta.setAttribute('content', isOpen ? '#ffffff' : '#D75E02');
-  window.dispatchEvent(new Event('resize'));
+  if (typeof window.applyHeaderOffset === 'function') window.applyHeaderOffset();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
