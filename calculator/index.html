@@ -233,13 +233,13 @@
             </p>
             <form id="calcForm" class="mt-6 grid gap-6 max-w-md mx-auto">
               <input type="number" step="0.1" name="tons" inputmode="decimal" required
-                     placeholder="Average monthly tons" value="2"
+                     placeholder="Average monthly tons (t)"
                      class="w-full rounded-md px-4 py-3 bg-white border border-brand-steel/20 text-brand-charcoal" />
               <input type="number" step="0.1" name="margin" inputmode="decimal" required
-                     placeholder="Margin per ton ($)" value="50"
+                     placeholder="Margin per ton ($) (m)"
                      class="w-full rounded-md px-4 py-3 bg-white border border-brand-steel/20 text-brand-charcoal" />
               <input type="number" name="missed" inputmode="numeric" required
-                     placeholder="Missed calls per month" value="10"
+                     placeholder="Missed calls per month (l)"
                      class="w-full rounded-md px-4 py-3 bg-white border border-brand-steel/20 text-brand-charcoal" />
               <button class="btn-primary w-full" type="submit">Calculate</button>
             </form>
@@ -280,14 +280,6 @@
       function fmt(x){
         return x.toLocaleString('en-US',{style:'currency',currency:'USD',minimumFractionDigits:0});
       }
-      function prefill(){
-        const p=new URLSearchParams(location.search);
-        ['tons','margin','missed'].forEach(n=>{
-          const el=document.querySelector(`#calcForm [name="${n}"]`);
-          if(el&&p.get(n)) el.value=p.get(n);
-        });
-      }
-      document.addEventListener('DOMContentLoaded', prefill);
       document.getElementById("calcForm").addEventListener("submit", (e) => {
         e.preventDefault();
         const t = +e.target.tons.value,
