@@ -12,13 +12,22 @@ function toggleMobileMenu() {
 
   if (isOpen) {
     scrollPosition = window.scrollY;
+    const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+    document.documentElement.classList.add('overflow-hidden');
+    document.body.classList.add('overflow-hidden');
     document.body.style.top = `-${scrollPosition}px`;
     document.body.style.position = 'fixed';
-    document.body.classList.add('overflow-hidden');
+    document.body.style.width = '100%';
+    if (scrollBarWidth) {
+      document.body.style.paddingRight = `${scrollBarWidth}px`;
+    }
   } else {
+    document.documentElement.classList.remove('overflow-hidden');
     document.body.classList.remove('overflow-hidden');
     document.body.style.position = '';
     document.body.style.top = '';
+    document.body.style.width = '';
+    document.body.style.paddingRight = '';
     window.scrollTo(0, scrollPosition);
   }
 
