@@ -377,6 +377,12 @@ header nav a:hover::after,
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  #materials-carousel::-webkit-scrollbar,
+  .carousel-track::-webkit-scrollbar {
+    display: none;
   }
   #materials-carousel > a,
   .carousel-item {
