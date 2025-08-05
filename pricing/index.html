@@ -21,7 +21,7 @@
     header nav ul a::after,#mobileMenu a:not(.bg-yellow-500):not(.btn-primary)::after{content:'';position:absolute;left:0;bottom:-2px;width:0;height:2px;background-color:var(--color-links);transition:width .3s ease;}
     header nav ul a:hover::after,#mobileMenu a:not(.bg-yellow-500):not(.btn-primary):hover::after{width:100%;}
     .site-title{position:relative;display:inline-block;}
-    @media (max-width: 767px){.carousel-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scroll-behavior:smooth;}.carousel-item{flex:0 0 100%;scroll-snap-align:center;}}
+    @media (max-width: 767px){.carousel-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scroll-behavior:smooth;scrollbar-width:none;-ms-overflow-style:none;}.carousel-track::-webkit-scrollbar{display:none;}.carousel-item{flex:0 0 100%;scroll-snap-align:center;}}
     .carousel-indicators{display:flex;justify-content:center;gap:.5rem;margin-top:2.5rem;}
     .carousel-indicators span{background:#D75E02;border-radius:9999px;width:.5rem;height:.5rem;opacity:.5;transition:width .3s ease,opacity .3s ease;}
     .carousel-indicators span.active{width:1.5rem;opacity:1;}
