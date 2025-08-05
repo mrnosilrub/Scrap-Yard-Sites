@@ -9,7 +9,7 @@ This demo includes a single `index.html` page. The markup expects a handful of J
 - `assets/copper.jpg` – copper & brass card image.
 - `assets/aluminum.jpg` – aluminum card image.
 - `assets/steel.jpg` – steel & iron card image.
-- `assets/stainless.jpg` – stainless steel card image.
+- `assets/stainless.jpg` – stainless steel & high temp card image.
 - `assets/catalytic.jpg` – catalytic converters card image.
 - `assets/batteries.jpg` – e‑scrap & batteries card image.
 
