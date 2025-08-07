@@ -103,11 +103,20 @@
 <section id="contact" class="scroll-mt-16 py-20 bg-gray-100">
   <div class="mx-auto max-w-4xl px-6 text-center">
     <h2 class="text-3xl font-bold">Contact Us</h2>
-    <div class="mt-2 text-brand-steel text-base md:text-sm space-y-1">
-      <p><strong>Phone:</strong> <a href="tel:5551234567" class="underline text-brand-orange">555‑123‑4567</a></p>
-      <p><strong>Email:</strong> <a href="mailto:info@demoyard.com" class="underline text-brand-orange">info@demoyard.com</a></p>
-      <p><strong>Yard Address:</strong> 123 Demo Road, Demo City, NY 12345</p>
-    </div>
+    <dl class="mt-2 text-brand-steel text-base md:text-sm space-y-1 text-left inline-block">
+      <div class="flex justify-between">
+        <dt class="font-bold">Phone:</dt>
+        <dd><a href="tel:5551234567" class="underline text-brand-orange">555‑123‑4567</a></dd>
+      </div>
+      <div class="flex justify-between">
+        <dt class="font-bold">Email:</dt>
+        <dd><a href="mailto:info@demoyard.com" class="underline text-brand-orange">info@demoyard.com</a></dd>
+      </div>
+      <div class="flex justify-between">
+        <dt class="font-bold">Yard&nbsp;Address:</dt>
+        <dd>123 Demo Road, Demo City, NY 12345</dd>
+      </div>
+    </dl>
 
     <form action="https://formspree.io/f/yourID" method="POST" class="mt-10 grid gap-6">
       <input type="text" name="name" required placeholder="Name" class="w-full rounded-md px-4 py-3 bg-white border border-brand-steel/20 text-brand-charcoal" />
