@@ -253,13 +253,6 @@ details summary::marker {
   line-height: 1;
 }
 
-@media (max-width: 1023px) {
-  header nav ul a::after,
-  #mobileMenu a:not(.bg-yellow-500)::after,
-  header nav ul a:hover::after,
-  #mobileMenu a:not(.bg-yellow-500):hover::after,
-}
-
 /* Disable hover transforms and shadows on touch devices */
 @media (hover: none) {
   [class*="hover\\:-translate"]:hover,
