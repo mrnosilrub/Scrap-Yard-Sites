@@ -18,6 +18,7 @@ The site currently expects the following assets:
 - `../demo-yard-3/assets/copper.jpg` – sample copper image used on the materials card.
 - `../demo-yard-3/assets/steel.jpg` – sample automobiles image used on the materials card.
 - `../demo-yard-3/assets/stainless.jpg` – sample appliances image used on the materials card.
+- `../demo-yard-3/assets/rolloff.jpg` – sample switch gear image used on the materials card.
 
 
 Image files are not tracked in version control. Ensure any additional images or documents are saved in the `assets/` folder and referenced by their relative path.

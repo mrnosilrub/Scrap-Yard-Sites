@@ -12,6 +12,7 @@ This demo includes a single `index.html` page. The markup expects a handful of J
 - `assets/stainless.jpg` – stainless steel & high temp card image.
 - `assets/catalytic.jpg` – catalytic converters card image.
 - `assets/batteries.jpg` – e‑scrap & batteries card image.
+- `assets/switchgear.jpg` – switch gear card image.
 
 The HTML also links to a number of external resources:
 
