@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://scrapyardsites.com/</loc></url>
-  <url><loc>https://scrapyardsites.com/about/</loc></url>
-  <url><loc>https://scrapyardsites.com/services/</loc></url>
-  <url><loc>https://scrapyardsites.com/pricing/</loc></url>
-  <url><loc>https://scrapyardsites.com/process/</loc></url>
-  <url><loc>https://scrapyardsites.com/calculator/</loc></url>
-  <url><loc>https://scrapyardsites.com/demos/</loc></url>
-  <url><loc>https://scrapyardsites.com/demos/demo-yard-1/</loc></url>
-  <url><loc>https://scrapyardsites.com/demos/demo-yard-2/</loc></url>
-  <url><loc>https://scrapyardsites.com/demos/demo-yard-3/</loc></url>
-  <url><loc>https://scrapyardsites.com/blog/</loc></url>
-  <url><loc>https://scrapyardsites.com/blog/posts/seo-basics-for-scrap-yards.html</loc></url>
-  <url><loc>https://scrapyardsites.com/blog/posts/pre-qualify-scrap-sellers.html</loc></url>
-  <url><loc>https://scrapyardsites.com/blog/posts/care-plan-essentials.html</loc></url>
-  <url><loc>https://scrapyardsites.com/contact/</loc></url>
-  <url><loc>https://scrapyardsites.com/privacy/</loc></url>
-  <url><loc>https://scrapyardsites.com/terms-of-service/</loc></url>
+  <url><loc>/</loc></url>
+  <url><loc>/about/</loc></url>
+  <url><loc>/services/</loc></url>
+  <url><loc>/pricing/</loc></url>
+  <url><loc>/process/</loc></url>
+  <url><loc>/calculator/</loc></url>
+  <url><loc>/demos/</loc></url>
+  <url><loc>/demos/demo-yard-1/</loc></url>
+  <url><loc>/demos/demo-yard-2/</loc></url>
+  <url><loc>/demos/demo-yard-3/</loc></url>
+  <url><loc>/blog/</loc></url>
+  <url><loc>/blog/posts/seo-basics-for-scrap-yards.html</loc></url>
+  <url><loc>/blog/posts/pre-qualify-scrap-sellers.html</loc></url>
+  <url><loc>/blog/posts/care-plan-essentials.html</loc></url>
+  <url><loc>/contact/</loc></url>
+  <url><loc>/privacy/</loc></url>
+  <url><loc>/terms-of-service/</loc></url>
 </urlset>
