@@ -32,7 +32,12 @@ function toggleMobileMenu() {
   }
 
   if (banner) banner.classList.toggle('hidden', isOpen);
-  if (btn) btn.classList.toggle('open', isOpen);
+  if (btn) {
+    btn.classList.toggle('open', isOpen);
+    btn.setAttribute('aria-expanded', String(isOpen));
+    btn.setAttribute('aria-controls', 'mobileMenu');
+    btn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+  }
 
   const themeMeta = document.querySelector('meta[name=theme-color]');
   if (themeMeta) themeMeta.setAttribute('content', isOpen ? '#ffffff' : '#D75E02');

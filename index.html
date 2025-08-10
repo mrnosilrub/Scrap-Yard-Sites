@@ -9,7 +9,9 @@
         content="Launch a high-converting website for your scrap or recycling yard in 7 days (Standard) or 10 days (Premium). $2,499 build, $99/mo care. Turn clicks into trucks-at-the-scale."/>
   <meta property="og:title" content="Your Outdated Site is Leaking Profits—We Plug the Hole in 7 Days (Standard) or 10 Days (Premium)."/>
   <meta property="og:description" content="Every day you wait means trucks drive to the guy with a real website. Stop the bleed—site live in 7 days (Standard) or 10 days (Premium)."/>
-  <meta property="og:image" content="assets/hero.jpg"/>
+  <link rel="canonical" href="https://scrapyardsites.com/"/>
+  <meta property="og:url" content="https://scrapyardsites.com/"/>
+  <meta property="og:image" content="https://scrapyardsites.com/assets/hero.jpg"/>
   <meta name="thumbnail" content="assets/thumbnail.jpg"/>
   <meta property="og:type" content="website"/>
   <link rel="icon" href="favicon.svg"> <!-- prevents 404s on mobile -->
@@ -35,9 +37,11 @@
   </script>
 <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <link rel="stylesheet" href="/assets/styles.css"/>
+  <link rel="preload" as="image" href="/assets/hero.jpg"/>
   <style>
     :root {
       --color-links: #D75E02;
@@ -169,7 +173,7 @@
     <nav class="max-w-7xl mx-auto relative flex items-center justify-between py-3 px-6">
       <a href="/" class="flex items-center gap-2"><img src="/assets/logo.svg" alt="Scrapyard Sites logo" class="h-8 w-8"/><span class="site-title text-xl text-brand-charcoal"><span class="font-bold text-brand-orange">Scrapyard</span> <span class="font-bold">Sites</span></span></a>
       <!-- Mobile hamburger (≤ 768 px) -->
-      <button id="menuToggle" class="lg:hidden p-2">
+      <button id="menuToggle" class="lg:hidden p-2" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
         <svg class="icon-open w-6 h-6" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <svg class="icon-close w-6 h-6" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M6 18L18 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
@@ -207,7 +211,7 @@
 
 <!-- ── Hero ───────────────────────────────────────────────── -->
 <section class="relative text-center flex items-center justify-center min-h-[80vh]">
-  <img src="/assets/hero.jpg" alt="Scrapyard hero" class="absolute inset-0 w-full h-full object-cover"/>
+  <img src="/assets/hero.jpg" alt="Scrapyard hero" class="absolute inset-0 w-full h-full object-cover" width="1920" height="1080"/>
   <div class="absolute inset-0 bg-black/80"></div>
   <div class="relative z-10 py-32 md:py-40 px-6 max-w-4xl mx-auto text-white">
     <h1 class="text-5xl md:text-6xl font-extrabold leading-tight">
@@ -414,21 +418,21 @@
       <!-- Demo project cards -->
       <a href="demos/demo-yard-1/" class="carousel-item block bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm p-10 flex flex-col items-center text-center hover:bg-gray-100 hover:shadow-lg transition transform hover:-translate-y-1 hover:cursor-pointer">
         <div class="w-full rounded-xl overflow-hidden border border-brand-steel/10">
-          <img class="w-full" src="https://placehold.co/600x400/2B2B2B/FFFFFF?text=Demo+Yard+1" alt="">
+          <img class="w-full" src="https://placehold.co/600x400/2B2B2B/FFFFFF?text=Demo+Yard+1" alt="Demo yard 1 placeholder" loading="lazy" decoding="async" width="600" height="400">
         </div>
         <h3 class="font-semibold mt-4">Demo Yard 1</h3>
         <p class="text-sm text-brand-steel mt-1">Custom design for a busy metro scrapyard.</p>
       </a>
       <a href="demos/demo-yard-2/" class="carousel-item block bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm p-10 flex flex-col items-center text-center hover:bg-gray-100 hover:shadow-lg transition transform hover:-translate-y-1 hover:cursor-pointer">
         <div class="w-full rounded-xl overflow-hidden border border-brand-steel/10">
-          <img class="w-full" src="https://placehold.co/600x400/2B2B2B/FFFFFF?text=Demo+Yard+2" alt="">
+          <img class="w-full" src="https://placehold.co/600x400/2B2B2B/FFFFFF?text=Demo+Yard+2" alt="Demo yard 2 placeholder" loading="lazy" decoding="async" width="600" height="400">
         </div>
         <h3 class="font-semibold mt-4">Demo Yard 2</h3>
         <p class="text-sm text-brand-steel mt-1">Mobile friendly layout with fast quote form.</p>
       </a>
       <a href="demos/demo-yard-3/" class="carousel-item block bg-gray-50 border border-brand-steel/10 rounded-xl shadow-sm p-10 flex flex-col items-center text-center hover:bg-gray-100 hover:shadow-lg transition transform hover:-translate-y-1 hover:cursor-pointer">
         <div class="w-full rounded-xl overflow-hidden border border-brand-steel/10">
-          <img class="w-full" src="https://placehold.co/600x400/2B2B2B/FFFFFF?text=Demo+Yard+3" alt="">
+          <img class="w-full" src="https://placehold.co/600x400/2B2B2B/FFFFFF?text=Demo+Yard+3" alt="Demo yard 3 placeholder" loading="lazy" decoding="async" width="600" height="400">
         </div>
         <h3 class="font-semibold mt-4">Demo Yard 3</h3>
         <p class="text-sm text-brand-steel mt-1">Highlighting services for industrial clients.</p>
@@ -677,7 +681,10 @@
       updateDots(index);
     }
 
-    // Auto-scrolling removed
+    // Make dots clickable
+    Array.from(indicators.querySelectorAll('span')).forEach((dot, i) => {
+      dot.addEventListener('click', () => goTo(i));
+    });
 
     track.addEventListener('scroll', () => {
       const i = Math.round(track.scrollLeft / slideWidth);

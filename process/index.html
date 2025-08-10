@@ -100,7 +100,7 @@
     <nav class="max-w-7xl w-full mx-auto relative flex items-center justify-between py-3 px-6">
       <a href="/" class="flex items-center gap-2"><img src="/assets/logo.svg" alt="Scrapyard Sites logo" class="h-8 w-8"/><span class="site-title text-xl text-brand-charcoal"><span class="font-bold text-brand-orange">Scrapyard</span> <span class="font-bold">Sites</span></span></a>
       <!-- Mobile hamburger (≤ 768 px) -->
-      <button id="menuToggle" class="lg:hidden p-2">
+      <button id="menuToggle" class="lg:hidden p-2" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
         <svg class="icon-open w-6 h-6" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <svg class="icon-close w-6 h-6" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M6 18L18 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
@@ -135,7 +135,7 @@
   <script src="/assets/mobile-menu.js"></script>
   <main class="pb-20">
     <section class="relative flex flex-col items-center justify-center min-h-[60vh] text-center">
-      <img src="/assets/hero.jpg" alt="Scrapyard hero" class="absolute inset-0 w-full h-full object-cover">
+      <img src="/assets/hero.jpg" alt="Scrapyard hero" class="absolute inset-0 w-full h-full object-cover" width="1920" height="1080">
       <div class="absolute inset-0 bg-black/80"></div>
       <div class="relative z-10 px-6">
         <h1 class="text-4xl md:text-5xl font-extrabold text-white">How We Build Your Reputation</h1>
@@ -297,7 +297,7 @@
                    placeholder="Margin per ton ($) (m)"
                    class="w-full rounded-md px-4 py-3 bg-white border border-brand-steel/20 text-brand-charcoal" />
             <input type="number" name="missed" inputmode="numeric" required
-                   placeholder="Missed calls per month (l)"
+                   placeholder="Missed loads per month (l)"
                    class="w-full rounded-md px-4 py-3 bg-white border border-brand-steel/20 text-brand-charcoal" />
             <button class="btn-primary w-full" type="submit">Calculate</button>
           </form>
@@ -345,7 +345,7 @@
       e.preventDefault();
       const t=+e.target.tons.value, m=+e.target.margin.value, l=+e.target.missed.value;
       if(!t||!m||!l) return alert('Fill every field');
-      const annual=t*m*l*12;
+      const annual=t*m*l*12; // l = missed loads per month
       document.getElementById('lossFig').textContent=fmt(annual);
       document.getElementById('roiDays').textContent=Math.ceil(2499/(annual/365));
       document.getElementById('contactBtn').href=`/contact?leak=${annual}`;

@@ -37,7 +37,7 @@
     <nav class="max-w-7xl mx-auto relative flex items-center justify-between py-3 px-6">
       <a href="/" class="flex items-center gap-2"><img src="/assets/logo.svg" alt="Scrapyard Sites logo" class="h-8 w-8"/><span class="site-title text-xl text-brand-charcoal"><span class="font-bold text-brand-orange">Scrapyard</span> <span class="font-bold">Sites</span></span></a>
       <!-- Mobile hamburger (≤ 768 px) -->
-      <button id="menuToggle" class="lg:hidden p-2">
+      <button id="menuToggle" class="lg:hidden p-2" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
         <svg class="icon-open w-6 h-6" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <svg class="icon-close w-6 h-6" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M6 18L18 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
@@ -73,7 +73,7 @@
   <main class="pb-20">
     <!-- Hero -->
     <section class="relative flex items-center justify-center min-h-[60vh] text-center">
-      <img src="/assets/hero.jpg" alt="Scrapyard hero" class="absolute inset-0 w-full h-full object-cover" />
+      <img src="/assets/hero.jpg" alt="Scrapyard hero" class="absolute inset-0 w-full h-full object-cover" width="1920" height="1080" />
       <div class="absolute inset-0 bg-black/80"></div>
       <div class="relative z-10 px-6 py-24 text-white max-w-4xl mx-auto">
         <h1 class="text-4xl md:text-5xl font-extrabold">Invest in Your Reputation</h1>
@@ -209,7 +209,10 @@
     let index=0;function updateDots(i){indicators.querySelectorAll('span').forEach((dot,idx)=>{dot.classList.toggle('active',idx===i);});}
     const slideWidth=slides[1]?slides[1].offsetLeft-slides[0].offsetLeft:track.clientWidth;
     function goTo(i){index=i;track.scrollTo({left:slideWidth*index,behavior:'smooth'});updateDots(index);}
-    // Auto-scrolling removed
+    // Make dots clickable
+    Array.from(indicators.querySelectorAll('span')).forEach((dot, i) => {
+      dot.addEventListener('click', () => goTo(i));
+    });
     track.addEventListener('scroll',()=>{const i=Math.round(track.scrollLeft/slideWidth);if(i!==index){index=i;updateDots(index);}});
   }
   if(window.matchMedia('(max-width: 767px)').matches){initCarousel('pricing-carousel');}

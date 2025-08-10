@@ -31,7 +31,7 @@
     <nav class="max-w-7xl mx-auto relative flex items-center justify-between py-3 px-6">
       <a href="/" class="flex items-center gap-2"><img src="/assets/logo.svg" alt="Scrapyard Sites logo" class="h-8 w-8"/><span class="site-title text-xl text-brand-charcoal"><span class="font-bold text-brand-orange">Scrapyard</span> <span class="font-bold">Sites</span></span></a>
       <!-- Mobile hamburger (≤ 768 px) -->
-      <button id="menuToggle" class="lg:hidden p-2">
+      <button id="menuToggle" class="lg:hidden p-2" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
         <svg class="icon-open w-6 h-6" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <svg class="icon-close w-6 h-6" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M6 18L18 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
@@ -74,11 +74,11 @@
     </section>
 
     <div class="mt-8 flex flex-wrap justify-center gap-2">
-      <a href="#" class="px-3 py-1 text-sm rounded-full border border-brand-orange text-brand-orange">Credibility</a>
-      <a href="#" class="px-3 py-1 text-sm rounded-full border border-brand-orange text-brand-orange">Qualification</a>
-      <a href="#" class="px-3 py-1 text-sm rounded-full border border-brand-orange text-brand-orange">Visibility</a>
-      <a href="#" class="px-3 py-1 text-sm rounded-full border border-brand-orange text-brand-orange">Reliability</a>
-      <a href="#" class="px-3 py-1 text-sm rounded-full border border-brand-orange text-brand-orange">News</a>
+      <button type="button" class="px-3 py-1 text-sm rounded-full border border-brand-orange text-brand-orange">Credibility</button>
+      <button type="button" class="px-3 py-1 text-sm rounded-full border border-brand-orange text-brand-orange">Qualification</button>
+      <button type="button" class="px-3 py-1 text-sm rounded-full border border-brand-orange text-brand-orange">Visibility</button>
+      <button type="button" class="px-3 py-1 text-sm rounded-full border border-brand-orange text-brand-orange">Reliability</button>
+      <button type="button" class="px-3 py-1 text-sm rounded-full border border-brand-orange text-brand-orange">News</button>
     </div>
     <form action="#" class="max-w-md mx-auto mt-6 flex">
       <input type="text" placeholder="Search articles..." class="w-full rounded-l-md px-4 py-2 border border-brand-steel/20" />
@@ -87,7 +87,7 @@
 
     <section class="post-grid max-w-7xl mx-auto mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       <article class="blog-card border rounded-md overflow-hidden shadow-sm">
-        <img src="/assets/hero.jpg" alt="Scrapyard SEO basics" class="w-full h-40 object-cover rounded-t-md">
+        <img src="/assets/hero.jpg" alt="Scrapyard SEO basics" class="w-full h-40 object-cover rounded-t-md" loading="lazy" decoding="async" width="600" height="160">
         <div class="p-4">
           <span class="text-xs uppercase text-brand-orange">Visibility</span>
           <h3 class="text-lg font-semibold mt-2"><a href="/blog/posts/seo-basics-for-scrap-yards.html" class="hover:underline">SEO Basics for Scrap Yards</a></h3>
@@ -96,7 +96,7 @@
         </div>
       </article>
       <article class="blog-card border rounded-md overflow-hidden shadow-sm">
-        <img src="/assets/hero.jpg" alt="Intake forms" class="w-full h-40 object-cover rounded-t-md">
+        <img src="/assets/hero.jpg" alt="Intake forms" class="w-full h-40 object-cover rounded-t-md" loading="lazy" decoding="async" width="600" height="160">
         <div class="p-4">
           <span class="text-xs uppercase text-brand-orange">Qualification</span>
           <h3 class="text-lg font-semibold mt-2"><a href="/blog/posts/pre-qualify-scrap-sellers.html" class="hover:underline">Pre-Qualify Scrap Sellers</a></h3>
@@ -105,7 +105,7 @@
         </div>
       </article>
       <article class="blog-card border rounded-md overflow-hidden shadow-sm">
-        <img src="/assets/hero.jpg" alt="Security patches" class="w-full h-40 object-cover rounded-t-md">
+        <img src="/assets/hero.jpg" alt="Security patches" class="w-full h-40 object-cover rounded-t-md" loading="lazy" decoding="async" width="600" height="160">
         <div class="p-4">
           <span class="text-xs uppercase text-brand-orange">Reliability</span>
           <h3 class="text-lg font-semibold mt-2"><a href="/blog/posts/care-plan-essentials.html" class="hover:underline">Care Plan Essentials</a></h3>
@@ -130,7 +130,7 @@
   <p>© <span id="year"></span> Scrapyard Sites — All rights reserved.</p>
 </footer>
   <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
-<script src="/assets/header-offset.js"></script>
-<script src="/assets/promo-banner.js"></script>
+  <script src="/assets/header-offset.js"></script>
+  <script src="/assets/promo-banner.js"></script>
 </body>
 </html>
