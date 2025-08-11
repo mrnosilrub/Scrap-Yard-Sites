@@ -598,6 +598,20 @@
 
 <!-- ── Footer ──────────────────────────────────────────────── -->
 <footer class="bg-white py-8 text-center text-xs text-gray-400">
+  <div class="max-w-4xl mx-auto px-6 mb-4">
+    <form action="https://formsubmit.co/hello@scrapyardsites.com" method="POST" class="grid gap-2">
+      <label for="footer-email" class="block text-brand-steel">Get updates</label>
+      <div class="flex gap-2 justify-center">
+        <input id="footer-email" type="email" name="email" placeholder="Your email" aria-label="Email" required class="w-full max-w-sm rounded-md px-4 py-3 bg-white border border-brand-steel/20 text-brand-charcoal" />
+        <button type="submit" class="btn-primary">Get Updates</button>
+      </div>
+      <input type="hidden" name="_subject" value="New Get Updates submission" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_next" value="https://scrapyardsites.com/thank-you.html" />
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+    </form>
+  </div>
   <nav class="mb-2 flex flex-wrap justify-center gap-x-2 gap-y-1">
     <a href="./">Home</a>
     <a href="about/">About</a>
